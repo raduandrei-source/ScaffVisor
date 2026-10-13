@@ -1,0 +1,10 @@
+title: ScaffVisor
+description: Site scaffolding for Blender, generated on the walls you mark.
+theme: minima
+show_excerpts: false
+header_pages:
+  - index.md
+  - philosophy.md
+  - panel.md
+  - presets.md
+  - limits.md

@@ -1,0 +1,476 @@
+{
+ "_meta": {
+  "id": "plettac_sl70_steel",
+  "name": "Plettac SL 70 (steel, 74 cm)",
+  "status": "draft-v2",
+  "note": "Values are from the manufacturer's catalog; 'verified' = false until weighed/measured on the real parts. Clones (P70 etc.) may differ slightly.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "ALTRAD plettac assco, plettac SL 70/100 catalog, ed. 04/2013 (plettac.ua/images/Doc/scaffolds/eng/plettac_SL_en1.pdf)",
+   "Leitern Ebertz: Vertikalrahmen SL 70 (pin spacing 26 cm), Holzboden SL 70 (metal end fittings, 2 holes at 26 cm)",
+   "Mascus, SL70 package listings (unit weights, cross-check)"
+  ],
+  "approvals": [
+   "DIBt Z-8.1-29 (SL 70 otel)",
+   "Z-8.1-29.1 (SL 70 alu)",
+   "Z-8.1-171 (SL 100)"
+  ],
+  "changes": [
+   "extra_bay_lengths_mm reduced to [740,1100] (400/1060/1250/4000 were unverified)",
+   "added rules section and compensation_frames_mm",
+   "braces for other heights are estimated geometrically (l=sqrt(b^2+h^2)+55 mm, 3.11 kg/m)"
+  ]
+ },
+ "system": {
+  "width_mm": 740,
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1500,
+   2000,
+   2500,
+   3000
+  ],
+  "extra_bay_lengths_mm": [
+   740,
+   1100
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 650,
+  "width_class": "W06 (EN 12811-1)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "star_pin_spacing_mm": 260,
+  "connection": "star pins (Sternbolzen) on the frame head transom; decks have 2 holes at 260 mm; ledgers and diagonals use gravity pins",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ]
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "5FSL713003",
+     "h_mm": 500,
+     "mass": 8.5,
+     "verified": false
+    },
+    {
+     "id": "5FSL713002",
+     "h_mm": 1000,
+     "mass": 11.7,
+     "verified": false
+    },
+    {
+     "id": "5FSL713005",
+     "h_mm": 1500,
+     "mass": 15.2,
+     "verified": false
+    },
+    {
+     "id": "5FSL713004",
+     "h_mm": 2000,
+     "mass": 18.3,
+     "verified": false
+    }
+   ],
+   "steel_light_74_4pins_2000": {
+    "id": "5FSL713000",
+    "mass": 18.6,
+    "verified": false
+   },
+   "alu_74": [
+    {
+     "id": "5FSL702003",
+     "h_mm": 500,
+     "mass": 4.8,
+     "verified": false
+    },
+    {
+     "id": "5FSL702002",
+     "h_mm": 1000,
+     "mass": 5.8,
+     "verified": false
+    },
+    {
+     "id": "5FSL702001",
+     "h_mm": 1500,
+     "mass": 7.8,
+     "verified": false
+    },
+    {
+     "id": "5FSL702000",
+     "h_mm": 2000,
+     "mass": 9.3,
+     "verified": false
+    }
+   ],
+   "pallet_20_frames": {
+    "id": "5FSL718500",
+    "w_mm": 740,
+    "l_mm": 1190,
+    "mass_empty": 40.7,
+    "capacity": 20,
+    "note": "frames standing upright; pallet height not given in the catalog"
+   }
+  },
+  "timber_deck_w320": {
+   "machine_sorted_MS10_13": [
+    {
+     "id": "5FSLN04016",
+     "l_mm": 740,
+     "t_mm": 44,
+     "mass": 5.8,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04015",
+     "l_mm": 1100,
+     "t_mm": 44,
+     "mass": 7.8,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04014",
+     "l_mm": 1500,
+     "t_mm": 44,
+     "mass": 10.6,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04013",
+     "l_mm": 2000,
+     "t_mm": 44,
+     "mass": 13.7,
+     "load_class": 5
+    },
+    {
+     "id": "5FSLN04012",
+     "l_mm": 2500,
+     "t_mm": 44,
+     "mass": 16.9,
+     "load_class": 4
+    },
+    {
+     "id": "5FSLN04000",
+     "l_mm": 3000,
+     "t_mm": 48,
+     "mass": 21.7,
+     "load_class": 3
+    }
+   ],
+   "visually_sorted_S10": [
+    {
+     "id": "5FSLN04006",
+     "l_mm": 740,
+     "t_mm": 48,
+     "mass": 6.2,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04005",
+     "l_mm": 1100,
+     "t_mm": 48,
+     "mass": 8.4,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04003",
+     "l_mm": 1500,
+     "t_mm": 48,
+     "mass": 11.4,
+     "load_class": 6
+    },
+    {
+     "id": "5FSLN04002",
+     "l_mm": 2000,
+     "t_mm": 48,
+     "mass": 14.9,
+     "load_class": 5
+    },
+    {
+     "id": "5FSLN04004",
+     "l_mm": 2500,
+     "t_mm": 48,
+     "mass": 18.3,
+     "load_class": 4
+    },
+    {
+     "id": "5FSLN04025",
+     "l_mm": 3000,
+     "t_mm": 50,
+     "mass": 22.6,
+     "load_class": 3
+    }
+   ],
+   "end_fittings": "ventilated metal end fittings, 2 holes at the ends (260 mm apart) that sit on the frame star pins",
+   "pallet_44_decks": {
+    "id": "5FSLN14000",
+    "w_mm": 780,
+    "l_mm": 1250,
+    "mass_empty": 50.8,
+    "capacity": 44
+   }
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "5FSLN57001",
+    "surface": "plywood",
+    "l_mm": 2500,
+    "h_mm": 73,
+    "mass": 23.9,
+    "load_class": 3
+   },
+   {
+    "id": "5FSLN57000",
+    "surface": "plywood",
+    "l_mm": 3000,
+    "h_mm": 73,
+    "mass": 29.8,
+    "load_class": 3
+   },
+   {
+    "id": "5FSLN50001",
+    "surface": "aluminium",
+    "l_mm": 2500,
+    "h_mm": 81,
+    "mass": 23.8,
+    "load_class": 4
+   },
+   {
+    "id": "5FSLN50000",
+    "surface": "aluminium",
+    "l_mm": 3000,
+    "h_mm": 81,
+    "mass": 27.4,
+    "load_class": 3
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "5FSNN60003",
+    "bay_mm": 1500,
+    "h_mm": 2000,
+    "l_mm": 2550,
+    "mass": 7.9
+   },
+   {
+    "id": "5FSNN60002",
+    "bay_mm": 2000,
+    "h_mm": 2000,
+    "l_mm": 2880,
+    "mass": 9.0
+   },
+   {
+    "id": "5FSNN60001",
+    "bay_mm": 2500,
+    "h_mm": 2000,
+    "l_mm": 3260,
+    "mass": 10.1
+   },
+   {
+    "id": "5FSNN60000",
+    "bay_mm": 3000,
+    "h_mm": 2000,
+    "l_mm": 3660,
+    "mass": 11.4
+   }
+  ],
+  "diagonal_fixing_bracket": {
+   "id": "5FSNN61000",
+   "mass": 0.4,
+   "note": "between base jack and frame, 2 pcs + one ledger as a transom at the lowest level"
+  },
+  "guard_rail": [
+   {
+    "id": "5FSNN05006",
+    "l_mm": 740,
+    "mass": 1.4
+   },
+   {
+    "id": "5FSNN05001",
+    "l_mm": 2000,
+    "mass": 3.5
+   },
+   {
+    "id": "5FSNN05002",
+    "l_mm": 2500,
+    "mass": 4.3
+   },
+   {
+    "id": "5FSNN05003",
+    "l_mm": 3000,
+    "mass": 5.2
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "5FSL712000",
+   "mass": 3.7
+  },
+  "single_end_guard_rail_74": {
+   "id": "5FSL709000",
+   "mass": 2.0
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "5FSNN14001",
+    "l_mm": 2500,
+    "mass": 5.0
+   },
+   {
+    "id": "5FSNN14000",
+    "l_mm": 3000,
+    "mass": 5.9
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "5FSL715000",
+   "mass": 1.4
+  },
+  "top_level": {
+   "guard_rail_post_h1000": {
+    "id": "5FSNN12000",
+    "mass": 4.0
+   },
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "5FSL764000",
+    "mass": 5.2
+   },
+   "end_guard_rail_frame_h1000_w740": {
+    "id": "5FSL763500",
+    "mass": 12.8
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "5FSOG59006",
+    "h_mm": 400,
+    "mass": 2.9
+   },
+   {
+    "id": "5FSOG59007",
+    "h_mm": 600,
+    "mass": 3.6
+   },
+   {
+    "id": "5FSOG59008",
+    "h_mm": 800,
+    "mass": 4.3
+   }
+  ],
+  "base_plate_rule": "at least 25% of the leg length or 150 mm must remain in the standard",
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "5FSNN24005",
+    "l_mm": 800,
+    "mass": 2.9
+   },
+   "clearance_tie_70": {
+    "id": "5FSLN25000",
+    "l_mm": 700,
+    "mass": 3.1
+   },
+   "normal_coupler": {
+    "id": "5FKUP10010",
+    "mass": 1.0
+   },
+   "swivel_coupler": {
+    "id": "5FKUP20017",
+    "mass": 1.2
+   },
+   "eyebolt_120": {
+    "id": "5FDIV00107",
+    "mass": 0.2
+   }
+  },
+  "side_brackets": [
+   {
+    "id": "5FSLN15500",
+    "w_mm": 320,
+    "mass": 5.5
+   },
+   {
+    "id": "5FSLN22500",
+    "w_mm": 640,
+    "mass": 6.4
+   },
+   {
+    "id": "5FSLN15000",
+    "w_mm": 740,
+    "mass": 10.9
+   }
+  ],
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "alu_48_3x4_0_per_m": 1.5,
+   "note": "values derived from the catalog: 3.8 kg per 1 m (steel 3.2 mm), 1.5 kg per 1 m (alu 4 mm)"
+  }
+ },
+ "sanity_check": {
+  "description": "Total scaffold weight per m2 of facade, catalog examples (3.00 m bays, h=8.2 m, with standard accessories)",
+  "examples": [
+   {
+    "area_m2": 1009,
+    "mass_kg": 9831
+   },
+   {
+    "area_m2": 517,
+    "mass_kg": 5096
+   },
+   {
+    "area_m2": 295,
+    "mass_kg": 2957
+   },
+   {
+    "area_m2": 148,
+    "mass_kg": 1544
+   },
+   {
+    "area_m2": 98,
+    "mass_kg": 1046
+   }
+  ],
+  "kg_per_m2_range": [
+   9.7,
+   10.6
+  ]
+ },
+ "to_measure_on_site": [
+  "real deck board width (catalog: 320 mm; your estimate: 250 mm)",
+  "deck board thickness",
+  "distance between the holes in the end fitting (catalog: 260 mm)",
+  "lengths of decks in use (1.5 / 2.0 / 2.5 / 3.0 m)",
+  "frame tube wall thickness",
+  "weighed values: frame, brace, deck board, hatch deck, base jack",
+  "height from the leg top to the transom"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.2,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.75,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 3.11,
+  "brace_est_extra_mm": 55,
+  "toeboard_est_kg_per_m": 2.0,
+  "note": "Indicative rules (Marcegaglia/Italian manual, Plettac catalog). Not a substitute for a stability calculation."
+ }
+}

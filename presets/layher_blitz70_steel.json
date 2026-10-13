@@ -1,0 +1,367 @@
+{
+ "_meta": {
+  "id": "layher_blitz70_steel",
+  "name": "Layher Blitz 70 (steel, 73 cm)",
+  "status": "draft",
+  "note": "Weights are guideline values from the Layher price list; 'verified' = false until weighed on real parts. Frame details, tie rules and jack minimum are NOT from Layher documents and are marked.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "Layher Blitz price list 2019 (leiternprofi24.de, Layher DE_Blitz_Preisliste.pdf); all weights are 'ca.' guideline values (Richtwerte)",
+   "Layher Blitz assembly manual Art.-Nr. 8102.030, 03/2011 (manualslib.de): bay and anchoring notes"
+  ],
+  "approvals": [],
+  "changes": [
+   "Table names are shared with the engine (e.g. 'timber_deck_w320' holds the steel decks of this system); labels and deck types are set in 'system'.",
+   "Diagonals for the 1.57 m bay and the short bays are estimated geometrically: the price list gives no clear length for a 2 m lift."
+  ]
+ },
+ "system": {
+  "width_mm": 730,
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1) - not stated in the price list",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "star_pin_spacing_mm": 0,
+  "connection": "U-decks hook onto the frame crossbars (not stated in the price list)",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   660,
+   1000,
+   1500
+  ],
+  "access_surface": "steel",
+  "deck_grade_labels": {
+   "steel_U_LW": "Steel U-LW 0.32 m",
+   "alu_U_perforated": "Aluminium U, perforated 0.32 m"
+  },
+  "labels": {
+   "deck": "Deck U 0.32 m",
+   "access": "Access deck with ladder and hatch 0.61 m",
+   "end_rail": "End guard rail, 2 x 0.73 m",
+   "end_toeboard": "End toeboard 0.73 m",
+   "support": "Guard rail support 1.0 m, 0.73 m",
+   "tie": "Scaffold tie 0.69 m",
+   "coupler": "Couplers (tie)",
+   "eyebolt": "Ring bolt M12 120 mm"
+  }
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "1700.066",
+     "h_mm": 660,
+     "mass": 9.3,
+     "verified": false
+    },
+    {
+     "id": "1700.101",
+     "h_mm": 1000,
+     "mass": 11.9,
+     "verified": false
+    },
+    {
+     "id": "1700.150",
+     "h_mm": 1500,
+     "mass": 15.8,
+     "verified": false
+    },
+    {
+     "id": "1700.200",
+     "h_mm": 2000,
+     "mass": 18.8,
+     "verified": false
+    }
+   ]
+  },
+  "timber_deck_w320": {
+   "steel_U_LW": [
+    {
+     "id": "3883.073",
+     "l_mm": 730,
+     "mass": 5.6
+    },
+    {
+     "id": "3883.109",
+     "l_mm": 1090,
+     "mass": 7.7
+    },
+    {
+     "id": "3883.157",
+     "l_mm": 1570,
+     "mass": 10.5
+    },
+    {
+     "id": "3883.207",
+     "l_mm": 2070,
+     "mass": 13.4
+    },
+    {
+     "id": "3883.257",
+     "l_mm": 2570,
+     "mass": 16.4
+    },
+    {
+     "id": "3883.307",
+     "l_mm": 3070,
+     "mass": 19.3
+    }
+   ],
+   "alu_U_perforated": [
+    {
+     "id": "3803.073",
+     "l_mm": 730,
+     "mass": 3.1
+    },
+    {
+     "id": "3803.109",
+     "l_mm": 1090,
+     "mass": 4.4
+    },
+    {
+     "id": "3803.157",
+     "l_mm": 1570,
+     "mass": 6.5
+    },
+    {
+     "id": "3803.207",
+     "l_mm": 2070,
+     "mass": 8.0
+    },
+    {
+     "id": "3803.257",
+     "l_mm": 2570,
+     "mass": 10.0
+    },
+    {
+     "id": "3803.307",
+     "l_mm": 3070,
+     "mass": 11.5
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "3838.257",
+    "surface": "steel",
+    "l_mm": 2570,
+    "mass": 24.0
+   },
+   {
+    "id": "3838.307",
+    "surface": "steel",
+    "l_mm": 3070,
+    "mass": 27.4
+   },
+   {
+    "id": "3852.257",
+    "surface": "aluminium",
+    "l_mm": 2570,
+    "mass": 24.0
+   },
+   {
+    "id": "3852.307",
+    "surface": "aluminium",
+    "l_mm": 3070,
+    "mass": 28.0
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "1736.207",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2800,
+    "mass": 7.0
+   },
+   {
+    "id": "1736.257",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3200,
+    "mass": 7.8
+   },
+   {
+    "id": "1736.307",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3600,
+    "mass": 8.3
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "1724.073",
+    "l_mm": 730,
+    "mass": 1.6
+   },
+   {
+    "id": "1724.109",
+    "l_mm": 1090,
+    "mass": 2.0
+   },
+   {
+    "id": "1725.157",
+    "l_mm": 1570,
+    "mass": 2.9
+   },
+   {
+    "id": "1725.207",
+    "l_mm": 2070,
+    "mass": 3.8
+   },
+   {
+    "id": "1725.257",
+    "l_mm": 2570,
+    "mass": 4.7
+   },
+   {
+    "id": "1725.307",
+    "l_mm": 3070,
+    "mass": 5.6
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "1725.073 x2",
+   "mass": 4.4,
+   "estimated": true,
+   "note": "2 x Stirngeländer 0.73 m (2.2 kg each); whether one or two are needed per open end is not stated"
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "1756.073",
+    "l_mm": 730,
+    "mass": 1.6
+   },
+   {
+    "id": "1756.109",
+    "l_mm": 1090,
+    "mass": 2.4
+   },
+   {
+    "id": "1757.157",
+    "l_mm": 1570,
+    "mass": 3.1
+   },
+   {
+    "id": "1757.207",
+    "l_mm": 2070,
+    "mass": 4.7
+   },
+   {
+    "id": "1757.257",
+    "l_mm": 2570,
+    "mass": 5.6
+   },
+   {
+    "id": "1757.307",
+    "l_mm": 3070,
+    "mass": 6.8
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "1757.073",
+   "mass": 1.8
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "1719.073",
+    "mass": 6.5
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "4001.060",
+    "h_mm": 600,
+    "mass": 3.6,
+    "ext_max_mm": 410
+   },
+   {
+    "id": "4002.080",
+    "h_mm": 800,
+    "mass": 4.9,
+    "ext_max_mm": 550
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "1754.069",
+    "l_mm": 690,
+    "mass": 2.8
+   },
+   "normal_coupler": {
+    "id": "coupler",
+    "mass": 1.0,
+    "estimated": true,
+    "note": "coupler not in the extract of the price list; 1.0 kg is the Plettac value"
+   },
+   "eyebolt_120": {
+    "id": "4009.121",
+    "mass": 1.8
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value (not from the Layher list)"
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": [
+   8.0,
+   16.0
+  ]
+ },
+ "to_measure_on_site": [
+  "frame weight, deck weight, diagonal weight",
+  "real deck width (catalog 0.32 m) and number of decks per bay",
+  "height from leg top to the crossbar",
+  "jack minimum extension and travel (price list: 41 cm for the 0.6 m jack, 55 cm for the 0.8 m jack)"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": -65,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": false,
+   "jack_ext_min_m": false,
+   "note": "From the Layher manual only: one diagonal serves at most 5 bays; end frames anchored every 4 m; at most two unanchored lifts. The area rule and wall gap are the Plettac values used as placeholders."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation."
+ }
+}

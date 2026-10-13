@@ -1,0 +1,18 @@
+schema_version = "1.0.0"
+
+id = "scaffvisor"
+version = "0.5.0"
+name = "ScaffVisor"
+tagline = "Site scaffolding on wall faces, with ground following"
+maintainer = "Radu"
+type = "add-on"
+
+blender_version_min = "4.2.0"
+
+# Blender extensions must be GPL-compatible; change only if you decide otherwise.
+license = ["SPDX:GPL-3.0-or-later"]
+
+tags = ["3D View", "Object"]
+
+[permissions]
+files = "Export the bill of materials (CSV) to a folder next to the .blend file"
