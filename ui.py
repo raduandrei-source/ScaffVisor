@@ -39,16 +39,18 @@ def _wrap(text, context, indent=0):
         width = context.region.width
     except Exception:
         pass
-    scale = 1.0
+    scale = 0.0
     try:
         # effective scale (resolution scale x display DPI): region.width is in real pixels
         scale = context.preferences.system.ui_scale
     except Exception:
+        pass
+    if not scale or scale <= 0:          # 0 without a window (background mode)
         try:
             scale = context.preferences.view.ui_scale
         except Exception:
-            pass
-    n = max(18, int(width / (6.8 * scale)) - 6 - indent)
+            scale = 1.0
+    n = max(18, int(width / (6.8 * (scale or 1.0))) - 6 - indent)
     out, line = [], ""
     for word in text.split():
         if line and len(line) + 1 + len(word) > n:
