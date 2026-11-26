@@ -1,3 +1,32 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<script>
+/* Theme before the page paints (no flash). Dark is the default, as in the systems catalog;
+   the choice is shared with the catalog through the same storage key. */
+(function () {
+  var d = document.documentElement, t = null;
+  try { t = localStorage.getItem("scaffvisor-docs-theme"); } catch (e) {}
+  d.setAttribute("data-theme", (t === "light" || t === "dark") ? t : "dark");
+  document.addEventListener("DOMContentLoaded", function () {
+    var head = document.querySelector(".site-header .wrapper");
+    if (!head) return;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "theme-toggle";
+    function label() {
+      var dark = d.getAttribute("data-theme") === "dark";
+      b.textContent = dark ? "Light theme" : "Dark theme";
+      b.setAttribute("aria-label", dark ? "Switch to the light theme" : "Switch to the dark theme");
+    }
+    b.addEventListener("click", function () {
+      var next = d.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      d.setAttribute("data-theme", next);
+      try { localStorage.setItem("scaffvisor-docs-theme", next); } catch (e) {}
+      label();
+    });
+    label();
+    head.appendChild(b);
+  });
+})();
+</script>
