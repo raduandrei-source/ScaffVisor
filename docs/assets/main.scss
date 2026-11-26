@@ -18,3 +18,37 @@ figure.hero { margin: 0 0 24px; }
 figure.hero img { display: block; width: 100%; height: auto; }
 figure figcaption { font: 500 0.78rem "IBM Plex Mono", ui-monospace, monospace; color: #6a706d; margin-top: 6px; max-width: 46ch; }
 figure.hero figcaption { max-width: none; }
+
+/* ── Theme toggle and dark theme (same palette as the systems catalog) ── */
+.site-header .wrapper { position: relative; }
+.theme-toggle {
+  float: right; margin: 14px 0 0 18px; padding: 4px 10px;
+  font: 500 0.78rem "IBM Plex Mono", ui-monospace, monospace; letter-spacing: 0.04em;
+  color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 3px; cursor: pointer;
+}
+.theme-toggle:hover { color: #2a5ca3; }
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="dark"] body { background: #121614; color: #e5eae6; }
+html[data-theme="dark"] .site-header { background: #1a1f1d; border-top-color: #333c38; border-bottom-color: #333c38; }
+html[data-theme="dark"] .site-title, html[data-theme="dark"] .site-title:visited { color: #e5eae6; }
+html[data-theme="dark"] .site-nav { background-color: #1a1f1d; border-color: #333c38; }
+html[data-theme="dark"] .site-nav .page-link { color: #e5eae6; }
+html[data-theme="dark"] .site-nav .menu-icon > svg path { fill: #e5eae6; }
+html[data-theme="dark"] .site-footer { border-top-color: #333c38; }
+html[data-theme="dark"] .footer-col-wrapper, html[data-theme="dark"] .site-footer { color: #9aa6a0; }
+html[data-theme="dark"] a { color: #86b4ff; }
+html[data-theme="dark"] a:visited { color: #b49cf0; }
+html[data-theme="dark"] .theme-toggle:hover { color: #86b4ff; }
+html[data-theme="dark"] table { color: #e5eae6; border-color: #333c38; }
+html[data-theme="dark"] table tr:nth-child(even) { background-color: #1a1f1d; }
+html[data-theme="dark"] table th { background-color: #232a27; border-color: #333c38; }
+html[data-theme="dark"] table td { border-color: #333c38; }
+html[data-theme="dark"] pre, html[data-theme="dark"] code { background-color: #1a1f1d; border-color: #333c38; color: #e5eae6; }
+html[data-theme="dark"] .highlight, html[data-theme="dark"] .highlight .w { background-color: #1a1f1d; }
+html[data-theme="dark"] blockquote { color: #9aa6a0; border-left-color: #333c38; }
+html[data-theme="dark"] hr { border-color: #333c38; }
+html[data-theme="dark"] figure.shot img { border-color: #333c38; }
+html[data-theme="dark"] figure figcaption { color: #9aa6a0; }
+@media screen and (max-width: 600px) {
+  .theme-toggle { position: absolute; right: 56px; top: 0; float: none; }
+}
