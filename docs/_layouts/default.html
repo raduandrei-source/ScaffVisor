@@ -135,11 +135,11 @@
         var out = [], dp = new DOMParser();
         pages.forEach(function (p) {
           var doc = dp.parseFromString("<div>" + p.html + "</div>", "text/html").body.firstChild;
-          var cur = { url: p.url, page: p.title, head: "", text: "" };
+          var cur = { url: p.url, page: p.title, head: "", text: "", guide: true };
           Array.prototype.forEach.call(doc.childNodes, function (n) {
             if (n.nodeName === "H2") {
               if (cur.text.trim() || cur.head) out.push(cur);
-              cur = { url: p.url + "#" + (n.id || ""), page: p.title, head: n.textContent, text: "" };
+              cur = { url: p.url + "#" + (n.id || ""), page: p.title, head: n.textContent, text: "", guide: true };
             } else { cur.text += " " + (n.textContent || ""); }
           });
           out.push(cur);
@@ -182,7 +182,7 @@
             if (all.indexOf(w) < 0) return;
             score += (e.n.head.indexOf(w) >= 0 ? 6 : 0) + (e.n.page.indexOf(w) >= 0 ? 3 : 0) + Math.min(5, e.n.text.split(w).length - 1);
           }
-          hits.push({ e: e, s: score });
+          hits.push({ e: e, s: score + (e.guide ? 4 : 0) });   /* explanations first, then the system sheets */
         });
         hits.sort(function (a, b) { return b.s - a.s; });
         nav.hidden = true; box.hidden = false;
