@@ -41,10 +41,14 @@ def _wrap(text, context, indent=0):
         pass
     scale = 1.0
     try:
-        scale = context.preferences.view.ui_scale
+        # effective scale (resolution scale x display DPI): region.width is in real pixels
+        scale = context.preferences.system.ui_scale
     except Exception:
-        pass
-    n = max(18, int(width / (6.2 * scale)) - 6 - indent)
+        try:
+            scale = context.preferences.view.ui_scale
+        except Exception:
+            pass
+    n = max(18, int(width / (6.8 * scale)) - 6 - indent)
     out, line = [], ""
     for word in text.split():
         if line and len(line) + 1 + len(word) > n:
@@ -79,7 +83,9 @@ def _note(layout, text, icon="NONE"):
 
 
 def _range(a, b, fmt):
-    return (fmt % a) if abs(a - b) < 1e-6 else ((fmt % a) + "–" + (fmt % b))
+    if abs(a - b) < 1e-6:
+        return fmt % a
+    return (fmt % a) + (" to " if min(a, b) < 0 else "–") + (fmt % b)
 
 
 # ── panels ───────────────────────────────────────────────────────────────────
@@ -229,10 +235,9 @@ class SCAFFVISOR_PT_main(bpy.types.Panel):
             lo = min(max(c["ext_min"], 0.0) for c in chains) * 100
             hi = max(c["ext"] for c in chains) * 100
             comp = sum(c["comp_columns"] for c in chains)
-            t = "Jacks %s cm" % _range(lo, hi, "%.0f")
+            _note(col, "Jacks %s cm" % _range(lo, hi, "%.0f"))
             if comp:
-                t += " · %d compensation frame%s" % (comp, "" if comp == 1 else "s")
-            _note(col, t)
+                _note(col, "%d compensation frame%s" % (comp, "" if comp == 1 else "s"))
         head, body = lay.panel("SCAFFVISOR_jacks", default_closed=True)
         head.label(text="Jacks and Tolerance")
         if body is not None:

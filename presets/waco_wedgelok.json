@@ -1,0 +1,482 @@
+{
+ "_meta": {
+  "id": "waco_wedgelok",
+  "name": "Waco Wedgelok (steel, 76 cm, imperial bays)",
+  "family": "Wedge-lock 0.76 m, imperial bays 5-10 ft (Waco)",
+  "status": "draft",
+  "note": "US modular system (verticals with wedge clusters, load-bearing transoms, non load-bearing ledgers). Values from the 1999 Waco training guide (Fig. 17.1 parts table, imperial, converted). Not a weight catalogue: verify on real parts. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "850794956-Waco-Guide-to-Scaffolding-1999.pdf p.34 (Fig. 17.1 Waco Wedgelok, printed p.33): codes and weights (lb) of verticals, transoms, ledgers, steel planks, diagonal braces, jack",
+   "850794956-Waco-Guide-to-Scaffolding-1999.pdf p.35 (printed 34): cluster pitch 1'7-11/16\", vertical 6'6\" drawing (10-9/16\" + 3 x 19-11/16\" + 9-1/16\"), ledgers non load-bearing and used as guardrail/midrail",
+   "850794956-Waco-Guide-to-Scaffolding-1999.pdf p.36 (printed 35): transoms load-bearing (A1 2'-4', bow-string A2 5'-10'), brace clamps to 1.9\" tube, steel plank 8-3/4\" x 2-1/2\" spanning transom to transom",
+   "850794956-Waco-Guide-to-Scaffolding-1999.pdf p.37 (printed 36): ties max 30 ft horizontal / 26 ft vertical (OSHA), 6'6\" max vertical spacing between horizontals",
+   "850794956-Waco-Guide-to-Scaffolding-1999.pdf p.17 (printed 16): toeboards 1/2 lb/ft (1\" x 6\" timber, worked example)"
+  ],
+  "approvals": [],
+  "changes": [
+   "Node spacing 500 mm, not 508: p.34 rounds the cluster pitch to 20\", but the dimensioned vertical on p.35 gives 1'7-11/16\" = 500.1 mm; the 6'6\" vertical is 4 pitches (78.7\" = 1999 mm). Lift = 4 clusters = 2000 mm, which is the 6'6\" max vertical spacing of p.37.",
+   "Standards: l_mm = cluster module (1000/1500/2000/3000) instead of the nominal 3'3\"/4'11\"/6'6\"/9'10\" (990/1499/1981/2997), so that stacked verticals keep the 500 mm pitch; nominal kept in each note.",
+   "Width: 2'6\" transom 0801-26 (762 mm c/c) + 1.9\" tube = 810 mm; 3 steel planks 8-3/4\" (222 mm) = 667 mm usable. Other transoms (2'-10') exist; this preset fixes the 2'6\" width.",
+   "Bays 5'-10' use the 0802 ledgers; the short fitting bays 3' and 4' use the A1 transoms 0801-30/0801-40 as ledgers and rails (no 3'/4' ledger in the table). Planks exist for every bay length.",
+   "Guard rails = the same ledgers (p.35: 'ledgers also serve as guardrails and midrails'). End guard rail = 2 transoms 2'6\" (2 x 2.72 kg).",
+   "Diagonal brace height is not printed: assumed one 2000 mm lift; l_mm computed from bay x 2000.",
+   "No access deck with hatch in Wedgelok (only stair stringers 7'/8' and treads, ladder 0805-66 without weight): access_deck list empty, the engine places no access deck and warns.",
+   "No base collar: verticals join by coupler 0805-10 (no weight printed, not counted).",
+   "Base jack: only the 2 ft R.O. jack 0805-20 (9 lb) is listed, max extension not printed -> rules.jack_ext_max_ratio default (0.68 x 610 = 415 mm). Waco's 12\" max screw extension (p.16/p.19) is stated for frame adjustment screws, not for this jack.",
+   "Toeboards: none in the Wedgelok table; estimated at 1/2 lb/ft = 0.74 kg/m (Waco p.17 example, 1\" x 6\" timber) via rules.toeboard_est_kg_per_m; end toeboard estimated the same way.",
+   "Ties: no tie hardware in the guide; wall tie 2.9 kg, coupler 1.0 kg, eyebolt 0.2 kg estimated (values used by the other draft presets).",
+   "Load class: transoms rated for OSHA light duty 25 psf = 1.2 kN/m2 (p.35-36), recorded as max_load_kn_m2 1.2 (below EN class 2)."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "node_spacing_note": "1'7-11/16\" = 500.1 mm (p.35); p.34 text says 'every 20\"'",
+  "width_mm": 810,
+  "leg_axis_mm": 762,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "tube_note": "1.9\" tube (p.36: brace end fittings clamp to 1.9\" tube) = 48.3 mm",
+  "bay_lengths_mm": [
+   1524,
+   1829,
+   2134,
+   2438,
+   3048
+  ],
+  "extra_bay_lengths_mm": [
+   914,
+   1219
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 222,
+  "decks_per_bay": 3,
+  "usable_deck_width_mm": 667,
+  "width_class": "W06 (EN 12811-1 analog; 3 x 8-3/4\" planks = 0.67 m)",
+  "max_load_class": 1,
+  "max_load_kn_m2": 1.2,
+  "load_note": "OSHA light duty 25 psf (transoms, p.35-36); ledgers are not load-bearing",
+  "star_pin_spacing_mm": 0,
+  "connection": "captive wedge in radiused C-flange, driven into a cluster on the vertical (+/-30 deg); verticals joined by removable coupler 0805-10",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "none",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_plank": "Steel plank 8-3/4\" (Waco 0806)"
+  },
+  "labels": {
+   "standard": "Vertical (Wedgelok)",
+   "ledger": "Ledger / A1 transom (longitudinal)",
+   "transom": "Transom 2'6\" (load-bearing)",
+   "base_collar": "Base collar",
+   "deck": "Steel plank 8-3/4\"",
+   "access": "Access deck (none in system)",
+   "end_rail": "End guardrail + midrail = 2 transoms 2'6\"",
+   "end_toeboard": "End toeboard 0.76 m (est.)",
+   "tie": "Wall tie (est.)",
+   "coupler": "Tie coupler (est.)",
+   "eyebolt": "Eyebolt (est.)",
+   "toeboard": "Timber toeboard 1\"x6\" (est.)",
+   "guard_rail": "Ledger as guardrail/midrail",
+   "brace": "Diagonal brace"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "0800-33",
+    "l_mm": 1000,
+    "mass": 5.85,
+    "verified": false,
+    "note": "nominal 3'3\" (12.9 lb); l_mm = 2 x 19-11/16\" cluster pitch = 1000 mm"
+   },
+   {
+    "id": "0800-50",
+    "l_mm": 1500,
+    "mass": 7.53,
+    "verified": false,
+    "note": "nominal 4'11\" (16.6 lb); l_mm = 3 x 19-11/16\" cluster pitch = 1500 mm"
+   },
+   {
+    "id": "0800-66",
+    "l_mm": 2000,
+    "mass": 9.8,
+    "verified": false,
+    "note": "nominal 6'6\" (21.6 lb); l_mm = 4 x 19-11/16\" cluster pitch = 2000 mm"
+   },
+   {
+    "id": "0800-10",
+    "l_mm": 3000,
+    "mass": 14.97,
+    "verified": false,
+    "note": "nominal 9'10\" (33.0 lb); l_mm = 6 x 19-11/16\" cluster pitch = 3000 mm"
+   }
+  ],
+  "transom": {
+   "id": "0801-26",
+   "l_mm": 762,
+   "mass": 2.72,
+   "verified": false,
+   "note": "2'6\", 6 lb"
+  },
+  "ledger": [
+   {
+    "id": "0801-30",
+    "l_mm": 914,
+    "mass": 2.95,
+    "verified": false,
+    "note": "3'0\", 6.5 lb; A1 transom (p.36: also ties the standards longitudinally and serves as guardrail/midrail), no 3'/4' ledger listed"
+   },
+   {
+    "id": "0801-40",
+    "l_mm": 1219,
+    "mass": 3.63,
+    "verified": false,
+    "note": "4'0\", 8 lb; A1 transom (p.36: also ties the standards longitudinally and serves as guardrail/midrail), no 3'/4' ledger listed"
+   },
+   {
+    "id": "0802-50",
+    "l_mm": 1524,
+    "mass": 4.85,
+    "verified": false,
+    "note": "5'0\", 10.7 lb"
+   },
+   {
+    "id": "0802-60",
+    "l_mm": 1829,
+    "mass": 5.9,
+    "verified": false,
+    "note": "6'0\", 13 lb"
+   },
+   {
+    "id": "0802-70",
+    "l_mm": 2134,
+    "mass": 6.58,
+    "verified": false,
+    "note": "7'0\", 14.5 lb"
+   },
+   {
+    "id": "0802-80",
+    "l_mm": 2438,
+    "mass": 7.71,
+    "verified": false,
+    "note": "8'0\", 17 lb"
+   },
+   {
+    "id": "0802-10",
+    "l_mm": 3048,
+    "mass": 9.12,
+    "verified": false,
+    "note": "10'0\", 20.1 lb"
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "0801-30",
+    "l_mm": 914,
+    "mass": 2.95,
+    "verified": false,
+    "note": "3'0\", 6.5 lb; A1 transom (p.36: also ties the standards longitudinally and serves as guardrail/midrail), no 3'/4' ledger listed"
+   },
+   {
+    "id": "0801-40",
+    "l_mm": 1219,
+    "mass": 3.63,
+    "verified": false,
+    "note": "4'0\", 8 lb; A1 transom (p.36: also ties the standards longitudinally and serves as guardrail/midrail), no 3'/4' ledger listed"
+   },
+   {
+    "id": "0802-50",
+    "l_mm": 1524,
+    "mass": 4.85,
+    "verified": false,
+    "note": "5'0\", 10.7 lb"
+   },
+   {
+    "id": "0802-60",
+    "l_mm": 1829,
+    "mass": 5.9,
+    "verified": false,
+    "note": "6'0\", 13 lb"
+   },
+   {
+    "id": "0802-70",
+    "l_mm": 2134,
+    "mass": 6.58,
+    "verified": false,
+    "note": "7'0\", 14.5 lb"
+   },
+   {
+    "id": "0802-80",
+    "l_mm": 2438,
+    "mass": 7.71,
+    "verified": false,
+    "note": "8'0\", 17 lb"
+   },
+   {
+    "id": "0802-10",
+    "l_mm": 3048,
+    "mass": 9.12,
+    "verified": false,
+    "note": "10'0\", 20.1 lb"
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_plank": [
+    {
+     "id": "0806-30",
+     "l_mm": 914,
+     "w_mm": 222,
+     "mass": 6.8,
+     "verified": false,
+     "note": "3'0\", 15 lb"
+    },
+    {
+     "id": "0806-40",
+     "l_mm": 1219,
+     "w_mm": 222,
+     "mass": 8.71,
+     "verified": false,
+     "note": "4'0\", 19.2 lb"
+    },
+    {
+     "id": "0806-50",
+     "l_mm": 1524,
+     "w_mm": 222,
+     "mass": 10.61,
+     "verified": false,
+     "note": "5'0\", 23.4 lb"
+    },
+    {
+     "id": "0806-60",
+     "l_mm": 1829,
+     "w_mm": 222,
+     "mass": 14.38,
+     "verified": false,
+     "note": "6'0\", 31.7 lb; printed heavier than the 7' plank (31.3 lb) - checked on the page, kept as printed"
+    },
+    {
+     "id": "0806-70",
+     "l_mm": 2134,
+     "w_mm": 222,
+     "mass": 14.2,
+     "verified": false,
+     "note": "7'0\", 31.3 lb"
+    },
+    {
+     "id": "0806-80",
+     "l_mm": 2438,
+     "w_mm": 222,
+     "mass": 17.96,
+     "verified": false,
+     "note": "8'0\", 39.6 lb"
+    },
+    {
+     "id": "0806-10",
+     "l_mm": 3048,
+     "w_mm": 222,
+     "mass": 20.14,
+     "verified": false,
+     "note": "10'0\", 44.4 lb"
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [],
+  "vertical_brace": [
+   {
+    "id": "0803-40",
+    "bay_mm": 1219,
+    "h_mm": 2000,
+    "l_mm": 2342,
+    "mass": 6.44,
+    "verified": false,
+    "note": "4' bay, 14.2 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed"
+   },
+   {
+    "id": "0803-50",
+    "bay_mm": 1524,
+    "h_mm": 2000,
+    "l_mm": 2514,
+    "mass": 8.44,
+    "verified": false,
+    "note": "5' bay, 18.6 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed"
+   },
+   {
+    "id": "0803-60",
+    "bay_mm": 1829,
+    "h_mm": 2000,
+    "l_mm": 2710,
+    "mass": 9.75,
+    "verified": false,
+    "note": "6' bay, 21.5 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed"
+   },
+   {
+    "id": "0803-70",
+    "bay_mm": 2134,
+    "h_mm": 2000,
+    "l_mm": 2925,
+    "mass": 9.57,
+    "verified": false,
+    "note": "7' bay, 21.1 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed; printed lighter than the next shorter brace - checked on the page, kept as printed"
+   },
+   {
+    "id": "0803-80",
+    "bay_mm": 2438,
+    "h_mm": 2000,
+    "l_mm": 3153,
+    "mass": 12.47,
+    "verified": false,
+    "note": "8' bay, 27.5 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed"
+   },
+   {
+    "id": "0803-10",
+    "bay_mm": 3048,
+    "h_mm": 2000,
+    "l_mm": 3646,
+    "mass": 11.52,
+    "verified": false,
+    "note": "10' bay, 25.4 lb; brace height (Y) not printed: assumed one 4-cluster lift; l_mm computed; printed lighter than the next shorter brace - checked on the page, kept as printed"
+   }
+  ],
+  "toeboard_timber_h150": [],
+  "double_end_guard_rail_74": {
+   "id": "0801-26",
+   "mass": 5.44,
+   "verified": false,
+   "note": "2 transoms 2'6\" (guardrail + midrail across the open end), 2 x 2.72 kg"
+  },
+  "end_toeboard_74": {
+   "id": "toeboard-end-est",
+   "mass": 0.56,
+   "estimated": true,
+   "note": "0.76 m x 0.74 kg/m (1/2 lb/ft, Waco p.17 example)"
+  },
+  "base_plate_threaded": [
+   {
+    "id": "0805-20",
+    "h_mm": 610,
+    "mass": 4.08,
+    "verified": false,
+    "note": "2 ft R.O. jack, 9 lb; max extension not printed (rules.jack_ext_max_ratio used)"
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "tie-est",
+    "l_mm": 800,
+    "mass": 2.9,
+    "estimated": true,
+    "note": "no tie hardware in the source"
+   },
+   "normal_coupler": {
+    "id": "coupler-est",
+    "mass": 1.0,
+    "estimated": true,
+    "note": "0805-11 coupler listed without weight; value estimated"
+   },
+   "eyebolt_120": {
+    "id": "eyebolt-est",
+    "mass": 0.2,
+    "estimated": true,
+    "note": "not in the source"
+   }
+  },
+  "other_listed": [
+   {
+    "id": "0804-20",
+    "desc": "Cantilever bracket 2 ft",
+    "mass": 9.07
+   },
+   {
+    "id": "0804-40",
+    "desc": "Cantilever bracket 4 ft (diagonal brace required)",
+    "mass": 16.33
+   },
+   {
+    "id": "0805-19",
+    "desc": "Board bracket 1 board",
+    "mass": 1.36
+   },
+   {
+    "id": "0805-29",
+    "desc": "Board bracket 2 boards",
+    "mass": 3.95
+   },
+   {
+    "id": "0805-31",
+    "desc": "Board bracket 3 boards",
+    "mass": 6.76
+   },
+   {
+    "id": "0805-71",
+    "desc": "Stairway stringer 7' bay RH (LH 0805-75)",
+    "mass": 18.91
+   },
+   {
+    "id": "0805-82",
+    "desc": "Stairway stringer 8' bay RH (LH 0805-83)",
+    "mass": 19.64
+   },
+   {
+    "id": "0801-xx",
+    "desc": "Other transoms: 2' 2.04, 3' 2.95, 3'6\" 3.63, 4' 3.63, 5' 7.39, 6' 8.75, 7' 10.12, 8' 11.48, 10' 14.20 kg (other widths)"
+   }
+  ]
+ },
+ "sanity_check": {
+  "description": "No weight-per-area example in the source.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "real cluster pitch and vertical lengths (500 mm module assumed)",
+  "brace height Y for each bay (assumed one 2000 mm lift)",
+  "jack 0805-20 maximum extension",
+  "toeboard and tie hardware actually used, and their weights",
+  "number of planks per 2'6\" bay (3 assumed) and gap at the wall"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 0.74,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "toeboard_est_kg_per_m": true,
+   "note": "Waco gives only the OSHA upper limit for ties (30 ft x 26 ft = 9.14 x 7.92 m, i.e. 72 m2 per tie) and says bracing/tying follow the leg load and the drawings; engine defaults kept (22 m2, brace every 5 bays). toeboard 1/2 lb/ft from the Waco p.17 example."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation."
+ }
+}

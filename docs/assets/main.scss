@@ -1,0 +1,20 @@
+---
+---
+// Same type as the CutVisor joints catalog and the ScaffVisor systems catalog.
+$base-font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+$code-font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+@import "minima";
+
+h1, h2, h3, h4, .site-title, .post-title, .page-heading, .page-link {
+  font-family: "Archivo Narrow", "Arial Narrow", "Roboto Condensed", sans-serif;
+}
+h1, h2, h3, .post-title { font-weight: 700; letter-spacing: 0.01em; }
+code, pre, kbd { font-family: $code-font-family; }
+.post-content img { max-width: 100%; height: auto; }
+
+figure.shot { display: inline-block; margin: 0 18px 18px 0; vertical-align: top; max-width: 100%; }
+figure.shot img { display: block; border: 1px solid #c9d0c9; border-radius: 3px; }
+figure.hero { margin: 0 0 24px; }
+figure.hero img { display: block; width: 100%; height: auto; }
+figure figcaption { font: 500 0.78rem "IBM Plex Mono", ui-monospace, monospace; color: #6a706d; margin-top: 6px; max-width: 46ch; }
+figure.hero figcaption { max-width: none; }

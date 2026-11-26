@@ -1,0 +1,682 @@
+{
+ "_meta": {
+  "id": "dss_cuplock",
+  "name": "DSS Cup Lock (steel, 122 cm, imperial bays)",
+  "family": "Cuplock 1.22 m, imperial bays 5-10 ft (node 0.50 m)",
+  "status": "draft",
+  "note": "US cuplock (DSS / Blue Steel catalogue 12/2025) as a facade scaffold: 4' (1.219 m) horizontal as transom, imperial bays 5'-10', five 9\" low-profile steel planks per bay, cups at 0.5 m, 2.0 m lift. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg",
+   "verified": false
+  },
+  "sources": [
+   "1067929480-BLUE-STEEL-DSS-03220-System-Scaffold-Catalog-12302025.pdf p.9 (tube 48.3 x 3.25 / 2.50), p.10 (verticals), p.11 (horizontals), p.13 (clamp braces for a 2 m drop), p.18 (California guardrail, not used)",
+   "1067929480-BLUE-STEEL-DSS-03220-System-Scaffold-Catalog-12302025.pdf p.41 (system jack BPSJB), p.49 (universal toe boards), p.58 (Twist Lock tube), p.60 (right angle clamp)",
+   "1067929480-BLUE-STEEL-DSS-03220-System-Scaffold-Catalog-12302025.pdf p.81 (9\" raised-hook steel plank), p.83-84 (9\" low-profile steel plank), p.97 (28\" hatch plank with ladder)"
+  ],
+  "approvals": [
+   "No system approval named for Cup Lock; factories ISO 9001:2008, most EN 1090-1/2 EXC3 and EN ISO 3834-2 (catalogue)"
+  ],
+  "changes": [
+   "The catalogue's 'MM' columns hold metres; converted to mm. Imperial originals kept in the descriptions (lb values in 'mass_orig' where the extract has them).",
+   "Width = 4' horizontal CLH40 (1.219 m) as transom: 5 x 229 mm planks = 1145 mm in 1171 mm clear. DSS does not name a standard facade width; the metric CLH41 (1.25 m) would also take 5 planks.",
+   "Bays = imperial series 5'-10' (1.524-3.048 m), short bays 3' and 4'. Every bay has a horizontal (p.11), plank (p.83-84), toe board (p.49) and clamp brace (p.13). CLCB30/40/60 are marked 'not stocked' (*) but have published weights and are used.",
+   "Plank, toe board and hatch catalogue lengths differ by a few mm from the horizontal bay lengths (e.g. WBDEP8 2440 vs CLH80 2438; GRUSTB toe boards are clear lengths); they are keyed to the bay length, the printed length is in l_printed_mm.",
+   "Guard rails = horizontals at the cups (standard cuplock practice). DSS also sells the clamp-on California guardrail CLGR (heavier, p.18), not used.",
+   "Two deck grades: 9\" low-profile steel plank WBDEP (default; DSS's Cup Lock plank is WBDEP43CL) and 9\" raised-hook steel plank WBSSP. Aluminium 9.5\" walkboards (241 mm) do not fit 5 to a 4' bay and are left out.",
+   "Access: 28\" (711 mm) hatch plank with aluminium ladder, 7' and 10' (p.97) + 2 planks of 229 mm beside it (1169 mm in 1171 mm clear: tight, check).",
+   "End guard rail = 2 x CLH40; end toeboard = GRUSTB40 (1140 mm; description printed 3'-9\" in the catalogue, code 40).",
+   "System jack BPSJB: overall 0.54 m, max extension 0.38 m (p.41).",
+   "Tie = Twist Lock tube TL4 (1.22 m, 4.3 kg, p.58) and right angle clamps CMPRA (1.5 kg, p.60). No eyebolt in the catalogue: 0.2 kg estimated (Plettac value)."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 1267,
+  "leg_axis_mm": 1219,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1524,
+   1829,
+   2134,
+   2438,
+   2743,
+   3048
+  ],
+  "extra_bay_lengths_mm": [
+   914,
+   1219
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 229,
+  "decks_per_bay": 5,
+  "usable_deck_width_mm": 1145,
+  "width_class": "W09 (EN 12811-1), deduced from 5 x 229 mm",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "no load classes published for Cup Lock; class 3 is a placeholder",
+  "star_pin_spacing_mm": 0,
+  "connection": "Cuplock node, cups every 0.5 m (verticals CLV, p.10); planks hook over the horizontals",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "plywood",
+  "access_extra_decks": 2,
+  "deck_grade_labels": {
+   "steel_low_profile_9in": "9\" low-profile steel plank (WBDEP)",
+   "steel_raised_hook_9in": "9\" raised-hook steel plank (WBSSP)"
+  },
+  "labels": {
+   "standard": "Cup Lock vertical",
+   "ledger": "Cup Lock horizontal",
+   "transom": "Cup Lock horizontal 4' (transom)",
+   "base_collar": "Base collar",
+   "deck": "9\" steel plank",
+   "access": "28\" hatch plank with aluminium ladder",
+   "end_rail": "End guard rail = 2 x CLH40",
+   "end_toeboard": "Universal toe board GRUSTB40 (end)",
+   "tie": "Twist Lock tube 4' (tie)",
+   "coupler": "Right angle clamp (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Universal toe board",
+   "guard_rail": "Cup Lock horizontal (guard rail)",
+   "brace": "Clamp brace swivel"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "CLV10",
+    "l_mm": 500,
+    "mass": 3.5,
+    "note": "1 Cup Vertical (p.10)",
+    "verified": false
+   },
+   {
+    "id": "CLV33",
+    "l_mm": 1000,
+    "mass": 6.2,
+    "note": "2 Cup Vertical (p.10)",
+    "verified": false
+   },
+   {
+    "id": "CLV411",
+    "l_mm": 1500,
+    "mass": 8.7,
+    "note": "3 Cup Vertical (p.10)",
+    "verified": false
+   },
+   {
+    "id": "CLV66",
+    "l_mm": 2000,
+    "mass": 11.4,
+    "note": "4 Cup Vertical (p.10)",
+    "verified": false
+   },
+   {
+    "id": "CLV82",
+    "l_mm": 2500,
+    "mass": 14.2,
+    "note": "5 Cup Vertical (p.10)",
+    "verified": false
+   },
+   {
+    "id": "CLV910",
+    "l_mm": 3000,
+    "mass": 16.5,
+    "note": "6 Cup Vertical (p.10)",
+    "verified": false
+   }
+  ],
+  "transom": {
+   "id": "CLH40",
+   "l_mm": 1219,
+   "mass": 4.8,
+   "note": "4' Cup Lock horizontal (p.11)",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "CLH30",
+    "l_mm": 914,
+    "mass": 3.6,
+    "note": "3' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH40",
+    "l_mm": 1219,
+    "mass": 4.8,
+    "note": "4' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH50",
+    "l_mm": 1524,
+    "mass": 6.0,
+    "note": "5' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH60",
+    "l_mm": 1829,
+    "mass": 7.0,
+    "note": "6' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH70",
+    "l_mm": 2134,
+    "mass": 8.1,
+    "note": "7' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH80",
+    "l_mm": 2438,
+    "mass": 9.3,
+    "note": "8' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH90",
+    "l_mm": 2743,
+    "mass": 10.5,
+    "note": "9' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH100",
+    "l_mm": 3048,
+    "mass": 11.5,
+    "note": "10' Cup Lock (p.11)",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "CLH30",
+    "l_mm": 914,
+    "mass": 3.6,
+    "note": "3' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH40",
+    "l_mm": 1219,
+    "mass": 4.8,
+    "note": "4' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH50",
+    "l_mm": 1524,
+    "mass": 6.0,
+    "note": "5' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH60",
+    "l_mm": 1829,
+    "mass": 7.0,
+    "note": "6' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH70",
+    "l_mm": 2134,
+    "mass": 8.1,
+    "note": "7' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH80",
+    "l_mm": 2438,
+    "mass": 9.3,
+    "note": "8' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH90",
+    "l_mm": 2743,
+    "mass": 10.5,
+    "note": "9' Cup Lock (p.11)",
+    "verified": false
+   },
+   {
+    "id": "CLH100",
+    "l_mm": 3048,
+    "mass": 11.5,
+    "note": "10' Cup Lock (p.11)",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_low_profile_9in": [
+    {
+     "id": "WBDEP3",
+     "l_mm": 914,
+     "mass": 7.1,
+     "note": "9\" Low Profile Steel Plank 3' (p.83-84)",
+     "mass_orig": "15.7 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP4",
+     "l_mm": 1219,
+     "mass": 8.8,
+     "note": "9\" Low Profile Steel Plank 4' (p.83-84); catalogue length 1220 mm, keyed to the 1219 mm bay",
+     "l_printed_mm": 1220,
+     "mass_orig": "19.4 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP5",
+     "l_mm": 1524,
+     "mass": 10.6,
+     "note": "9\" Low Profile Steel Plank 5' (p.83-84)",
+     "mass_orig": "23.4 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP6",
+     "l_mm": 1829,
+     "mass": 12.5,
+     "note": "9\" Low Profile Steel Plank 6' (p.83-84)",
+     "mass_orig": "27.5 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP7",
+     "l_mm": 2134,
+     "mass": 14.3,
+     "note": "9\" Low Profile Steel Plank 7' (p.83-84)",
+     "mass_orig": "31.4 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP8",
+     "l_mm": 2438,
+     "mass": 16.6,
+     "note": "9\" Low Profile Steel Plank 8' (p.83-84); catalogue length 2440 mm, keyed to the 2438 mm bay",
+     "l_printed_mm": 2440,
+     "mass_orig": "36.5 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP9",
+     "l_mm": 2743,
+     "mass": 18.2,
+     "note": "9\" Low Profile Steel Plank 9' (p.83-84)",
+     "mass_orig": "40.1 lb",
+     "verified": false
+    },
+    {
+     "id": "WBDEP100",
+     "l_mm": 3048,
+     "mass": 20.0,
+     "note": "9\" Low Profile Steel Plank 10' (p.83-84); catalogue length 3051 mm, keyed to the 3048 mm bay",
+     "l_printed_mm": 3051,
+     "mass_orig": "44.1 lb",
+     "verified": false
+    }
+   ],
+   "steel_raised_hook_9in": [
+    {
+     "id": "WBSSP3",
+     "l_mm": 914,
+     "mass": 7.1,
+     "note": "9\" Steel Plank Raised Hook 3' (p.81); catalogue length 910 mm, keyed to the 914 mm bay",
+     "l_printed_mm": 910,
+     "mass_orig": "15.7 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP4",
+     "l_mm": 1219,
+     "mass": 8.6,
+     "note": "9\" Steel Plank Raised Hook 4' (p.81); catalogue length 1220 mm, keyed to the 1219 mm bay",
+     "l_printed_mm": 1220,
+     "mass_orig": "19 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP5",
+     "l_mm": 1524,
+     "mass": 10.5,
+     "note": "9\" Steel Plank Raised Hook 5' (p.81); catalogue length 1520 mm, keyed to the 1524 mm bay",
+     "l_printed_mm": 1520,
+     "mass_orig": "23.2 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP6",
+     "l_mm": 1829,
+     "mass": 12.0,
+     "note": "9\" Steel Plank Raised Hook 6' (p.81); catalogue length 1830 mm, keyed to the 1829 mm bay",
+     "l_printed_mm": 1830,
+     "mass_orig": "26.5 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP7",
+     "l_mm": 2134,
+     "mass": 14.2,
+     "note": "9\" Steel Plank Raised Hook 7' (p.81); catalogue length 2130 mm, keyed to the 2134 mm bay",
+     "l_printed_mm": 2130,
+     "mass_orig": "31.2 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP8",
+     "l_mm": 2438,
+     "mass": 16.1,
+     "note": "9\" Steel Plank Raised Hook 8' (p.81); catalogue length 2440 mm, keyed to the 2438 mm bay",
+     "l_printed_mm": 2440,
+     "mass_orig": "35.4 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP9",
+     "l_mm": 2743,
+     "mass": 18.1,
+     "note": "9\" Steel Plank Raised Hook 9' (p.81); catalogue length 2740 mm, keyed to the 2743 mm bay",
+     "l_printed_mm": 2740,
+     "mass_orig": "39.8 lb",
+     "verified": false
+    },
+    {
+     "id": "WBSSP10",
+     "l_mm": 3048,
+     "mass": 19.5,
+     "note": "9\" Steel Plank Raised Hook 10' (p.81); catalogue length 3050 mm, keyed to the 3048 mm bay",
+     "l_printed_mm": 3050,
+     "mass_orig": "42.9 lb",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "WBAPSH287TH-H2",
+    "surface": "plywood",
+    "l_mm": 2134,
+    "mass": 33.0,
+    "w_mm": 711,
+    "note": "28\" x 7' Aluminum Plywood Hatch Plank w/ Aluminum Ladder (p.97); catalogue length 2130 mm, keyed to the 2134 mm bay; 72.8 lb",
+    "verified": false
+   },
+   {
+    "id": "WBAPSH2810TH-H2",
+    "surface": "plywood",
+    "l_mm": 3048,
+    "mass": 41.2,
+    "w_mm": 711,
+    "note": "28\" x 10' Aluminum Plywood Hatch Plank w/ Aluminum Ladder (p.97); catalogue length 3050 mm, keyed to the 3048 mm bay; 90.8 lb",
+    "verified": false
+   },
+   {
+    "id": "WBAASH287TH-H2",
+    "surface": "aluminium",
+    "l_mm": 2134,
+    "mass": 37.2,
+    "w_mm": 711,
+    "note": "28\" x 7' All Aluminum Hatch Plank w/ Aluminum Ladder (p.97); catalogue length 2130 mm, keyed to the 2134 mm bay; 82 lb",
+    "verified": false
+   },
+   {
+    "id": "WBAASH2810TH-H2",
+    "surface": "aluminium",
+    "l_mm": 3048,
+    "mass": 47.2,
+    "w_mm": 711,
+    "note": "28\" x 10' All Aluminum Hatch Plank w/ Aluminum Ladder (p.97); catalogue length 3050 mm, keyed to the 3048 mm bay; 104.1 lb",
+    "verified": false
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "CLCB30*",
+    "bay_mm": 914,
+    "h_mm": 2000,
+    "l_mm": 2199,
+    "mass": 8.2,
+    "note": "3' Clamp Brace Swivel (not stocked) (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB40*",
+    "bay_mm": 1219,
+    "h_mm": 2000,
+    "l_mm": 2343,
+    "mass": 8.5,
+    "note": "4' Clamp Brace Swivel (not stocked) (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB50",
+    "bay_mm": 1524,
+    "h_mm": 2000,
+    "l_mm": 2515,
+    "mass": 8.7,
+    "note": "5' Clamp Brace Swivel (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB60*",
+    "bay_mm": 1829,
+    "h_mm": 2000,
+    "l_mm": 2710,
+    "mass": 10.0,
+    "note": "6' Clamp Brace Swivel (not stocked) (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB70",
+    "bay_mm": 2134,
+    "h_mm": 2000,
+    "l_mm": 2925,
+    "mass": 10.4,
+    "note": "7' Clamp Brace Swivel (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB80",
+    "bay_mm": 2438,
+    "h_mm": 2000,
+    "l_mm": 3154,
+    "mass": 10.8,
+    "note": "8' Clamp Brace Swivel (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB90",
+    "bay_mm": 2743,
+    "h_mm": 2000,
+    "l_mm": 3395,
+    "mass": 12.1,
+    "note": "9' Clamp Brace Swivel (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   },
+   {
+    "id": "CLCB100",
+    "bay_mm": 3048,
+    "h_mm": 2000,
+    "l_mm": 3646,
+    "mass": 12.8,
+    "note": "10' Clamp Brace Swivel (p.13; braces designed for a 2 m vertical drop)",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "GRUSTB30",
+    "l_mm": 914,
+    "mass": 3.72,
+    "note": "3' Universal Toe Board (p.49); catalogue length 834 mm, keyed to the 914 mm bay",
+    "l_printed_mm": 834,
+    "mass_orig": "8.2 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB40",
+    "l_mm": 1219,
+    "mass": 5.2,
+    "note": "Universal Toe Board (description printed 3'-9\", code 40) (p.49); catalogue length 1140 mm, keyed to the 1219 mm bay",
+    "l_printed_mm": 1140,
+    "mass_orig": "11.46 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB50",
+    "l_mm": 1524,
+    "mass": 6.5,
+    "note": "5' Universal Toe Board (p.49); catalogue length 1440 mm, keyed to the 1524 mm bay",
+    "l_printed_mm": 1440,
+    "mass_orig": "14.33 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB60",
+    "l_mm": 1829,
+    "mass": 7.9,
+    "note": "6' Universal Toe Board (p.49); catalogue length 1750 mm, keyed to the 1829 mm bay",
+    "l_printed_mm": 1750,
+    "mass_orig": "17.42 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB70",
+    "l_mm": 2134,
+    "mass": 9.3,
+    "note": "7' Universal Toe Board (p.49); catalogue length 2050 mm, keyed to the 2134 mm bay",
+    "l_printed_mm": 2050,
+    "mass_orig": "20.5 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB80",
+    "l_mm": 2438,
+    "mass": 10.6,
+    "note": "8' Universal Toe Board (p.49); catalogue length 2360 mm, keyed to the 2438 mm bay",
+    "l_printed_mm": 2360,
+    "mass_orig": "23.37 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB90",
+    "l_mm": 2743,
+    "mass": 12.0,
+    "note": "9' Universal Toe Board (p.49); catalogue length 2660 mm, keyed to the 2743 mm bay",
+    "l_printed_mm": 2660,
+    "mass_orig": "26.46 lb",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB100",
+    "l_mm": 3048,
+    "mass": 13.4,
+    "note": "10' Universal Toe Board (p.49); catalogue length 2970 mm, keyed to the 3048 mm bay",
+    "l_printed_mm": 2970,
+    "mass_orig": "29.54 lb",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "CLH40 x2",
+   "mass": 9.6,
+   "note": "2 x 4' horizontal (p.11)",
+   "verified": false
+  },
+  "end_toeboard_74": {
+   "id": "GRUSTB40",
+   "mass": 5.2,
+   "note": "Universal toe board 1140 mm, 172 mm high (p.49)",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "BPSJB",
+    "h_mm": 540,
+    "mass": 3.74,
+    "ext_max_mm": 380,
+    "note": "21 in system jack with base plate: overall 22.22 in / 0.54 m, max extension 15 in / 0.38 m, 8.2 lb (p.41)",
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "TL4",
+    "l_mm": 1220,
+    "mass": 4.3,
+    "note": "4' Twist Lock tube, 9.6 lb (p.58)",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "CMPRA",
+    "mass": 1.5,
+    "note": "Right angle clamp (I-bolt), 3.3 lb (p.60)",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true,
+    "note": "not in the catalogue; Plettac value",
+    "verified": false
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalogue example (kg per m2 or bill of materials) for this system.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "masses of standards, ledgers, transoms, decks and braces on real parts",
+  "real deck (plank) width and how many planks fit on the transom",
+  "jack length, travel and the minimum length that must stay inside the standard",
+  "tie length and anchor type for the real wall gap",
+  "clear width beside the 28\" hatch plank (2 planks of 229 mm leave only ~2 mm)"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "note": "DSS gives no tie pattern, bracing frequency or wall gap: all placeholders. Jack travel 0.38 m is from the catalogue (p.41, BPSJB). Swivel jacks: anchors must hold 4 x the shear force on the slope, above 45 deg consult a Professional Engineer (p.41). For comparison only (other manufacturer): the SGB Cuplok user guide (339768111, p.2-3, 6-15) asks for a tie at every standard, vertically every 8 m (2 m lifts, pattern A) down to 4.5 m, and one braced bay in every 8 bays (20 m). Not applied here because it is not this manufacturer's document."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

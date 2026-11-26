@@ -1,0 +1,413 @@
+{
+ "_meta": {
+  "id": "plettac_sl100_steel",
+  "name": "Plettac SL 100 (steel, 110 cm)",
+  "family": "Frame 1.10 m, grid 1.50-3.00 m (Plettac SL type)",
+  "status": "draft",
+  "note": "Wide variant of SL 70: 1.10 m frames with three 0.32 m decks; decks, rails, diagonals and toeboards shared with SL 70. 'verified' = false until weighed on real parts.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "Altrad plettac SL 70/100 price list (https://www.ramirent.ee/wp-content/uploads/2020/09//Plettac_SL70.100.pdf) pp.3-17, 24-26; weights are guideline values (doc p.2)"
+  ],
+  "approvals": [
+   "DIBt Z-8.1-171 (plettac SL 100 Stahl), cited p.3/p.5; Geruestgruppe 4-6 (DIN 4420) depending on deck and bay"
+  ],
+  "changes": [
+   "Access bay: B64 access deck + one B32 deck (inferred from the widths, not stated).",
+   "Tie rules, jack travel and wall gap are not in the price list: the SL 70 values are used as placeholders."
+  ]
+ },
+ "system": {
+  "width_mm": 1100,
+  "leg_axis_mm": 1100,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1500,
+   2000,
+   2500,
+   3000
+  ],
+  "extra_bay_lengths_mm": [
+   740,
+   1100
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 3,
+  "usable_deck_width_mm": 980,
+  "width_class": "W09 (EN 12811-1), usable width 980 mm (p.4)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "Geruestgruppe 4-6 (DIN 4420) depending on deck and bay (p.3)",
+  "star_pin_spacing_mm": 0,
+  "connection": "decks on the frame transom (SL system)",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "access_surface": "aluminium",
+  "access_extra_decks": 1,
+  "deck_grade_labels": {
+   "steel_perforated": "Steel deck SL B32",
+   "timber": "Timber deck SL B32",
+   "aluminium": "Aluminium deck SL B32"
+  },
+  "labels": {
+   "frame": "Steel frame SL 2.00 x 1.10 m",
+   "deck": "Deck SL B32",
+   "access": "Access deck B64 with ladder",
+   "end_rail": "Double end guard rail SL 100",
+   "end_toeboard": "End toeboard SL 100",
+   "support": "Guard rail support SL 100, 1.0 x 1.10 m",
+   "tie": "Scaffold tie 0.8 m",
+   "coupler": "Normal couplers SW22 (tie)",
+   "eyebolt": "Ring bolt M12 120 mm"
+  }
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "5FSL103503",
+     "h_mm": 500,
+     "mass": 11.5,
+     "verified": false
+    },
+    {
+     "id": "5FSL103502",
+     "h_mm": 1000,
+     "mass": 15.0,
+     "verified": false
+    },
+    {
+     "id": "5FSL103501",
+     "h_mm": 1500,
+     "mass": 18.7,
+     "verified": false
+    },
+    {
+     "id": "5FSL103500",
+     "h_mm": 2000,
+     "mass": 22.0,
+     "verified": false
+    }
+   ]
+  },
+  "timber_deck_w320": {
+   "steel_perforated": [
+    {
+     "id": "5FSLN47007",
+     "l_mm": 740,
+     "mass": 6.1
+    },
+    {
+     "id": "5FSLN47004",
+     "l_mm": 1100,
+     "mass": 8.1
+    },
+    {
+     "id": "5FSLN47003",
+     "l_mm": 1500,
+     "mass": 11.2
+    },
+    {
+     "id": "5FSLN47002",
+     "l_mm": 2000,
+     "mass": 14.3
+    },
+    {
+     "id": "5FSLN47001",
+     "l_mm": 2500,
+     "mass": 17.4
+    },
+    {
+     "id": "5FSLN47000",
+     "l_mm": 3000,
+     "mass": 20.9
+    }
+   ],
+   "timber": [
+    {
+     "id": "5FSLN04016",
+     "l_mm": 740,
+     "mass": 5.3
+    },
+    {
+     "id": "5FSLN04015",
+     "l_mm": 1100,
+     "mass": 7.1
+    },
+    {
+     "id": "5FSLN04014",
+     "l_mm": 1500,
+     "mass": 9.4
+    },
+    {
+     "id": "5FSLN04013",
+     "l_mm": 2000,
+     "mass": 12.1
+    },
+    {
+     "id": "5FSLN04012",
+     "l_mm": 2500,
+     "mass": 15.7
+    },
+    {
+     "id": "5FSLN04000",
+     "l_mm": 3000,
+     "mass": 20.2
+    }
+   ],
+   "aluminium": [
+    {
+     "id": "5FSLN13003",
+     "l_mm": 1500,
+     "mass": 6.7
+    },
+    {
+     "id": "5FSLN13002",
+     "l_mm": 2000,
+     "mass": 9.8
+    },
+    {
+     "id": "5FSLN13001",
+     "l_mm": 2500,
+     "mass": 12.2
+    },
+    {
+     "id": "5FSLN13000",
+     "l_mm": 3000,
+     "mass": 14.0
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "5FSLN50001",
+    "l_mm": 2500,
+    "mass": 23.8,
+    "surface": "aluminium"
+   },
+   {
+    "id": "5FSLN50000",
+    "l_mm": 3000,
+    "mass": 27.4,
+    "surface": "aluminium"
+   },
+   {
+    "id": "5FSLN57001",
+    "l_mm": 2500,
+    "mass": 23.5,
+    "surface": "plywood"
+   },
+   {
+    "id": "5FSLN57000",
+    "l_mm": 3000,
+    "mass": 27.5,
+    "surface": "plywood"
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "5FSNN60003",
+    "bay_mm": 1500,
+    "h_mm": 2000,
+    "l_mm": 2550,
+    "mass": 7.6
+   },
+   {
+    "id": "5FSNN60002",
+    "bay_mm": 2000,
+    "h_mm": 2000,
+    "l_mm": 2880,
+    "mass": 8.6
+   },
+   {
+    "id": "5FSNN60001",
+    "bay_mm": 2500,
+    "h_mm": 2000,
+    "l_mm": 3260,
+    "mass": 9.7
+   },
+   {
+    "id": "5FSNN60000",
+    "bay_mm": 3000,
+    "h_mm": 2000,
+    "l_mm": 3660,
+    "mass": 10.9
+   }
+  ],
+  "diagonal_fixing_bracket": {
+   "id": "5FSNN61000",
+   "mass": 0.4
+  },
+  "guard_rail": [
+   {
+    "id": "5FSNN05006",
+    "l_mm": 740,
+    "mass": 1.5
+   },
+   {
+    "id": "5FSNN05005",
+    "l_mm": 1100,
+    "mass": 2.0
+   },
+   {
+    "id": "5FSNN05000",
+    "l_mm": 1500,
+    "mass": 2.8
+   },
+   {
+    "id": "5FSNN05001",
+    "l_mm": 2000,
+    "mass": 3.6
+   },
+   {
+    "id": "5FSNN05002",
+    "l_mm": 2500,
+    "mass": 4.2
+   },
+   {
+    "id": "5FSNN05003",
+    "l_mm": 3000,
+    "mass": 5.2
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "5FSL112000",
+   "mass": 4.6
+  },
+  "single_end_guard_rail_74": {
+   "id": "5FSL109000",
+   "mass": 2.7
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "5FSNN14006",
+    "l_mm": 740,
+    "mass": 1.8
+   },
+   {
+    "id": "5FSNN14007",
+    "l_mm": 1100,
+    "mass": 2.5
+   },
+   {
+    "id": "5FSNN14003",
+    "l_mm": 1500,
+    "mass": 3.3
+   },
+   {
+    "id": "5FSNN14002",
+    "l_mm": 2000,
+    "mass": 4.2
+   },
+   {
+    "id": "5FSNN14001",
+    "l_mm": 2500,
+    "mass": 5.1
+   },
+   {
+    "id": "5FSNN14000",
+    "l_mm": 3000,
+    "mass": 6.0
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "5FSL115000",
+   "mass": 1.8
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "5FSL120000",
+    "mass": 5.9
+   },
+   "end_guard_rail_frame_h1000_w740": {
+    "id": "5FSL119000",
+    "mass": 15.5
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "5FSOG59006",
+    "h_mm": 400,
+    "mass": 2.6
+   },
+   {
+    "id": "5FSOG59007",
+    "h_mm": 600,
+    "mass": 3.2
+   },
+   {
+    "id": "5FSOG59008",
+    "h_mm": 800,
+    "mass": 3.9
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "5FSNN24005",
+    "l_mm": 800,
+    "mass": 2.9
+   },
+   "normal_coupler": {
+    "id": "5FKUP10010",
+    "mass": 1.1
+   },
+   "eyebolt_120": {
+    "id": "5FDIV00107",
+    "mass": 0.2
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value"
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "frame, deck, diagonal and jack weights on real parts",
+  "real deck width and number of decks per bay",
+  "jack travel and the minimum length that must stay inside the frame",
+  "tie length used for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.2,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.75,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 3.0,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": false,
+   "jack_ext_min_m": false,
+   "jack_ext_max_ratio": false,
+   "note": "Placeholders copied from the Plettac SL 70 preset; the SL 100 price list gives no tie, jack or wall-gap rules."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

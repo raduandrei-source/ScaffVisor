@@ -1,0 +1,437 @@
+{
+ "_meta": {
+  "id": "layher_blitz100_steel",
+  "name": "Layher Blitz 100 (steel, 109 cm)",
+  "family": "Frame 1.09 m, U-deck grid 1.57-3.07 m (Layher Blitz type)",
+  "status": "draft",
+  "note": "Wide variant of Blitz 70: same decks, rails, diagonals and toeboards, 1.09 m frames with three 0.32 m decks. 'verified' = false until weighed on real parts.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "Layher Blitz price list 04/2019 (https://leiternprofi24.de/media/19/a6/6d/1670916471/Layher%20DE_Blitz_Preisliste.pdf); weights are 'ca.' guideline values: frames p.11/13, decks p.15, access p.17, rails p.19, toeboards/diagonals p.21, ties p.27, top level p.29",
+   "Layher Blitz Fassadengeruest AuV 11.2013, Art.-Nr. 8102.030 (https://www.leiternprofi24.de/media/06/b0/ae/1731009238/AuV-Layher-Blitz-Fassadengeruest.pdf): jacks p.11, diagonals p.12, tie grids p.19"
+  ],
+  "approvals": [
+   "DIBt Z-8.1-840 (Layher Blitz Geruest 100 Stahl), cited in the price list p.6; approval text not read"
+  ],
+  "changes": [
+   "Access deck 0.61 m + one 0.32 m deck in the access bay (AuV p.11: 3 x 0.32 or 0.61 + 0.32).",
+   "Eye bolt 4009.121: the price list weight is for a pack of 10 (sold only in VE 10); 0.18 kg per bolt, estimated.",
+   "Normal coupler weight is not in the extract of the price list; 1.0 kg estimated (Plettac value).",
+   "Tie 1754.069 (0.69 m) as in the Blitz 70 preset; the right length depends on the wall gap."
+  ]
+ },
+ "system": {
+  "width_mm": 1090,
+  "leg_axis_mm": 1090,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 3,
+  "usable_deck_width_mm": 960,
+  "width_class": "W09 (EN 12811-1), deduced from 3 x 0.32 m",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "up to LK6 depending on deck type and bay (price list p.6)",
+  "star_pin_spacing_mm": 0,
+  "connection": "U-decks hook onto the frame crossbars",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   660,
+   1000,
+   1500
+  ],
+  "access_surface": "aluminium",
+  "access_extra_decks": 1,
+  "deck_grade_labels": {
+   "steel_U_LW": "Steel U-LW 0.32 m",
+   "steel_U_T4": "Steel U-T4 0.32 m",
+   "alu_U_perforated": "Aluminium U, perforated 0.32 m"
+  },
+  "labels": {
+   "frame": "Blitz frame LW steel 2.00 x 1.09 m",
+   "deck": "Deck U 0.32 m",
+   "access": "Access deck with ladder and hatch 0.61 m",
+   "end_rail": "Double end guard rail 1.09 m",
+   "end_toeboard": "End toeboard 1.09 m",
+   "support": "Guard rail support 1.0 m, 1.09 m",
+   "tie": "Scaffold tie 0.69 m",
+   "coupler": "Couplers (tie)",
+   "eyebolt": "Ring bolt M12 120 mm"
+  }
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "1780.066",
+     "h_mm": 660,
+     "mass": 11.5,
+     "verified": false
+    },
+    {
+     "id": "1780.100",
+     "h_mm": 1000,
+     "mass": 13.8,
+     "verified": false
+    },
+    {
+     "id": "1780.150",
+     "h_mm": 1500,
+     "mass": 14.9,
+     "verified": false
+    },
+    {
+     "id": "1780.200",
+     "h_mm": 2000,
+     "mass": 21.5,
+     "verified": false
+    }
+   ]
+  },
+  "timber_deck_w320": {
+   "steel_U_LW": [
+    {
+     "id": "3883.073",
+     "l_mm": 730,
+     "mass": 5.6
+    },
+    {
+     "id": "3883.109",
+     "l_mm": 1090,
+     "mass": 7.7
+    },
+    {
+     "id": "3883.157",
+     "l_mm": 1570,
+     "mass": 10.5
+    },
+    {
+     "id": "3883.207",
+     "l_mm": 2070,
+     "mass": 13.4
+    },
+    {
+     "id": "3883.257",
+     "l_mm": 2570,
+     "mass": 16.4
+    },
+    {
+     "id": "3883.307",
+     "l_mm": 3070,
+     "mass": 19.3
+    }
+   ],
+   "steel_U_T4": [
+    {
+     "id": "3812.073",
+     "l_mm": 730,
+     "mass": 6.0
+    },
+    {
+     "id": "3812.109",
+     "l_mm": 1090,
+     "mass": 8.3
+    },
+    {
+     "id": "3802.129",
+     "l_mm": 1290,
+     "mass": 9.8
+    },
+    {
+     "id": "3802.140",
+     "l_mm": 1400,
+     "mass": 10.6
+    },
+    {
+     "id": "3812.157",
+     "l_mm": 1570,
+     "mass": 11.6
+    },
+    {
+     "id": "3812.207",
+     "l_mm": 2070,
+     "mass": 14.9
+    },
+    {
+     "id": "3812.257",
+     "l_mm": 2570,
+     "mass": 18.2
+    },
+    {
+     "id": "3812.307",
+     "l_mm": 3070,
+     "mass": 21.5
+    },
+    {
+     "id": "3812.414",
+     "l_mm": 4140,
+     "mass": 29.8
+    }
+   ],
+   "alu_U_perforated": [
+    {
+     "id": "3803.073",
+     "l_mm": 730,
+     "mass": 3.1
+    },
+    {
+     "id": "3803.109",
+     "l_mm": 1090,
+     "mass": 4.4
+    },
+    {
+     "id": "3803.157",
+     "l_mm": 1570,
+     "mass": 6.5
+    },
+    {
+     "id": "3803.207",
+     "l_mm": 2070,
+     "mass": 8.0
+    },
+    {
+     "id": "3803.257",
+     "l_mm": 2570,
+     "mass": 10.0
+    },
+    {
+     "id": "3803.307",
+     "l_mm": 3070,
+     "mass": 11.5
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "3852.257",
+    "l_mm": 2570,
+    "mass": 24.0,
+    "surface": "aluminium"
+   },
+   {
+    "id": "3852.307",
+    "l_mm": 3070,
+    "mass": 28.0,
+    "surface": "aluminium"
+   },
+   {
+    "id": "3838.257",
+    "l_mm": 2570,
+    "mass": 24.0,
+    "surface": "plywood"
+   },
+   {
+    "id": "3838.307",
+    "l_mm": 3070,
+    "mass": 27.4,
+    "surface": "plywood"
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "1736.157",
+    "bay_mm": 1570,
+    "h_mm": 2000,
+    "l_mm": 2250,
+    "mass": 6.5
+   },
+   {
+    "id": "1736.207",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2800,
+    "mass": 7.0
+   },
+   {
+    "id": "1736.257",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3200,
+    "mass": 7.8
+   },
+   {
+    "id": "1736.307",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3600,
+    "mass": 8.3
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "1724.073",
+    "l_mm": 730,
+    "mass": 1.6
+   },
+   {
+    "id": "1724.109",
+    "l_mm": 1090,
+    "mass": 2.0
+   },
+   {
+    "id": "1725.157",
+    "l_mm": 1570,
+    "mass": 2.9
+   },
+   {
+    "id": "1725.207",
+    "l_mm": 2070,
+    "mass": 3.8
+   },
+   {
+    "id": "1725.257",
+    "l_mm": 2570,
+    "mass": 4.7
+   },
+   {
+    "id": "1725.307",
+    "l_mm": 3070,
+    "mass": 5.6
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "1728.122",
+   "mass": 5.6,
+   "note": "Doppelstirngelaender 1.09 m SW22"
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "1756.073",
+    "l_mm": 730,
+    "mass": 1.6
+   },
+   {
+    "id": "1756.109",
+    "l_mm": 1090,
+    "mass": 2.4
+   },
+   {
+    "id": "1757.157",
+    "l_mm": 1570,
+    "mass": 3.1
+   },
+   {
+    "id": "1757.207",
+    "l_mm": 2070,
+    "mass": 4.7
+   },
+   {
+    "id": "1757.257",
+    "l_mm": 2570,
+    "mass": 5.6
+   },
+   {
+    "id": "1757.307",
+    "l_mm": 3070,
+    "mass": 6.8
+   },
+   {
+    "id": "1757.414",
+    "l_mm": 4140,
+    "mass": 10.3
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "1757.109",
+   "mass": 2.3
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "1719.109",
+    "mass": 8.5,
+    "note": "Blitz Gelaenderstuetze 1.09 m, steel"
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "4001.060",
+    "h_mm": 600,
+    "mass": 3.6,
+    "ext_max_mm": 410
+   },
+   {
+    "id": "4002.080",
+    "h_mm": 800,
+    "mass": 4.9,
+    "ext_max_mm": 550
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "1754.069",
+    "l_mm": 690,
+    "mass": 2.8
+   },
+   "normal_coupler": {
+    "id": "coupler",
+    "mass": 1.0,
+    "estimated": true,
+    "note": "not in the price list extract; Plettac value"
+   },
+   "eyebolt_120": {
+    "id": "4009.121",
+    "mass": 0.18,
+    "estimated": true,
+    "note": "price list: 1.8 kg per pack of 10"
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value"
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "frame, deck, diagonal and jack weights on real parts",
+  "real deck width and number of decks per bay",
+  "jack travel and the minimum length that must stay inside the frame",
+  "tie length used for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": true,
+   "note": "From the Layher AuV 11.2013: one diagonal serves at most 5 bays (p.12); jack travel 41 cm (jack 60) and 55 cm (jack 80, price list); tie grids 8 m staggered / 4 m / 2 m depending on cladding (p.19). The area rule (22 m2 per tie) and the wall gap are placeholders."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

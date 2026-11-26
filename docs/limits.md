@@ -11,7 +11,11 @@ title: Limits
 
 ## What it does not do yet
 
-- One system is built in (Plettac SL 70, steel).
+- 23 systems are built in (see [Systems and presets](presets.html)). Rules that a manufacturer does not publish (tie area, wall gap) are placeholders, and each preset says so.
+- Modular systems are counted as standards, ledgers and transoms, but drawn with the silhouette of a frame; rosettes and cups are not modelled.
+- Walk-through frames are counted with cross braces on both faces of every bay; the viewport draws them on the outer face.
+- Systems without a published access deck with hatch get no access deck: plan a stair or ladder tower.
+- With 0.50 m nodes and short jacks some top-deck heights cannot be reached exactly; the notes say which columns are out of the jack range.
 - Corners at angles other than about 90° are approximate, and a note says so.
 - A chain of connected faces with different heights uses its tallest face for the whole chain.
 - On sloping ground the scaffold follows the terrain with jacks, compensation frames and extra lifts. It does not step the bays across a wall, and it cannot go beyond the travel of the jacks.

@@ -1,0 +1,395 @@
+{
+ "_meta": {
+  "id": "altrad_assco_quadro70",
+  "name": "Altrad assco quadro 70 (steel, 73 cm)",
+  "family": "Frame 0.73 m, U-deck grid 1.57-3.07 m (Layher Blitz type)",
+  "status": "draft",
+  "note": "Values from the assembly instructions (AuV 08/2020), parts annex. The source gives sheet numbers of the approval annex, not article numbers; codes here are 'sheet/length'. 'verified' = false until weighed on real parts.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "Altrad plettac assco 'assco quadro 70' Aufbau- und Verwendungsanleitung 08/2020 (https://www.rolle-gerueste.de/media/image/storage/opc/pdf-dateien/13_assco_quadro_70_auv_2020_08.pdf) PDF pp.3, 5, 11-12, 38-44, 83-93"
+  ],
+  "approvals": [
+   "DIBt Z-8.1-190 (PDF p.3/5); height class H2 to EN 12811-1"
+  ],
+  "changes": [
+   "Codes are annex sheet numbers + length (no article numbers in the source).",
+   "Normal coupler: Ankerkupplung A-152 (0.8 kg). Eye bolt not listed: 0.2 kg estimated.",
+   "Jacks: 35.5 cm travel in the first unclad standard variant, 20 cm in the other main variants; 0.40 m jack limited to 20 cm."
+  ]
+ },
+ "system": {
+  "width_mm": 730,
+  "leg_axis_mm": 730,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "see deck table AuV 1.6",
+  "star_pin_spacing_mm": 0,
+  "connection": "decks on the frame transom",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   660,
+   1000,
+   1500
+  ],
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel": "Steel deck 32",
+   "timber": "Timber deck"
+  },
+  "labels": {
+   "frame": "Vertical frame 2.00 x 0.73 m (t = 2.7 mm)",
+   "deck": "Deck 0.32 m",
+   "access": "Alu frame deck with hatch and ladder 0.61 m",
+   "end_rail": "End double guard rail 0.73 m",
+   "end_toeboard": "End toeboard 0.73 m",
+   "support": "Guard rail support 0.73 m",
+   "tie": "Scaffold tie 0.8 m",
+   "coupler": "Anchor coupler (tie)",
+   "eyebolt": "Ring bolt M12"
+  }
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "A-1/H200",
+     "h_mm": 2000,
+     "mass": 19.8,
+     "verified": false
+    },
+    {
+     "id": "A-1/H150",
+     "h_mm": 1500,
+     "mass": 16.7,
+     "verified": false
+    },
+    {
+     "id": "A-1/H100",
+     "h_mm": 1000,
+     "mass": 13.5,
+     "verified": false
+    },
+    {
+     "id": "A-1/H66",
+     "h_mm": 660,
+     "mass": 10.2,
+     "verified": false
+    }
+   ]
+  },
+  "timber_deck_w320": {
+   "steel": [
+    {
+     "id": "A-23/24/730",
+     "l_mm": 730,
+     "mass": 6.4
+    },
+    {
+     "id": "A-23/24/1090",
+     "l_mm": 1090,
+     "mass": 8.3
+    },
+    {
+     "id": "A-23/24/1570",
+     "l_mm": 1570,
+     "mass": 11.0
+    },
+    {
+     "id": "A-23/24/2070",
+     "l_mm": 2070,
+     "mass": 14.0
+    },
+    {
+     "id": "A-23/24/2570",
+     "l_mm": 2570,
+     "mass": 17.0
+    },
+    {
+     "id": "A-23/24/3070",
+     "l_mm": 3070,
+     "mass": 20.0
+    }
+   ],
+   "timber": [
+    {
+     "id": "A-28/730",
+     "l_mm": 730,
+     "mass": 5.8
+    },
+    {
+     "id": "A-28/1090",
+     "l_mm": 1090,
+     "mass": 7.8
+    },
+    {
+     "id": "A-28/1570",
+     "l_mm": 1570,
+     "mass": 10.6
+    },
+    {
+     "id": "A-28/2070",
+     "l_mm": 2070,
+     "mass": 14.9
+    },
+    {
+     "id": "A-28/2570",
+     "l_mm": 2570,
+     "mass": 17.9
+    },
+    {
+     "id": "A-28/3070",
+     "l_mm": 3070,
+     "mass": 18.6
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "A-98/2570",
+    "l_mm": 2570,
+    "mass": 23.3,
+    "surface": "plywood"
+   },
+   {
+    "id": "A-98/3070",
+    "l_mm": 3070,
+    "mass": 28.5,
+    "surface": "plywood"
+   },
+   {
+    "id": "A-108/109/2570",
+    "l_mm": 2570,
+    "mass": 23.5,
+    "surface": "aluminium"
+   },
+   {
+    "id": "A-108/109/3070",
+    "l_mm": 3070,
+    "mass": 27.0,
+    "surface": "aluminium"
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "A-18/19/1570",
+    "bay_mm": 1570,
+    "h_mm": 2000,
+    "l_mm": 2543,
+    "mass": 6.0,
+    "l_note": "length computed from bay x 2.00 m"
+   },
+   {
+    "id": "A-18/19/2070",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2878,
+    "mass": 6.6,
+    "l_note": "length computed from bay x 2.00 m"
+   },
+   {
+    "id": "A-18/19/2570",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3257,
+    "mass": 7.4,
+    "l_note": "length computed from bay x 2.00 m"
+   },
+   {
+    "id": "A-18/19/3070",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3664,
+    "mass": 8.3,
+    "l_note": "length computed from bay x 2.00 m"
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "A-40/730",
+    "l_mm": 730,
+    "mass": 1.5
+   },
+   {
+    "id": "A-40/1090",
+    "l_mm": 1090,
+    "mass": 2.1
+   },
+   {
+    "id": "A-40/1570",
+    "l_mm": 1570,
+    "mass": 2.9
+   },
+   {
+    "id": "A-40/2070",
+    "l_mm": 2070,
+    "mass": 3.8
+   },
+   {
+    "id": "A-40/2570",
+    "l_mm": 2570,
+    "mass": 4.6
+   },
+   {
+    "id": "A-40/3070",
+    "l_mm": 3070,
+    "mass": 5.4
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "A-54/D73",
+   "mass": 3.7
+  },
+  "single_end_guard_rail_74": {
+   "id": "A-54/E73",
+   "mass": 2.0
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "A-58/730",
+    "l_mm": 730,
+    "mass": 1.8
+   },
+   {
+    "id": "A-58/1090",
+    "l_mm": 1090,
+    "mass": 2.7
+   },
+   {
+    "id": "A-58/1570",
+    "l_mm": 1570,
+    "mass": 3.4
+   },
+   {
+    "id": "A-58/2070",
+    "l_mm": 2070,
+    "mass": 4.3
+   },
+   {
+    "id": "A-58/2570",
+    "l_mm": 2570,
+    "mass": 5.2
+   },
+   {
+    "id": "A-58/3070",
+    "l_mm": 3070,
+    "mass": 6.2
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "A-60/730",
+   "mass": 1.6
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "A-48",
+    "mass": 5.9
+   },
+   "end_guard_rail_frame_h1000_w740": {
+    "id": "A-56",
+    "mass": 11.6
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "A-13/400",
+    "h_mm": 400,
+    "mass": 2.9,
+    "ext_max_mm": 200
+   },
+   {
+    "id": "A-13/600",
+    "h_mm": 600,
+    "mass": 3.6,
+    "ext_max_mm": 355
+   },
+   {
+    "id": "A-13/800",
+    "h_mm": 800,
+    "mass": 4.3,
+    "ext_max_mm": 355
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "A-39/800",
+    "l_mm": 800,
+    "mass": 2.9
+   },
+   "normal_coupler": {
+    "id": "A-152",
+    "mass": 0.8
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value"
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "frame, deck, diagonal and jack weights on real parts",
+  "real deck width and number of decks per bay",
+  "jack travel and the minimum length that must stay inside the frame",
+  "tie length used for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": true,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": true,
+   "note": "From the AuV: clear gap deck-facade max. 30 cm (PDF p.11-12); unclad: tie grid 8 m staggered, V-tie once per 5 bays in each tie level (twice at the top); nets: 4 m grid; tarpaulin: 2 m grid (PDF pp.38-44); jack 35.5 cm (GV) / 20 cm (other variants). The area rule (22 m2 per tie) is a placeholder for the 8 m staggered grid."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

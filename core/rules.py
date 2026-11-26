@@ -41,7 +41,8 @@ def apply_rules(plan, preset, cladding="NONE", access_every_m=None, brace_every=
     cand = [b for b in plan.bays if b.length_mm in acc_len]
     cnt = max(1, int(math.ceil(plan.wall_length / access_every_m)))
     if not cand:
-        plan.warnings.append("No 2.5/3.0 m bay available: no room for an access deck with ladder/hatch.")
+        plan.warnings.append(("No bay of %s m: no room for an access deck with ladder/hatch." % " / ".join("%.2f" % (a / 1000) for a in acc_len))
+                             if acc_len else "This system has no access deck with ladder/hatch: plan a stair or ladder tower.")
     else:
         nlev = max(len(station_levels(plan, s)) for s in st)
         for d in range(nlev):

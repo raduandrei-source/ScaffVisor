@@ -1,0 +1,631 @@
+{
+ "_meta": {
+  "id": "coronet_ringlock",
+  "name": "Coronet Ringlock (steel, 73 cm)",
+  "family": "Ringlock 0.73 m, grid 1.57-3.07 m (Layher Allround type, node 0.50 m)",
+  "status": "draft",
+  "note": "Facade scaffold built from the Coronet Ringlock 2023 catalog (UK/AU/NZ edition): O-ledgers 0.73 m as transoms, 2 x O-steel planks 320 per bay, O-ledgers as guard rails, RDB diagonals for a 2.0 m lift. Values are catalog values; 'verified' = false until weighed/measured.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "681927970-coronet-scaffold-ringlock-system-2023.pdf PDF p.7 (standards), p.8 (O-ledgers), p.16 (diagonals), p.17 (O-steel planks 320), p.21-22 (access decks), p.25 (steel toe boards), p.28 (base collar), p.29 (base jack), p.47 (right angle clamp). Printed page = PDF page - 1."
+  ],
+  "approvals": [],
+  "changes": [
+   "Initial draft from scratchpad/out/modular.json (Coronet object), values re-checked on PDF p.7, 16, 25, 28, 29, 47.",
+   "Transom = O-Ledger RH073 (O-planks hook on the 48.3 tube); the U-system (RHU073 + RWP planks) is the alternative and is not modelled.",
+   "Bays 1.57/2.07/2.57/3.07 m; short bays 0.73/1.09/1.40 m as extras (all have ledger, plank, toe board and diagonal).",
+   "Guard rails = the same O-ledgers (2 per bay and level); open end = 2 x RH073 + toe board RSTB073.",
+   "Base jack CSJB 0.6 m: travel not published -> jack_ext_max_ratio 0.68 (default) gives 0.41 m.",
+   "Ties: the catalog has no tie tube and no eyebolt. Tie tube estimated (1.0 m of 48.3 x 3.2 tube = 3.55 kg/m, value from the PERI catalog), eyebolt estimated 0.2 kg; coupler = Right Angle Clamp RCA (1.00 kg printed; the lb column says 3.30 lb = 1.50 kg).",
+   "Brace l_mm = geometric axis length sqrt(bay^2 + 2000^2); the catalog gives only bay x lift.",
+   "Load class and width class are not published: max_load_class 3 / 2.0 kN/m2 are defaults; W06 derived from 2 x 320 mm planks.",
+   "RV10 mass 5.21 kg kept as printed (lb column 12.10 lb = 5.49 kg disagrees; 5.21 fits between RV05 and RV15)."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 778.3,
+  "leg_axis_mm": 730,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090,
+   1400
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1) derived from 2 x 320 mm planks; not stated in the catalog",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_note": "Not published in the catalog (no load table, no approval).",
+  "star_pin_spacing_mm": 0,
+  "connection": "Ringlock rosettes at 500 mm (8 holes); O-ledgers/diagonals with wedge heads; O-planks hook onto the 48.3 ledger tube.",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_O_320": "O-steel plank 320 (RDEP)"
+  },
+  "labels": {
+   "standard": "Ringlock standard",
+   "ledger": "O-ledger",
+   "transom": "O-ledger (transom)",
+   "base_collar": "Starter/base collar RSBC1 0.24 m",
+   "deck": "O-steel plank 320",
+   "access": "Aluminium plywood access deck 0.64 (hatch)",
+   "end_rail": "End guard rail = 2 x O-ledger 0.73 m",
+   "end_toeboard": "Steel toe board 0.73 m (end)",
+   "tie": "Wall tie tube 1.0 m (estimated)",
+   "coupler": "Right angle clamp RCA (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Steel toe board 150 (bolted)",
+   "guard_rail": "Guard rail (O-ledger)",
+   "brace": "Diagonal brace RDB, 2.0 m lift"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "RV05",
+    "l_mm": 500,
+    "mass": 2.9,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV10",
+    "l_mm": 1000,
+    "mass": 5.21,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV15",
+    "l_mm": 1500,
+    "mass": 7.51,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV20",
+    "l_mm": 2000,
+    "mass": 9.82,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV25",
+    "l_mm": 2500,
+    "mass": 12.26,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV30",
+    "l_mm": 3000,
+    "mass": 14.56,
+    "src": "p.7",
+    "verified": false
+   },
+   {
+    "id": "RV40",
+    "l_mm": 4000,
+    "mass": 19.18,
+    "src": "p.7",
+    "verified": false
+   }
+  ],
+  "base_collar": {
+   "id": "RSBC1",
+   "h_mm": 240,
+   "mass": 1.7,
+   "src": "p.28",
+   "verified": false
+  },
+  "transom": {
+   "id": "RH073",
+   "l_mm": 730,
+   "mass": 3.18,
+   "src": "p.8",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "RH073",
+    "l_mm": 730,
+    "mass": 3.18,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH109",
+    "l_mm": 1090,
+    "mass": 4.28,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH140",
+    "l_mm": 1400,
+    "mass": 5.56,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH157",
+    "l_mm": 1570,
+    "mass": 6.16,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH207",
+    "l_mm": 2070,
+    "mass": 7.93,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH257",
+    "l_mm": 2570,
+    "mass": 9.71,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH307",
+    "l_mm": 3070,
+    "mass": 11.49,
+    "src": "p.8",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "RH073",
+    "l_mm": 730,
+    "mass": 3.18,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH109",
+    "l_mm": 1090,
+    "mass": 4.28,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH140",
+    "l_mm": 1400,
+    "mass": 5.56,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH157",
+    "l_mm": 1570,
+    "mass": 6.16,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH207",
+    "l_mm": 2070,
+    "mass": 7.93,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH257",
+    "l_mm": 2570,
+    "mass": 9.71,
+    "src": "p.8",
+    "verified": false
+   },
+   {
+    "id": "RH307",
+    "l_mm": 3070,
+    "mass": 11.49,
+    "src": "p.8",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_O_320": [
+    {
+     "id": "RDEP073",
+     "l_mm": 730,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 6.82,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP109",
+     "l_mm": 1090,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 9.43,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP140",
+     "l_mm": 1400,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 11.46,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP157",
+     "l_mm": 1570,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 12.58,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP207",
+     "l_mm": 2070,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 16.11,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP257",
+     "l_mm": 2570,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 19.63,
+     "src": "p.17",
+     "verified": false
+    },
+    {
+     "id": "RDEP307",
+     "l_mm": 3070,
+     "w_mm": 320,
+     "h_mm": 76,
+     "mass": 22.92,
+     "src": "p.17",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "RPAD109",
+    "surface": "plywood",
+    "l_mm": 1090,
+    "w_mm": 640,
+    "mass": 15.7,
+    "src": "p.21",
+    "verified": false
+   },
+   {
+    "id": "RPAD157",
+    "surface": "plywood",
+    "l_mm": 1570,
+    "w_mm": 640,
+    "mass": 17.4,
+    "src": "p.21",
+    "verified": false
+   },
+   {
+    "id": "RPAD207",
+    "surface": "plywood",
+    "l_mm": 2070,
+    "w_mm": 640,
+    "mass": 21.2,
+    "src": "p.21",
+    "verified": false
+   },
+   {
+    "id": "RPAD257",
+    "surface": "plywood",
+    "l_mm": 2570,
+    "w_mm": 640,
+    "mass": 26.2,
+    "src": "p.21",
+    "verified": false
+   },
+   {
+    "id": "RPAD307",
+    "surface": "plywood",
+    "l_mm": 3070,
+    "w_mm": 640,
+    "mass": 30.2,
+    "src": "p.21",
+    "verified": false
+   },
+   {
+    "id": "RAD109",
+    "surface": "aluminium",
+    "l_mm": 1090,
+    "w_mm": 640,
+    "mass": 20.3,
+    "src": "p.22",
+    "verified": false
+   },
+   {
+    "id": "RAD157",
+    "surface": "aluminium",
+    "l_mm": 1570,
+    "w_mm": 640,
+    "mass": 22.8,
+    "src": "p.22",
+    "verified": false
+   },
+   {
+    "id": "RAD207",
+    "surface": "aluminium",
+    "l_mm": 2070,
+    "w_mm": 640,
+    "mass": 24.5,
+    "src": "p.22",
+    "verified": false
+   },
+   {
+    "id": "RAD257",
+    "surface": "aluminium",
+    "l_mm": 2570,
+    "w_mm": 640,
+    "mass": 28.1,
+    "src": "p.22",
+    "verified": false
+   },
+   {
+    "id": "RAD307",
+    "surface": "aluminium",
+    "l_mm": 3070,
+    "w_mm": 640,
+    "mass": 32.2,
+    "src": "p.22",
+    "verified": false
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "RDB073",
+    "bay_mm": 730,
+    "h_mm": 2000,
+    "l_mm": 2129,
+    "mass": 7.87,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB109",
+    "bay_mm": 1090,
+    "h_mm": 2000,
+    "l_mm": 2278,
+    "mass": 8.18,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB140",
+    "bay_mm": 1400,
+    "h_mm": 2000,
+    "l_mm": 2441,
+    "mass": 8.66,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB157",
+    "bay_mm": 1570,
+    "h_mm": 2000,
+    "l_mm": 2543,
+    "mass": 8.94,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB207",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2878,
+    "mass": 9.86,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB257",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3257,
+    "mass": 10.91,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "RDB307",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3664,
+    "mass": 12.07,
+    "src": "p.16",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "RSTB073",
+    "l_mm": 730,
+    "h_mm": 150,
+    "mass": 2.15,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RSTB109",
+    "l_mm": 1090,
+    "h_mm": 150,
+    "mass": 3.09,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RSTB129",
+    "l_mm": 1400,
+    "h_mm": 150,
+    "mass": 3.89,
+    "src": "p.25",
+    "verified": false,
+    "note": "code printed RSTB129 but description and length column say 1.40 m (kept as printed)"
+   },
+   {
+    "id": "RSTB157",
+    "l_mm": 1570,
+    "h_mm": 150,
+    "mass": 4.34,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RSTB207",
+    "l_mm": 2070,
+    "h_mm": 150,
+    "mass": 5.64,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RSTB257",
+    "l_mm": 2570,
+    "h_mm": 150,
+    "mass": 6.94,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RSTB307",
+    "l_mm": 3070,
+    "h_mm": 150,
+    "mass": 8.24,
+    "src": "p.25",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "RH073 x2",
+   "mass": 6.36,
+   "verified": false,
+   "note": "2 x O-Ledger RH073 (3.18 kg each, p.8) across the open end"
+  },
+  "end_toeboard_74": {
+   "id": "RSTB073",
+   "mass": 2.15,
+   "src": "p.25",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "CSJB",
+    "h_mm": 600,
+    "mass": 3.4,
+    "src": "p.29",
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "tie-tube-1.0",
+    "l_mm": 1000,
+    "mass": 3.55,
+    "estimated": true,
+    "verified": false,
+    "note": "no tube in the Coronet catalog; 1.0 m of 48.3 x 3.2 tube at 3.55 kg/m (PERI catalog PDF p.130)"
+   },
+   "normal_coupler": {
+    "id": "RCA",
+    "mass": 1.0,
+    "src": "p.47",
+    "verified": false,
+    "note": "kg column 1.00 kept; lb column 3.30 lb (= 1.50 kg) disagrees"
+   },
+   "eyebolt_120": {
+    "id": "eyebolt-est",
+    "mass": 0.2,
+    "estimated": true,
+    "verified": false,
+    "note": "not in this catalog; 0.2 kg assumed (cf. PERI Ring Bolt UFE 12/120 = 0.19 kg)"
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "The catalog gives no example of total scaffold weight per m2 of facade.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "base jack travel (catalog gives only the 0.6 m length)",
+  "weighed O-ledger, O-plank, diagonal, standard",
+  "whether the planks in use are O-type (RDEP) or U-type (RWP, needs U-ledger transoms)",
+  "tie tube length and coupler type used on site"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "wind_factor": false,
+   "joint_deg": false,
+   "min_leg_clearance_m": false,
+   "top_post_m": false,
+   "jack_ext_max": false,
+   "note": "The catalog publishes no tie pattern, wall gap, bracing frequency, access spacing or free height: these are the ScaffVisor default values, not the manufacturer's. Jack travel not in the catalog: jack_ext_max_ratio 0.68 (default) applies. "
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation."
+ }
+}

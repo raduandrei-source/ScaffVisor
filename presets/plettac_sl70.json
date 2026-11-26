@@ -2,6 +2,7 @@
  "_meta": {
   "id": "plettac_sl70_steel",
   "name": "Plettac SL 70 (steel, 74 cm)",
+  "family": "Frame 0.74 m, grid 1.50-3.00 m (Plettac SL type)",
   "status": "draft-v2",
   "note": "Values are from the manufacturer's catalog; 'verified' = false until weighed/measured on the real parts. Clones (P70 etc.) may differ slightly.",
   "units": {
@@ -10,8 +11,8 @@
   },
   "sources": [
    "ALTRAD plettac assco, plettac SL 70/100 catalog, ed. 04/2013 (plettac.ua/images/Doc/scaffolds/eng/plettac_SL_en1.pdf)",
-   "Leitern Ebertz: Vertikalrahmen SL 70 (pin spacing 26 cm), Holzboden SL 70 (metal end fittings, 2 holes at 26 cm)",
-   "Mascus, SL70 package listings (unit weights, cross-check)"
+   "Leitern Ebertz shop (https://www.leitern-ebertz.de, product pages change): Vertikalrahmen SL 70 (pin spacing 26 cm), Holzboden SL 70 (metal end fittings, 2 holes at 26 cm)",
+   "Mascus used-equipment listings (https://www.mascus.com, listings change), SL70 packages (unit weights, cross-check)"
   ],
   "approvals": [
    "DIBt Z-8.1-29 (SL 70 otel)",
@@ -26,6 +27,8 @@
  },
  "system": {
   "width_mm": 740,
+  "leg_axis_mm": 740,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
   "frame_height_mm": 2000,
   "tube_od_mm": 48.3,
   "bay_lengths_mm": [
@@ -52,7 +55,11 @@
    500,
    1000,
    1500
-  ]
+  ],
+  "deck_grade_labels": {
+   "machine_sorted_MS10_13": "Timber deck, machine graded MS10/MS13",
+   "visually_sorted_S10": "Timber deck, visually graded S10"
+  }
  },
  "components": {
   "frame": {

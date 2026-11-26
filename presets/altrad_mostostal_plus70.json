@@ -1,0 +1,383 @@
+{
+ "_meta": {
+  "id": "altrad_mostostal_plus70",
+  "name": "Altrad Mostostal Plus 70 (steel, 73 cm)",
+  "family": "Frame 0.73 m, U-deck grid 1.57-3.07 m (Layher Blitz type)",
+  "status": "draft",
+  "note": "Blitz-type frame scaffold made in Poland (also sold in Romania). 'verified' = false until weighed on real parts.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "ALTRAD-Mostostal (Siedlce) 'Frame scaffoldings' catalogue, Mostostal Plus (https://amm.siedlce.pl/images/design/pdf/frame-scaffolodings.pdf) pp.3-19"
+  ],
+  "approvals": [
+   "Safety certificate B/02/014/08 (ITBM Warsaw), height up to 34 m (p.3); decks 2-6 kN/m2 per PN-EN 12811-1"
+  ],
+  "changes": [
+   "Diagonals for bay x 2.00 m listed by length only (2.40/2.80/3.20/3.60 m); assigned to the 1.57/2.07/2.57/3.07 m bays in order.",
+   "Front railing used as the double end guard rail (3.7 kg, as Plettac's double end rail).",
+   "No 0.73 m long toeboard in the catalogue: estimated for 0.73 m bays."
+  ]
+ },
+ "system": {
+  "width_mm": 730,
+  "leg_axis_mm": 730,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1), deduced from the deck widths",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "2-6 kN/m2 by deck and length (p.3)",
+  "star_pin_spacing_mm": 0,
+  "connection": "U-decks on the frame transom (Blitz type)",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   660,
+   1000,
+   1500
+  ],
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_perforated": "Steel plank 0.32 m (perforated)",
+   "steel_eco": "ECO plank 0.32 m",
+   "timber": "Wooden plank 0.32 m"
+  },
+  "labels": {
+   "frame": "Steel frame 2.00 x 0.73 m",
+   "deck": "Plank 0.32 m",
+   "access": "Aluminium-plywood access deck with ladder 0.61 m",
+   "end_rail": "Front railing 0.73 m",
+   "end_toeboard": "Transverse toe board 0.73 m",
+   "support": "Steel railing post 1.00 x 0.73 m",
+   "tie": "Anchor coupling with hook 0.60 m",
+   "coupler": "Normal coupling (tie)",
+   "eyebolt": "Anchor eye bolt 0.23 m"
+  }
+ },
+ "components": {
+  "timber_deck_w320": {
+   "steel_perforated": [
+    {
+     "id": "e491307",
+     "l_mm": 730,
+     "mass": 5.8
+    },
+    {
+     "id": "e491310",
+     "l_mm": 1090,
+     "mass": 8.0
+    },
+    {
+     "id": "e491315",
+     "l_mm": 1570,
+     "mass": 11.1
+    },
+    {
+     "id": "e491320",
+     "l_mm": 2070,
+     "mass": 14.2
+    },
+    {
+     "id": "e491325",
+     "l_mm": 2570,
+     "mass": 17.4
+    },
+    {
+     "id": "e491330",
+     "l_mm": 3070,
+     "mass": 20.5
+    }
+   ],
+   "steel_eco": [
+    {
+     "id": "e491607",
+     "l_mm": 730,
+     "mass": 6.08
+    },
+    {
+     "id": "e491610",
+     "l_mm": 1090,
+     "mass": 7.98
+    },
+    {
+     "id": "e491615",
+     "l_mm": 1570,
+     "mass": 10.8
+    },
+    {
+     "id": "e491620",
+     "l_mm": 2070,
+     "mass": 13.4
+    },
+    {
+     "id": "e491625",
+     "l_mm": 2570,
+     "mass": 15.9
+    },
+    {
+     "id": "e491630",
+     "l_mm": 3070,
+     "mass": 18.5
+    }
+   ],
+   "timber": [
+    {
+     "id": "e499015",
+     "l_mm": 1570,
+     "mass": 10.2
+    },
+    {
+     "id": "e499020",
+     "l_mm": 2070,
+     "mass": 13.4
+    },
+    {
+     "id": "e499025",
+     "l_mm": 2570,
+     "mass": 16.6
+    },
+    {
+     "id": "e499030",
+     "l_mm": 3070,
+     "mass": 18.2
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "e492325",
+    "l_mm": 2570,
+    "mass": 26.8,
+    "surface": "plywood"
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "e284715",
+    "bay_mm": 1570,
+    "h_mm": 2000,
+    "l_mm": 2400,
+    "mass": 5.8
+   },
+   {
+    "id": "e284720",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2800,
+    "mass": 6.6
+   },
+   {
+    "id": "e284725",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3200,
+    "mass": 7.4
+   },
+   {
+    "id": "e284730",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3600,
+    "mass": 8.3
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "e283607",
+    "l_mm": 730,
+    "mass": 1.5
+   },
+   {
+    "id": "e283610",
+    "l_mm": 1090,
+    "mass": 2.1
+   },
+   {
+    "id": "e283615",
+    "l_mm": 1570,
+    "mass": 3.0
+   },
+   {
+    "id": "e283620",
+    "l_mm": 2070,
+    "mass": 3.8
+   },
+   {
+    "id": "e283625",
+    "l_mm": 2570,
+    "mass": 4.7
+   },
+   {
+    "id": "e283630",
+    "l_mm": 3070,
+    "mass": 5.5
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "e286813",
+    "l_mm": 1090,
+    "mass": 3.0
+   },
+   {
+    "id": "e286815",
+    "l_mm": 1570,
+    "mass": 4.2
+   },
+   {
+    "id": "e286820",
+    "l_mm": 2070,
+    "mass": 5.4
+   },
+   {
+    "id": "e286825",
+    "l_mm": 2570,
+    "mass": 6.7
+   },
+   {
+    "id": "e286830",
+    "l_mm": 3070,
+    "mass": 7.9
+   }
+  ],
+  "base_plate_threaded": [
+   {
+    "id": "e511204",
+    "h_mm": 400,
+    "mass": 3.39,
+    "ext_max_mm": 200
+   },
+   {
+    "id": "e511206",
+    "h_mm": 600,
+    "mass": 4.3,
+    "ext_max_mm": 400
+   },
+   {
+    "id": "e511208",
+    "h_mm": 800,
+    "mass": 5.2,
+    "ext_max_mm": 600
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "e286606",
+    "l_mm": 600,
+    "mass": 2.7
+   },
+   "normal_coupler": {
+    "id": "e581119",
+    "mass": 0.8
+   },
+   "eyebolt_120": {
+    "id": "e511023",
+    "mass": 0.4
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value"
+  },
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "e281606",
+     "h_mm": 660,
+     "mass": 10.7,
+     "verified": false
+    },
+    {
+     "id": "e281610",
+     "h_mm": 1000,
+     "mass": 13.2,
+     "verified": false
+    },
+    {
+     "id": "e281615",
+     "h_mm": 1500,
+     "mass": 16.6,
+     "verified": false
+    },
+    {
+     "id": "e281620",
+     "h_mm": 2000,
+     "mass": 19.7,
+     "verified": false
+    }
+   ]
+  },
+  "double_end_guard_rail_74": {
+   "id": "e283907",
+   "mass": 3.7,
+   "note": "front railing"
+  },
+  "end_toeboard_74": {
+   "id": "e286807",
+   "mass": 1.7
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "e202091",
+    "mass": 5.8
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "frame, deck, diagonal and jack weights on real parts",
+  "real deck width and number of decks per bay",
+  "jack travel and the minimum length that must stay inside the frame",
+  "tie length used for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": false,
+   "jack_ext_min_m": false,
+   "jack_ext_max": true,
+   "note": "From the catalogue: jack 0.40 -> 20 cm, 0.60 -> 40 cm, 0.80 -> 60 cm, at least 15 cm of the threaded tube inside the frame (p.6). No tie grid, brace or wall-gap rule published: area rule, braces every 5 bays and wall gap are placeholders."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

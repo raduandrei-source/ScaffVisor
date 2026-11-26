@@ -7,8 +7,10 @@ _ITEMS = []
 
 
 def preset_items(self, context):
+    """Systems grouped by family. Each item has a fixed number (Blender saves the number, not the name),
+    so adding systems never changes the system of a saved scaffold."""
     global _ITEMS
-    _ITEMS = [(pid, name, "") for pid, name, _ in P.list_presets()] or [("none", "(no preset)", "")]
+    _ITEMS = [(pid, name, P.family(path), P.enum_number(pid)) for pid, name, path in P.list_presets()] or [("none", "(no preset)", "", 0)]
     return _ITEMS
 
 

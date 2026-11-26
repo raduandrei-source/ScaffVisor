@@ -1,0 +1,345 @@
+{
+ "_meta": {
+  "id": "scafom_rux_framescaff",
+  "name": "Scafom-rux Framescaff (steel, 73 cm)",
+  "family": "Frame 0.73 m, U-deck grid 1.57-3.07 m (Layher Blitz type)",
+  "status": "draft",
+  "note": "Values from the Framescaff assembly instructions, appendix of parts. 'verified' = false until weighed on real parts.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "Scafom-rux FRAMESCAFF instructions for assembly and use (https://geruest-welt.de/out/media/FramecsaffAVA(4).pdf) pp.2, 8, 10-12, 29-36"
+  ],
+  "approvals": [
+   "DIBt Z-8.1-924; EN 12810/12811, load class 3 (p.2)"
+  ],
+  "changes": [
+   "Diagonal lengths are not printed; l_mm is computed from bay x 2.00 m. No catalog diagonal for the 1.57 m bay: estimated (2.35 kg/m from the 2.07-3.07 m diagonals).",
+   "Guard rail 2.07 m: printed 1.2 kg, replaced by 4.2 kg interpolated and flagged as estimated.",
+   "Jack travel is not stated as a limit (only loads by spindle length, p.8): ratio 0.68 of the jack length as a placeholder.",
+   "Normal coupler and eye bolt not in the parts list: 1.0 kg and 0.2 kg estimated."
+  ]
+ },
+ "system": {
+  "width_mm": 732,
+  "leg_axis_mm": 732,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "LK3 (p.2)",
+  "star_pin_spacing_mm": 0,
+  "connection": "U-profile decks on the frame transom",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "compensation_frames_mm": [
+   660,
+   1000,
+   1500
+  ],
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_U": "Steel plank 0.32 m",
+   "steel_U_019": "Steel plank 0.19 m"
+  },
+  "labels": {
+   "frame": "Framescaff frame 2.00 x 0.732 m",
+   "deck": "Steel plank 0.32 m",
+   "access": "Aluminium/plywood ladder frame deck 0.61 m",
+   "end_rail": "Double end guard rail 0.732 m",
+   "end_toeboard": "End toeboard 0.732 m",
+   "support": "Guard rail post with transom 1.00 x 0.732 m",
+   "tie": "Wall tie 1.0 m",
+   "coupler": "Couplers (tie)",
+   "eyebolt": "Ring bolt M12"
+  }
+ },
+ "components": {
+  "frame": {
+   "steel_light_74": [
+    {
+     "id": "E04FS0005",
+     "h_mm": 660,
+     "mass": 10.2,
+     "verified": false
+    },
+    {
+     "id": "E04FS0003",
+     "h_mm": 1000,
+     "mass": 12.8,
+     "verified": false
+    },
+    {
+     "id": "E04FS0002",
+     "h_mm": 1500,
+     "mass": 16.0,
+     "verified": false
+    },
+    {
+     "id": "E04FS0001",
+     "h_mm": 2000,
+     "mass": 19.7,
+     "verified": false
+    }
+   ]
+  },
+  "timber_deck_w320": {
+   "steel_U": [
+    {
+     "id": "E04RS0941",
+     "l_mm": 730,
+     "mass": 5.9
+    },
+    {
+     "id": "E04RS0887",
+     "l_mm": 1090,
+     "mass": 9.7
+    },
+    {
+     "id": "E04RS0942",
+     "l_mm": 1570,
+     "mass": 11.3
+    },
+    {
+     "id": "E04RS0988",
+     "l_mm": 2070,
+     "mass": 15.6
+    },
+    {
+     "id": "E04RS0943",
+     "l_mm": 2570,
+     "mass": 18.7
+    },
+    {
+     "id": "E04RS0944",
+     "l_mm": 3070,
+     "mass": 21.5
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "E04RS0467",
+    "l_mm": 2570,
+    "mass": 22.9,
+    "surface": "plywood"
+   },
+   {
+    "id": "E04RS0468",
+    "l_mm": 3070,
+    "mass": 26.0,
+    "surface": "plywood"
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "E04FS0036",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2878,
+    "mass": 6.8,
+    "l_note": "length not in the source; computed from bay x 2.00 m"
+   },
+   {
+    "id": "E04FS0038",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3257,
+    "mass": 7.6,
+    "l_note": "length not in the source; computed from bay x 2.00 m"
+   },
+   {
+    "id": "E04FS0040",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3664,
+    "mass": 8.5,
+    "l_note": "length not in the source; computed from bay x 2.00 m"
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "E04FS0007",
+    "l_mm": 730,
+    "mass": 1.7
+   },
+   {
+    "id": "E04FS0008",
+    "l_mm": 1090,
+    "mass": 2.4
+   },
+   {
+    "id": "E04FS0009",
+    "l_mm": 1570,
+    "mass": 3.3
+   },
+   {
+    "id": "E04FS0010",
+    "l_mm": 2070,
+    "mass": 4.2,
+    "estimated": true,
+    "mass_printed": 1.2,
+    "note": "source prints 1.2 kg (checked on the page image), clearly a misprint; 4.2 kg interpolated from 1.57 and 2.57 m"
+   },
+   {
+    "id": "E04FS0011",
+    "l_mm": 2570,
+    "mass": 5.1
+   },
+   {
+    "id": "E04FS0012",
+    "l_mm": 3070,
+    "mass": 6.1
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "E04FS0023",
+   "mass": 4.0
+  },
+  "single_end_guard_rail_74": {
+   "id": "E04FS0021",
+   "mass": 2.4
+  },
+  "toeboard_timber_h150": [
+   {
+    "id": "E04FS0028",
+    "l_mm": 732,
+    "mass": 2.0
+   },
+   {
+    "id": "E04FS0029",
+    "l_mm": 1090,
+    "mass": 2.9
+   },
+   {
+    "id": "E04FS0030",
+    "l_mm": 1570,
+    "mass": 4.1
+   },
+   {
+    "id": "E04FS0031",
+    "l_mm": 2070,
+    "mass": 5.4
+   },
+   {
+    "id": "E04FS0032",
+    "l_mm": 2570,
+    "mass": 6.6
+   },
+   {
+    "id": "E04FS0033",
+    "l_mm": 3070,
+    "mass": 7.9
+   }
+  ],
+  "end_toeboard_74": {
+   "id": "E04FS0034",
+   "mass": 1.9
+  },
+  "top_level": {
+   "steel_guard_rail_support_h1000_w740": {
+    "id": "E04FS0025",
+    "mass": 6.8
+   },
+   "end_guard_rail_frame_h1000_w740": {
+    "id": "E04FS0027",
+    "mass": 12.5
+   }
+  },
+  "base_plate_threaded": [
+   {
+    "id": "E02RS0011",
+    "h_mm": 400,
+    "mass": 3.2
+   },
+   {
+    "id": "E02RS0005",
+    "h_mm": 600,
+    "mass": 4.0
+   },
+   {
+    "id": "E02RS0002",
+    "h_mm": 780,
+    "mass": 4.8
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "E04AA0095",
+    "l_mm": 1000,
+    "mass": 4.2
+   },
+   "normal_coupler": {
+    "id": "coupler",
+    "mass": 1.0,
+    "estimated": true
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true
+   }
+  },
+  "tubes": {
+   "steel_48_3x3_2_per_m": 3.76,
+   "note": "generic value"
+  }
+ },
+ "sanity_check": {
+  "description": "No catalog example found for this system yet.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "frame, deck, diagonal and jack weights on real parts",
+  "real deck width and number of decks per bay",
+  "jack travel and the minimum length that must stay inside the frame",
+  "tie length used for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.35,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_wall_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": true,
+   "note": "From the instructions: vertical braces in at least every 5th bay on every lift (p.12); ties near the frame top on both standards, grids 8 m (4 m on the outer standards), 4 m, 4 m staggered or 2 m, V-ties at both ends (pp.10-12). Area rule, wall gap and jack ratio are placeholders."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

@@ -1,0 +1,499 @@
+{
+ "_meta": {
+  "id": "apac_ringlock",
+  "name": "APAC Ringlock (steel, 73 cm)",
+  "family": "Ringlock 0.73 m, grid 1.57-3.07 m (Layher Allround type, node 0.50 m)",
+  "status": "draft",
+  "note": "Facade scaffold from the APAC Scaffold & Formwork catalogue (Suzhou): 0.73 m ledgers as transoms, 2 x 0.32 m access steel planks per bay, ledgers as guard rails, diagonals for a 2.0 m lift. The catalogue has no article numbers: codes are descriptive. Values are catalog values; 'verified' = false until weighed/measured.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf PDF p.15 (standards, base collar), p.16 (ledgers, U-ledger deck table, base jack), p.17 (diagonal braces), p.19 (steel planks), p.20 (access deck with ladder), p.9 (wall tie, Kwikstage section), p.36 (couplers)."
+  ],
+  "approvals": [
+   "ISO 9001 (factory)"
+  ],
+  "changes": [
+   "Initial draft from scratchpad/out/asia_uk.json (APAC Ringlock), values re-checked on PDF p.16, 17, 19, 20, 9.",
+   "No article numbers in the catalogue: descriptive codes STD-/LDG-/SP32-/DB-/ADL-.",
+   "Standards 'with spigot' series. Transom = 0.73 m ledger (tube) carrying 2 x 0.32 m planks (U-ledger deck table p.16: 0.73 -> 2 x 0.32).",
+   "Bays 1.57/2.07/2.57/3.07 m; extras 0.73/1.09/1.40 m.",
+   "Toe boards are mentioned ('can be attached', p.15) but not listed: toe boards estimated with toeboard_est_kg_per_m = 2.0 (end toe board 0.73 m estimated 1.5 kg).",
+   "Base jack: 3.7 kg, length and travel not given -> length 600 mm estimated, jack_ext_max_ratio 0.68 (default).",
+   "Ties: 0.6 m Wall Tie (S-hook tube, 2.24 kg) from the Kwikstage section p.9 of the same catalogue; coupler = drop-forged double coupler 0.98 kg (p.36); eyebolt estimated 0.2 kg.",
+   "Diagonal 1.09 m x 2.0 m is printed 7.1 kg (lighter than the 1.04 m one, 7.7 kg): kept as printed.",
+   "Brace l_mm = geometric axis length; the catalogue gives bay x height only.",
+   "Load class and width class not published: max_load_class 3 / 2.0 kN/m2 are defaults."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 778.3,
+  "leg_axis_mm": 730,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1570,
+   2070,
+   2570,
+   3070
+  ],
+  "extra_bay_lengths_mm": [
+   730,
+   1090,
+   1400
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 320,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 640,
+  "width_class": "W06 (EN 12811-1) derived from 2 x 320 mm planks; not stated in the catalogue",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_note": "Not published in the catalogue.",
+  "star_pin_spacing_mm": 0,
+  "connection": "Ringlock rosettes at 0.50 m; ledgers and diagonals with wedge heads; planks with hooks on the ledger tube.",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_O_320": "Access steel plank 0.32 m"
+  },
+  "labels": {
+   "standard": "Ringlock standard",
+   "ledger": "Ringlock ledger",
+   "transom": "Ringlock ledger (transom)",
+   "base_collar": "Base collar 240",
+   "deck": "Access steel plank 0.32",
+   "access": "Access deck with ladder 0.61",
+   "end_rail": "End guard rail = 2 x ledger 0.73 m",
+   "end_toeboard": "End toe board 0.73 m (estimated)",
+   "tie": "Wall tie 0.6 m (S-hook)",
+   "coupler": "Drop-forged double coupler (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Toe board (estimated, 2.0 kg/m)",
+   "guard_rail": "Guard rail (ledger)",
+   "brace": "Diagonal brace, 2.0 m lift"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "STD-0.50",
+    "l_mm": 500,
+    "mass": 3.2,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-1.00",
+    "l_mm": 1000,
+    "mass": 5.6,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-1.50",
+    "l_mm": 1500,
+    "mass": 7.9,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-2.00",
+    "l_mm": 2000,
+    "mass": 10.3,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-2.50",
+    "l_mm": 2500,
+    "mass": 12.3,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-3.00",
+    "l_mm": 3000,
+    "mass": 14.7,
+    "src": "p.15",
+    "verified": false
+   },
+   {
+    "id": "STD-4.00",
+    "l_mm": 4000,
+    "mass": 19.2,
+    "src": "p.15",
+    "verified": false
+   }
+  ],
+  "base_collar": {
+   "id": "BC-240",
+   "h_mm": 240,
+   "mass": 1.6,
+   "src": "p.15",
+   "verified": false
+  },
+  "transom": {
+   "id": "LDG-0.73",
+   "l_mm": 730,
+   "mass": 3.2,
+   "src": "p.16",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "LDG-0.73",
+    "l_mm": 730,
+    "mass": 3.2,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.09",
+    "l_mm": 1090,
+    "mass": 4.5,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.40",
+    "l_mm": 1400,
+    "mass": 5.5,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.57",
+    "l_mm": 1570,
+    "mass": 6.0,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-2.07",
+    "l_mm": 2070,
+    "mass": 7.9,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-2.57",
+    "l_mm": 2570,
+    "mass": 9.8,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-3.07",
+    "l_mm": 3070,
+    "mass": 11.5,
+    "src": "p.16",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "LDG-0.73",
+    "l_mm": 730,
+    "mass": 3.2,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.09",
+    "l_mm": 1090,
+    "mass": 4.5,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.40",
+    "l_mm": 1400,
+    "mass": 5.5,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-1.57",
+    "l_mm": 1570,
+    "mass": 6.0,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-2.07",
+    "l_mm": 2070,
+    "mass": 7.9,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-2.57",
+    "l_mm": 2570,
+    "mass": 9.8,
+    "src": "p.16",
+    "verified": false
+   },
+   {
+    "id": "LDG-3.07",
+    "l_mm": 3070,
+    "mass": 11.5,
+    "src": "p.16",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_O_320": [
+    {
+     "id": "SP32-0.73",
+     "l_mm": 730,
+     "w_mm": 320,
+     "mass": 7.1,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-1.09",
+     "l_mm": 1090,
+     "w_mm": 320,
+     "mass": 9.4,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-1.40",
+     "l_mm": 1400,
+     "w_mm": 320,
+     "mass": 10.8,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-1.57",
+     "l_mm": 1570,
+     "w_mm": 320,
+     "mass": 12.6,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-2.07",
+     "l_mm": 2070,
+     "w_mm": 320,
+     "mass": 16.1,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-2.57",
+     "l_mm": 2570,
+     "w_mm": 320,
+     "mass": 19.0,
+     "src": "p.19",
+     "verified": false
+    },
+    {
+     "id": "SP32-3.07",
+     "l_mm": 3070,
+     "w_mm": 320,
+     "mass": 22.5,
+     "src": "p.19",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "ADL-2.57",
+    "surface": "plywood",
+    "l_mm": 2570,
+    "w_mm": 610,
+    "mass": 25.9,
+    "src": "p.20",
+    "verified": false
+   },
+   {
+    "id": "ADL-3.07",
+    "surface": "plywood",
+    "l_mm": 3070,
+    "w_mm": 610,
+    "mass": 29.7,
+    "src": "p.20",
+    "verified": false
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "DB-0.73x2.0",
+    "bay_mm": 730,
+    "h_mm": 2000,
+    "l_mm": 2129,
+    "mass": 6.9,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-1.09x2.0",
+    "bay_mm": 1090,
+    "h_mm": 2000,
+    "l_mm": 2278,
+    "mass": 7.1,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-1.40x2.0",
+    "bay_mm": 1400,
+    "h_mm": 2000,
+    "l_mm": 2441,
+    "mass": 7.6,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-1.57x2.0",
+    "bay_mm": 1570,
+    "h_mm": 2000,
+    "l_mm": 2543,
+    "mass": 7.8,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-2.07x2.0",
+    "bay_mm": 2070,
+    "h_mm": 2000,
+    "l_mm": 2878,
+    "mass": 8.9,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-2.57x2.0",
+    "bay_mm": 2570,
+    "h_mm": 2000,
+    "l_mm": 3257,
+    "mass": 9.6,
+    "src": "p.17",
+    "verified": false
+   },
+   {
+    "id": "DB-3.07x2.0",
+    "bay_mm": 3070,
+    "h_mm": 2000,
+    "l_mm": 3664,
+    "mass": 10.6,
+    "src": "p.17",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [],
+  "double_end_guard_rail_74": {
+   "id": "LDG-0.73 x2",
+   "mass": 6.4,
+   "verified": false,
+   "note": "2 x 0.73 m ledger (3.2 kg each, p.16)"
+  },
+  "end_toeboard_74": {
+   "id": "toeboard-0.73-est",
+   "mass": 1.5,
+   "estimated": true,
+   "verified": false,
+   "note": "not in the catalogue; 0.73 m x 2.0 kg/m"
+  },
+  "base_plate_threaded": [
+   {
+    "id": "BJ-0.6",
+    "h_mm": 600,
+    "note": "length not given in the catalogue: 600 mm assumed (estimated)",
+    "mass": 3.7,
+    "src": "p.16",
+    "verified": false,
+    "estimated": true
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "WT-0.6",
+    "l_mm": 600,
+    "note": "0.6 m Wall Tie with S-hook, listed in the Kwikstage section (p.9)",
+    "mass": 2.24,
+    "src": "p.9",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "DF-DC",
+    "mass": 0.98,
+    "src": "p.36",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt-est",
+    "mass": 0.2,
+    "estimated": true,
+    "verified": false,
+    "note": "not in this catalog; 0.2 kg assumed (cf. PERI Ring Bolt UFE 12/120 = 0.19 kg)"
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "The catalog gives no example of total scaffold weight per m2 of facade.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "base jack length and travel",
+  "toe boards in use (type and weight)",
+  "weighed standard, ledger, plank, diagonal",
+  "tie type used on site"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "wind_factor": false,
+   "joint_deg": false,
+   "min_leg_clearance_m": false,
+   "top_post_m": false,
+   "jack_ext_max": false,
+   "note": "The catalog publishes no tie pattern, wall gap, bracing frequency, access spacing or free height: these are the ScaffVisor default values, not the manufacturer's. Jack travel not in the catalog: jack_ext_max_ratio 0.68 (default) applies. "
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation."
+ }
+}

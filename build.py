@@ -243,13 +243,16 @@ def rebuild(root, live=False):
             jm = mesh(("jack", round(e, 2)), lambda e=e: G.jack(e, 0))
             put("Base jack", jm, _basis(info["pt"], (0.0, 1.0), info["z_jack"]))
         fm = mesh("frame2", lambda: G.frame(preset, hh))
+        modular = preset.kind == "modular"     # same silhouette: two standards + transom per lift
+        n_frame, n_comp, n_top = (("Standards + transom", "Standards (base)", "Top standards") if modular
+                                  else ("Frame", "Comp frame", "Top post"))
         cms = {}
         for s_ in st:
             if s_.comp > 0:
                 cm = mesh(("frameC", round(s_.comp, 2)), lambda c=s_.comp: G.frame(preset, c))
-                put("Comp frame", cm, _basis(s_.inner, s_.n, s_.z_bot - s_.comp))
+                put(n_comp, cm, _basis(s_.inner, s_.n, s_.z_bot - s_.comp))
             for d in range(s_.lifts):
-                put("Frame", fm, _basis(s_.inner, s_.n, ztop - hh * (d + 1)))
+                put(n_frame, fm, _basis(s_.inner, s_.n, ztop - hh * (d + 1)))
         inner_rails = plan.gap > preset.rules["inner_rail_gap_m"]
         for b in plan.bays:
             a, c = st[b.i], st[b.j]
@@ -271,7 +274,7 @@ def rebuild(root, live=False):
                 put("End guard rail", em, _basis(st[sid].inner, st[sid].n, ztop - hh * d))
             sm = mesh("support", lambda: G.support(preset))
             for s_ in st:
-                put("Top post", sm, _basis(s_.inner, s_.n, ztop))
+                put(n_top, sm, _basis(s_.inner, s_.n, ztop))
         if s.show_braces:
             bm = mesh("brace", G.brace_unit)
             for (bid, d) in sorted(plan.braces):

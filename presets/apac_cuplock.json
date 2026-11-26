@@ -1,0 +1,318 @@
+{
+ "_meta": {
+  "id": "apac_cuplock",
+  "name": "APAC Cuplock (steel, 125 cm)",
+  "family": "Cuplock 1.25-1.30 m, bays 1.8 / 2.5 m (Cuplok type, node 0.50 m)",
+  "status": "draft",
+  "note": "Cuplock facade scaffold from the APAC catalogue (no article codes in the source: codes are descriptive). Tubular 1.25 m horizontal as transom, steel planks with hooks, cups at 0.5 m, 2.0 m lift. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg",
+   "verified": false
+  },
+  "sources": [
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.21-26 (Cuplock: standards, horizontals, jack p.24; swivel braces, planks, omega transoms p.25; p.26 intermediate transoms, base plate)",
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.36 (Tube & Fitting: drop-forged double coupler, used for the ties)",
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.11 (Kwikstage section: LVL board 38 x 225, 4.7 kg/m, used only as the toeboard rate)"
+  ],
+  "approvals": [
+   "ISO 9001 (factory) only; no system approval named in the catalogue"
+  ],
+  "changes": [
+   "Tube printed '48.8x3.2mm' for standards/horizontals (p.24, text layer and page image) and for the hop-up (p.25); the braces on the same page are 48.3x2.5 and no 48.8 mm scaffold tube exists in EN 39 / BS 1139, so tube_od_mm = 48.3 (misprint assumed).",
+   "No article codes in the catalogue: descriptive codes CL-STD/CL-H/CL-SP/CL-BR, original text kept in 'note'.",
+   "Transom = 1.25 m tubular horizontal (4.93 kg) because the decks are steel planks with hooks; the 1.25 m Omega transom (6.81 kg, p.25) is the alternative for boards/battens.",
+   "Plank width is not published (p.25). 230 mm assumed (estimated): the 6.7 kg/m of these planks matches APAC's 230 mm Kwikstage plank (6.8 kg/m, p.11). 5 planks on a 1.25 m transom (1150 mm in 1202 mm clear) - estimated.",
+   "Bays 1.8 and 2.5 m (ledger, plank and 2.0 m-high swivel brace all published); 1.5 m as short bay (no brace for 1.5 x 2.0: estimated by the engine at 4.07 kg/m = 1.8x2.0 brace 11.0 kg / 2.7 m). The 3.00 m plank is labelled '(10')' while the 10' ledger is 3.05 m, and there is no 2.0 m ledger for the 2.00 m '(7')' plank, so 3.0/3.05 and 2.0 m bays are left out.",
+   "No toeboard in the Cuplock section: the engine estimates toeboards and the end toeboard at 4.7 kg/m (APAC LVL board 38x225, p.11, on edge) - estimated.",
+   "Base jack 3.7 kg (p.24) has no published length or travel: length 0.6 m assumed (estimated), travel = 0.68 x length (default ratio). The mass is from the source, so the jack line is not flagged as estimated.",
+   "No access deck with hatch (only a 2.5 x 2.0 m staircase, p.26): no access decks are placed.",
+   "No wall tie in the Cuplock section: tie tube 0.8 m estimated (48.3 tube at 3.56 kg/m, EN 39 type 3 value), couplers = APAC drop-forged double coupler 0.98 kg (p.36), eyebolt 0.2 kg estimated (Plettac value).",
+   "End guard rail = 2 x 1.25 m horizontal (2 x 4.93 kg)."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 1298,
+  "leg_axis_mm": 1250,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1800,
+   2500
+  ],
+  "extra_bay_lengths_mm": [
+   1500
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 230,
+  "decks_per_bay": 5,
+  "usable_deck_width_mm": 1150,
+  "deck_width_note": "estimated: plank width not published (p.25)",
+  "width_class": "W09 (EN 12811-1), deduced from 5 x 0.23 m (estimated plank width)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "not published for the facade; catalogue only claims 57 kN per standard (p.23). Class 3 is a placeholder.",
+  "star_pin_spacing_mm": 0,
+  "connection": "Cuplock node: forged blade ends locked by a sliding top cup, cups every 0.5 m, up to 4 members per node (p.22-24)",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "none",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_plank_hooks": "Steel plank with hooks (width ~0.23 m, estimated)"
+  },
+  "labels": {
+   "standard": "Cuplock standard with spigot",
+   "ledger": "Cuplock horizontal",
+   "transom": "Cuplock horizontal (transom)",
+   "base_collar": "Base collar",
+   "deck": "Steel plank with hooks",
+   "access": "Access deck (none in catalogue)",
+   "end_rail": "End guard rail = 2 x horizontal 1.25 m",
+   "end_toeboard": "End toeboard 1.25 m (estimated)",
+   "tie": "Tie tube 0.8 m (estimated)",
+   "coupler": "Drop-forge double coupler (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Toeboard (estimated, board 38x225 on edge)",
+   "guard_rail": "Cuplock horizontal (guard rail)",
+   "brace": "Swivel brace"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "CL-STD-1000",
+    "l_mm": 1000,
+    "mass": 6.1,
+    "note": "1.0 meter (3'-3\") Standard with Spigot (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-STD-1500",
+    "l_mm": 1500,
+    "mass": 8.7,
+    "note": "1.5 meter (4'-11\") Standard with Spigot (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-STD-2000",
+    "l_mm": 2000,
+    "mass": 11.4,
+    "note": "2.0 meter (6'-6\") Standard with Spigot (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-STD-2500",
+    "l_mm": 2500,
+    "mass": 14.1,
+    "note": "2.5 meter (8'-2\") Standard with Spigot (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-STD-3000",
+    "l_mm": 3000,
+    "mass": 16.8,
+    "note": "3.0 meter (9'-10\") Standard with Spigot (p.24)",
+    "verified": false
+   }
+  ],
+  "transom": {
+   "id": "CL-H-1250",
+   "l_mm": 1250,
+   "mass": 4.93,
+   "note": "1.25 meter (4'-1\") Horizontal (p.24)",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "CL-H-1500",
+    "l_mm": 1500,
+    "mass": 5.88,
+    "note": "1.50 meter (4'-11\") Horizontal (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-H-1800",
+    "l_mm": 1800,
+    "mass": 7.02,
+    "note": "1.80 meter (5'-11\") Horizontal (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-H-2500",
+    "l_mm": 2500,
+    "mass": 9.67,
+    "note": "2.50 meter (8'-2\") Horizontal (p.24)",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "CL-H-1500",
+    "l_mm": 1500,
+    "mass": 5.88,
+    "note": "1.50 meter (4'-11\") Horizontal (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-H-1800",
+    "l_mm": 1800,
+    "mass": 7.02,
+    "note": "1.80 meter (5'-11\") Horizontal (p.24)",
+    "verified": false
+   },
+   {
+    "id": "CL-H-2500",
+    "l_mm": 2500,
+    "mass": 9.67,
+    "note": "2.50 meter (8'-2\") Horizontal (p.24)",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_plank_hooks": [
+    {
+     "id": "CL-SP-1500",
+     "l_mm": 1500,
+     "mass": 10.66,
+     "note": "1.50 meter (4'11\") Steel Plank with hooks (p.25)",
+     "verified": false
+    },
+    {
+     "id": "CL-SP-1800",
+     "l_mm": 1800,
+     "mass": 12.52,
+     "note": "1.80 meter (5'11\") Steel Plank with hooks (p.25)",
+     "verified": false
+    },
+    {
+     "id": "CL-SP-2500",
+     "l_mm": 2500,
+     "mass": 16.72,
+     "note": "2.50 meter (8'-2\") Steel Plank with hooks (p.25)",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [],
+  "vertical_brace": [
+   {
+    "id": "CL-BR-2518",
+    "bay_mm": 1800,
+    "h_mm": 2000,
+    "l_mm": 2700,
+    "mass": 11.0,
+    "note": "1.8x2.0m Brace 2.7m (p.25)",
+    "verified": false
+   },
+   {
+    "id": "CL-BR-2525",
+    "bay_mm": 2500,
+    "h_mm": 2000,
+    "l_mm": 3200,
+    "mass": 12.6,
+    "note": "2.5x2.0m Brace 3.2m (p.25)",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [],
+  "double_end_guard_rail_74": {
+   "id": "CL-H-1250 x2",
+   "mass": 9.86,
+   "note": "2 x 1.25 m horizontal (p.24)",
+   "verified": false
+  },
+  "end_toeboard_74": {
+   "id": "toeboard-1250",
+   "mass": 5.88,
+   "estimated": true,
+   "note": "1.25 m x 4.7 kg/m (APAC LVL board, p.11)",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "CL-JACK",
+    "h_mm": 600,
+    "mass": 3.7,
+    "note": "Adjustable base jack 3.7 kg (p.24); length 0.6 m estimated, travel from rules.jack_ext_max_ratio",
+    "h_estimated": true,
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "tie-tube-0.8",
+    "l_mm": 800,
+    "mass": 2.85,
+    "estimated": true,
+    "note": "not in the catalogue; 0.8 m of 48.3x3.2 tube at 3.56 kg/m (EN 39 type 3)",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "Drop-forge Double Coupler",
+    "mass": 0.98,
+    "note": "p.36",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true,
+    "note": "not in the catalogue; Plettac value",
+    "verified": false
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalogue example (kg per m2 or bill of materials) for this system.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "masses of standards, ledgers, transoms, decks and braces on real parts",
+  "real deck (plank) width and how many planks fit on the transom",
+  "jack length, travel and the minimum length that must stay inside the standard",
+  "tie length and anchor type for the real wall gap",
+  "toeboard type and mass (none in the Cuplock section)"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 4.07,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 4.7,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "note": "Nothing in the APAC catalogue on ties, bracing frequency, wall gap or jack travel: all values are the ScaffVisor placeholders. brace_est_mass_per_m = 4.07 from the APAC 1.8x2.0 m brace (11.0 kg / 2.7 m); toeboard_est_kg_per_m = 4.7 from the APAC LVL board 38x225 (p.11). For comparison only (other manufacturer): the SGB Cuplok user guide (339768111, p.2-3, 6-15) asks for a tie at every standard, vertically every 8 m (2 m lifts, pattern A) down to 4.5 m, and one braced bay in every 8 bays (20 m). Not applied here because it is not this manufacturer's document."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

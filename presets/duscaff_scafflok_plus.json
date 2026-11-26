@@ -1,0 +1,326 @@
+{
+ "_meta": {
+  "id": "duscaff_scafflok_plus",
+  "name": "Duscaff Scafflok Plus (steel, 130 cm)",
+  "family": "Cuplock 1.25-1.30 m, bays 1.8 / 2.5 m (Cuplok type, node 0.50 m)",
+  "status": "draft",
+  "note": "Cuplock-type system from the Duscaff brochure: cups every 0.5 m, 2.5 m basic bay and 1.8 m make-up bay, 1.3 m horizontal as transom with a five-board platform of BSI timber boards 38 x 225. The brochure has no diagonals and no weights for jacks, steel planks or couplers. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg",
+   "verified": false
+  },
+  "sources": [
+   "736172830-DUSCAFF-SCAFFLOK-PLUS-BROCHURE.pdf p.7 (verticals, horizontals; 'normal horizontals also act as guardrails'), p.8 (span supports: 1.3 m = five-board platform), p.10 (BASE-EXT jack, adjustment up to 0.5 m)",
+   "736172830-DUSCAFF-SCAFFLOK-PLUS-BROCHURE.pdf p.11 (BSI timber scaffold board 38 x 225, 3.84 kg/m, 1.2 m span), p.13 (steel planks 38 x 225, no weights), p.15 (EN 39 tube 48.3 x 3.2, 3.56 kg/m), p.16 (couplers, no weights)"
+  ],
+  "approvals": [
+   "Brochure: products allow compliance with OSHA, BS EN 12810-1/-2, BS EN 12811-1 (no approval number for SCAFFLOK PLUS)"
+  ],
+  "changes": [
+   "NO DIAGONALS in the brochure: vertical_brace is empty and the engine estimates every brace as hypot(bay, 2.0 m) x 3.56 kg/m (Duscaff EN 39 tube 48.3 x 3.2, p.15; swivel ends not included) - estimated.",
+   "Decks = BSI timber boards 38 x 225 at 3.84 kg/m (p.11) x bay length, 5 per bay on the 1.3 m horizontal (p.8: 'standard five-board platform'). Board length = bay length is an assumption (boards may overhang or be lapped). The galvanized steel planks (p.13) have no weights and are not offered as a grade.",
+   "BSI boards span only 1.2 m (p.11): a 1.8 m bay needs 1 and a 2.5 m bay 2 intermediate span supports SS-SP-SS-130 (6.2 kg, p.8) per deck level. The engine has no slot for them, so they are NOT in the bill of materials (about 6-12 kg per bay and deck level).",
+   "Transom = 1.3 m horizontal SS-SP-H-130 (4.8 kg, p.7) at every standard and level; width 1300 + 48.3 = 1348 mm.",
+   "Guard rails = horizontals (p.7). Toeboards = the same timber board on edge, 3.84 kg/m x bay length; end toeboard 1.3 m board; end guard rail = 2 x SS-SP-H-130.",
+   "BASE-EXT jack: adjustment up to 0.5 m (p.10) used as ext_max_mm; length (0.7 m) and mass (4.5 kg) are estimated (no data in the brochure). The mass is from the source, so the jack line is not flagged as estimated.",
+   "Couplers have no weights (p.16): drop-forged double coupler DF-DBL-01 at 1.0 kg - estimated. Tie = 1 m tube T3-39-10-G (3.56 kg, p.15). Eyebolt 0.2 kg estimated (Plettac value).",
+   "Short bay 1.3 m (horizontal SS-SP-H-130, board by kg/m) for fitting and square corners.",
+   "No access deck with hatch: no access decks are placed."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 1348,
+  "leg_axis_mm": 1300,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1800,
+   2500
+  ],
+  "extra_bay_lengths_mm": [
+   1300
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 225,
+  "decks_per_bay": 5,
+  "usable_deck_width_mm": 1125,
+  "width_class": "W09 (EN 12811-1), deduced from 5 x 0.225 m",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "2.5 m bay 'suitable for all common access loading conditions' (p.7); no class given; class 3 is a placeholder",
+  "star_pin_spacing_mm": 0,
+  "connection": "Cuplock-type: fixed lower cups every 0.5 m, captive rotating top cups, up to 4 members per node; 150 mm spigot (p.6-7)",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "none",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "bsi_timber_board_225": "BSI timber scaffold board 38 x 225"
+  },
+  "labels": {
+   "standard": "SCAFFLOK PLUS vertical",
+   "ledger": "SCAFFLOK PLUS horizontal",
+   "transom": "SCAFFLOK PLUS horizontal 1.3 m (transom)",
+   "base_collar": "Base collar",
+   "deck": "BSI timber board 38x225",
+   "access": "Access deck (none in brochure)",
+   "end_rail": "End guard rail = 2 x horizontal 1.3 m",
+   "end_toeboard": "End toeboard: timber board 1.3 m",
+   "tie": "Tube 1.0 m (tie)",
+   "coupler": "Double coupler DF-DBL-01 (estimated)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Toeboard: timber board 38x225 on edge",
+   "guard_rail": "SCAFFLOK PLUS horizontal (guard rail)",
+   "brace": "Diagonal brace (not in brochure, estimated)"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "SS-SP-V-05",
+    "l_mm": 500,
+    "mass": 2.42,
+    "note": "Vertical 0.50 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-V-10",
+    "l_mm": 1000,
+    "mass": 4.9,
+    "note": "Vertical 1.00 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-V-15",
+    "l_mm": 1500,
+    "mass": 7.25,
+    "note": "Vertical 1.50 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-V-20",
+    "l_mm": 2000,
+    "mass": 9.7,
+    "note": "Vertical 2.00 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-V-25",
+    "l_mm": 2500,
+    "mass": 12.075,
+    "note": "Vertical 2.50 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-V-30",
+    "l_mm": 3000,
+    "mass": 14.5,
+    "note": "SCAFFLOK PLUS Vertical 3.00 m (p.7)",
+    "verified": false
+   }
+  ],
+  "transom": {
+   "id": "SS-SP-H-130",
+   "l_mm": 1300,
+   "mass": 4.8,
+   "note": "Horizontal 1.30 m (p.7)",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "SS-SP-H-130",
+    "l_mm": 1300,
+    "mass": 4.8,
+    "note": "Horizontal 1.30 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-H-180",
+    "l_mm": 1800,
+    "mass": 6.5,
+    "note": "Horizontal 1.80 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-H-250",
+    "l_mm": 2500,
+    "mass": 8.92,
+    "note": "SCAFFLOK PLUS Horizontal 2.50 m (p.7)",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "SS-SP-H-130",
+    "l_mm": 1300,
+    "mass": 4.8,
+    "note": "Horizontal 1.30 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-H-180",
+    "l_mm": 1800,
+    "mass": 6.5,
+    "note": "Horizontal 1.80 m (p.7)",
+    "verified": false
+   },
+   {
+    "id": "SS-SP-H-250",
+    "l_mm": 2500,
+    "mass": 8.92,
+    "note": "SCAFFLOK PLUS Horizontal 2.50 m (p.7)",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "bsi_timber_board_225": [
+    {
+     "id": "BSI-board-1.3",
+     "l_mm": 1300,
+     "mass": 4.99,
+     "note": "BSI timber scaffold board 38x225, 3.84 kg/m x 1.3 m (p.11); length = bay length assumed",
+     "verified": false
+    },
+    {
+     "id": "BSI-board-1.8",
+     "l_mm": 1800,
+     "mass": 6.91,
+     "note": "BSI timber scaffold board 38x225, 3.84 kg/m x 1.8 m (p.11); length = bay length assumed",
+     "verified": false
+    },
+    {
+     "id": "BSI-board-2.5",
+     "l_mm": 2500,
+     "mass": 9.6,
+     "note": "BSI timber scaffold board 38x225, 3.84 kg/m x 2.5 m (p.11); length = bay length assumed",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [],
+  "vertical_brace": [],
+  "toeboard_timber_h150": [
+   {
+    "id": "BSI-board-1.3",
+    "l_mm": 1300,
+    "mass": 4.99,
+    "note": "timber board 38x225 on edge, 3.84 kg/m (p.11)",
+    "verified": false
+   },
+   {
+    "id": "BSI-board-1.8",
+    "l_mm": 1800,
+    "mass": 6.91,
+    "note": "timber board 38x225 on edge, 3.84 kg/m (p.11)",
+    "verified": false
+   },
+   {
+    "id": "BSI-board-2.5",
+    "l_mm": 2500,
+    "mass": 9.6,
+    "note": "timber board 38x225 on edge, 3.84 kg/m (p.11)",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "SS-SP-H-130 x2",
+   "mass": 9.6,
+   "note": "2 x horizontal 1.30 m (p.7)",
+   "verified": false
+  },
+  "end_toeboard_74": {
+   "id": "BSI-board-1.3",
+   "mass": 4.99,
+   "note": "timber board 1.3 m, 3.84 kg/m (p.11)",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "BASE-EXT",
+    "h_mm": 700,
+    "mass": 4.5,
+    "ext_max_mm": 500,
+    "estimated": true,
+    "note": "BASE-EXT jack, adjustment up to 0.5 m (p.10); length 0.7 m and mass 4.5 kg estimated (no data)",
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "T3-39-10-G",
+    "l_mm": 1000,
+    "mass": 3.56,
+    "note": "Scaffold tube EN39 48.3x3.2 HDG 1 m (p.15)",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "DF-DBL-01",
+    "mass": 1.0,
+    "estimated": true,
+    "note": "Double coupler, drop forged, EN74-B (p.16); no weight published, 1.0 kg estimated",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true,
+    "note": "not in the brochure; Plettac value",
+    "verified": false
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalogue example (kg per m2 or bill of materials) for this system.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "masses of standards, ledgers, transoms, decks and braces on real parts",
+  "real deck (plank) width and how many planks fit on the transom",
+  "jack length, travel and the minimum length that must stay inside the standard",
+  "tie length and anchor type for the real wall gap",
+  "diagonal braces (type, length, mass): none in the brochure",
+  "intermediate span supports per bay (not counted by ScaffVisor)"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 3.56,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 3.84,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "note": "Duscaff gives no ties, bracing frequency or wall gap: placeholders. Jack travel 0.5 m from the brochure (p.10). brace_est_mass_per_m = 3.56 (Duscaff EN 39 tube 48.3 x 3.2, p.15), because the brochure has no braces. For comparison only (other manufacturer): the SGB Cuplok user guide (339768111, p.2-3, 6-15) asks for a tie at every standard, vertically every 8 m (2 m lifts, pattern A) down to 4.5 m, and one braced bay in every 8 bays (20 m). Not applied here because it is not this manufacturer's document."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "scaffvisor"
-version = "0.5.0"
+version = "0.6.0"
 name = "ScaffVisor"
 tagline = "Site scaffolding on wall faces, with ground following"
 maintainer = "Radu"

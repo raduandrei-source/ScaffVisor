@@ -1,0 +1,345 @@
+{
+ "_meta": {
+  "id": "unispan_kwikstage",
+  "name": "Uni-span Kwikstage type (steel, 120 cm)",
+  "family": "Kwikstage 1.2 m, bays 1.8 / 2.4 m (node 0.495 m)",
+  "status": "draft",
+  "note": "Kwikstage-type modular scaffold from the Uni-span Australia catalogue (v07/2015, distributed by ULMA). The name 'Kwikstage' does not appear in the catalogue. All scaffold item weights are rounded UP to 0.5 kg and fittings to 0.2 kg (catalogue p.2), so totals run slightly high. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg",
+   "verified": false
+  },
+  "sources": [
+   "357167556-Uni-Span-Scaffolding-Catalogue-v0707151.pdf p.2 (rounding note), p.7 (LVL scaffold planks), p.9-11 (couplers, wall tie bracket), p.12 (jacks), p.13 (toe board clips)",
+   "357167556-Uni-Span-Scaffolding-Catalogue-v0707151.pdf p.15-18 (standards), p.20 (transoms), p.23 (ledgers), p.25 (steel boards), p.27 (diagonal braces), p.30 (tube 3.2 mm)",
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.8-9 (Kwikstage geometry only: V-pressings at 495 mm, brace sizes 1828x1980 / 2438x1980 used to match Uni-span brace lengths)"
+  ],
+  "approvals": [
+   "none named in the catalogue ('NOT BINDING DOCUMENT', p.2)"
+  ],
+  "changes": [
+   "The catalogue gives no node spacing, lift height, bay centres, board width or jack length. Kwikstage geometry assumed: nodes every 495 mm, lift 1980 mm (4 x 495), as in the APAC Kwikstage catalogue (p.8-9) - estimated. Bays and width use the nominal lengths printed by Uni-span (1.2 / 1.8 / 2.4 m); real Kwikstage centres are about 1.27 / 1.83 / 2.44 m.",
+   "Diagonal braces are sold only by length (p.27). Matched to bays by length against the APAC Kwikstage braces: 7327 2.7 m = 1.8 m bay x 1.98 m (APAC 2795 mm), 7332 3.2 m = 2.4 m bay x 1.98 m (APAC 3241 mm) - geometry deduced, masses from the catalogue.",
+   "Steel board width not published (p.25): 5 boards on the 1.2 m transom assumed (standard Kwikstage 5-board platform, about 225-230 mm each) - estimated.",
+   "Toeboard = LVL scaffold plank of bay length on edge (p.7: 3312 / 3318 / 3324, read from the page, not in the extract) + 1 toe board clip 7400 (0.8 kg, p.13) per bay; end toeboard = 1.2 m LVL plank + end toe board clip 7401 (1.2 kg).",
+   "Guard rails = ledgers (Kwikstage handrails). End guard rail = 2 x 1.2 m ledger 7112.",
+   "Base jack = 38 mm hollow base jack 2622H (4.2 kg, p.12); length and travel not published: length 0.6 m assumed (estimated), travel = 0.68 x length. The mass is from the source, so the jack line is not flagged as estimated.",
+   "No access deck with hatch in the catalogue (only a 1.5 m aluminium stair rise, p.43): no access decks are placed.",
+   "Tie = 0.9 m tube 1109 (48.3 x 3.2, 3.5 kg, p.30) + right angle couplers 1500 (1.2 kg, p.9); the 'eyebolt' slot holds the wall tie bracket double 2521D (4.2 kg, p.11), which already carries clamps, so couplers may be over-counted by one per tie.",
+   "Short bay 1.2 m: ledger 7112, board 7412 and LVL 3312 exist; braces only in bays >= 1.5 m."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 495,
+  "width_mm": 1248,
+  "leg_axis_mm": 1200,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 1980,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1800,
+   2400
+  ],
+  "extra_bay_lengths_mm": [
+   1200
+  ],
+  "compensation_frames_mm": [
+   495,
+   990,
+   1485
+  ],
+  "deck_module_width_mm": 230,
+  "decks_per_bay": 5,
+  "usable_deck_width_mm": 1150,
+  "deck_width_note": "estimated: board width not published (p.25)",
+  "geometry_note": "node spacing 495 mm and lift 1980 mm assumed from the Kwikstage type (APAC p.8-9); Uni-span gives no node spacing",
+  "width_class": "W09 (EN 12811-1), deduced from 5 boards (estimated width)",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_classes_note": "no load classes published; class 3 is a placeholder",
+  "star_pin_spacing_mm": 0,
+  "connection": "Kwikstage-type V-pressings with wedge ends (deduced from the component names; not described in the catalogue)",
+  "diagonals_outside": true,
+  "bay_height_mm": 1980,
+  "access_surface": "none",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_board_hdg": "Steel board HDG (width not published)"
+  },
+  "labels": {
+   "standard": "Standard HDG",
+   "ledger": "Ledger HDG",
+   "transom": "Transom HDG 1.2 m",
+   "base_collar": "Base collar",
+   "deck": "Steel board HDG",
+   "access": "Access deck (none in catalogue)",
+   "end_rail": "End guard rail = 2 x ledger 1.2 m",
+   "end_toeboard": "End toeboard: LVL plank 1.2 m + end toe board clip",
+   "tie": "Tube 0.9 m (tie)",
+   "coupler": "Right angle coupler (tie)",
+   "eyebolt": "Wall tie bracket double",
+   "toeboard": "Toeboard: LVL plank + toe board clip",
+   "guard_rail": "Ledger HDG (guard rail)",
+   "brace": "Diagonal brace HDG"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "7005S",
+    "l_mm": 500,
+    "mass": 2.5,
+    "note": "0.5M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   },
+   {
+    "id": "7010",
+    "l_mm": 1000,
+    "mass": 6.0,
+    "note": "1.0M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   },
+   {
+    "id": "7015",
+    "l_mm": 1500,
+    "mass": 8.5,
+    "note": "1.5M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   },
+   {
+    "id": "7020",
+    "l_mm": 2000,
+    "mass": 11.0,
+    "note": "2.0M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   },
+   {
+    "id": "7025",
+    "l_mm": 2500,
+    "mass": 13.5,
+    "note": "2.5M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   },
+   {
+    "id": "7030",
+    "l_mm": 3000,
+    "mass": 17.5,
+    "note": "3.0M STANDARD - HDG (p.15-18; mass rounded up to 0.5 kg)",
+    "verified": false
+   }
+  ],
+  "transom": {
+   "id": "7212",
+   "l_mm": 1200,
+   "mass": 10.0,
+   "note": "1.2M TRANSOM - HDG (p.20)",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "7112",
+    "l_mm": 1200,
+    "mass": 5.0,
+    "note": "1.2M LEDGER - HDG (p.23)",
+    "verified": false
+   },
+   {
+    "id": "7118",
+    "l_mm": 1800,
+    "mass": 6.5,
+    "note": "1.8M LEDGER - HDG (p.23)",
+    "verified": false
+   },
+   {
+    "id": "7124",
+    "l_mm": 2400,
+    "mass": 9.0,
+    "note": "2.4M LEDGER - HDG (p.23)",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "7112",
+    "l_mm": 1200,
+    "mass": 5.0,
+    "note": "1.2M LEDGER - HDG (p.23)",
+    "verified": false
+   },
+   {
+    "id": "7118",
+    "l_mm": 1800,
+    "mass": 6.5,
+    "note": "1.8M LEDGER - HDG (p.23)",
+    "verified": false
+   },
+   {
+    "id": "7124",
+    "l_mm": 2400,
+    "mass": 9.0,
+    "note": "2.4M LEDGER - HDG (p.23)",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_board_hdg": [
+    {
+     "id": "7412",
+     "l_mm": 1200,
+     "mass": 8.0,
+     "note": "1.2M STEEL BOARD - HDG (p.25)",
+     "verified": false
+    },
+    {
+     "id": "7418",
+     "l_mm": 1800,
+     "mass": 9.5,
+     "note": "1.8M STEEL BOARD - HDG (p.25)",
+     "verified": false
+    },
+    {
+     "id": "7424",
+     "l_mm": 2400,
+     "mass": 14.0,
+     "note": "2.4M STEEL BOARD - HDG (p.25)",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [],
+  "vertical_brace": [
+   {
+    "id": "7327",
+    "bay_mm": 1800,
+    "h_mm": 1980,
+    "l_mm": 2700,
+    "mass": 11.5,
+    "note": "2.7M DIAGONAL BRACE - HDG (p.27); bay x lift deduced by length (APAC 1828x1980 = 2795 mm)",
+    "verified": false
+   },
+   {
+    "id": "7332",
+    "bay_mm": 2400,
+    "h_mm": 1980,
+    "l_mm": 3200,
+    "mass": 13.0,
+    "note": "3.2M DIAGONAL BRACE - HDG (p.27); bay x lift deduced by length (APAC 2438x1980 = 3241 mm)",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "3312 + 7400",
+    "l_mm": 1200,
+    "mass": 8.8,
+    "note": "1.2M LVL SCAF PLANK 3312, 8.00 kg (p.7) + toe board clip 7400 0.8 kg (p.13)",
+    "verified": false
+   },
+   {
+    "id": "3318 + 7400",
+    "l_mm": 1800,
+    "mass": 13.8,
+    "note": "1.8M LVL SCAF PLANK 3318, 13.00 kg (p.7) + toe board clip 7400 0.8 kg (p.13)",
+    "verified": false
+   },
+   {
+    "id": "3324 + 7400",
+    "l_mm": 2400,
+    "mass": 16.8,
+    "note": "2.4M LVL SCAF PLANK 3324, 16.00 kg (p.7) + toe board clip 7400 0.8 kg (p.13)",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "7112 x2",
+   "mass": 10.0,
+   "note": "2 x 1.2M LEDGER (p.23)",
+   "verified": false
+  },
+  "end_toeboard_74": {
+   "id": "3312 + 7401",
+   "mass": 9.2,
+   "note": "1.2M LVL plank 8.0 kg (p.7) + END TOE BOARD CLIP 1.2 kg (p.13)",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "2622H",
+    "h_mm": 600,
+    "mass": 4.2,
+    "note": "38MM BASE JACK - HOLLOW (p.12); length 0.6 m estimated, travel from rules.jack_ext_max_ratio",
+    "h_estimated": true,
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "1109",
+    "l_mm": 900,
+    "mass": 3.5,
+    "note": "0.9M TUBE - HDG - 3.2MM (p.30)",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "1500",
+    "mass": 1.2,
+    "note": "48.3 X 48.3 RIGHT ANGLE COUPLER (p.9)",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "2521D",
+    "mass": 4.2,
+    "note": "WALL TIE BRACKET DOUBLE (p.11), used in place of an eyebolt",
+    "verified": false
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalogue example (kg per m2 or bill of materials) for this system.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "masses of standards, ledgers, transoms, decks and braces on real parts",
+  "real deck (plank) width and how many planks fit on the transom",
+  "jack length, travel and the minimum length that must stay inside the standard",
+  "tie length and anchor type for the real wall gap",
+  "node spacing and lift height (not in the catalogue)",
+  "real ledger/transom centre distances"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 4.06,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "note": "Uni-span publishes no ties, bracing, wall gap or jack travel: all placeholders. brace_est_mass_per_m = 4.06 from Uni-span brace 7332 (13.0 kg / 3.2 m), used only if a bay without a catalogued brace is braced."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

@@ -1,0 +1,367 @@
+{
+ "_meta": {
+  "id": "apac_kwikstage",
+  "name": "APAC Kwikstage (steel, 120 cm)",
+  "family": "Kwikstage 1.2 m, bays 1.8 / 2.4 m (node 0.495 m)",
+  "status": "draft",
+  "note": "Kwikstage facade scaffold from the APAC catalogue (no article codes: codes are descriptive). V-pressings every 495 mm, 1.98 m lift (4 x 0.495), 1.2 m transom with five 230 mm steel planks. 'verified' = false everywhere.",
+  "units": {
+   "length": "mm",
+   "mass": "kg",
+   "verified": false
+  },
+  "sources": [
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.5-11 (Kwikstage: standards, transoms, banana ledgers p.8; diagonal braces, toe board bracket, wall ties p.9; end toe board bracket, base jack p.10; steel planks and LVL boards p.11)",
+   "168261806-APAC-Scaffold-Formwork-Catalogue.pdf p.36 (Tube & Fitting: drop-forged double coupler, used for the ties)"
+  ],
+  "approvals": [
+   "ISO 9001 (factory) only; no system approval named in the catalogue"
+  ],
+  "changes": [
+   "Ledger tube printed '48.8x3.2mm' (p.8, text layer and page image); assumed to be 48.3 (no 48.8 mm scaffold tube in EN 39 / BS 1139).",
+   "Lift 1980 mm and bays 1828 / 2438 mm taken from the diagonal table (p.9: 1828x1980, 2438x1980); the ledgers are sold as '1.8m' / '2.4m'. The 1.2 m ledger/transom centre 1268 mm comes from the 1268x1485 brace.",
+   "Width = 1.2 m transom (12.08 kg, p.8): 1268 + 48.3 = 1316 mm; 5 x 230 mm planks = 1150 mm (Kwikstage '5-board' platform).",
+   "Two deck grades: closed-end steel plank 230 mm (default) and LVL board 38 x 225 (both p.11).",
+   "Short bay 1.2 m (1268): ledger, plank and LVL board exist; its only brace is 1268x1485, so bracing in a 1.2 m bay is not catalogued (the engine only braces bays >= 1.5 m anyway).",
+   "Guard rails = ledgers (Kwikstage handrails are ledgers at 1 and 2 nodes above the deck).",
+   "Toeboard = LVL board 38x225 of bay length on edge + 1 Toe Board Bracket (0.8 kg) per bay; end toeboard = 1.2 m LVL board + End Toe Board Bracket (1.3 kg). Composite lines, masses from p.9-11.",
+   "Base jack 3.7 kg (p.10) has no published length or travel: length 0.6 m assumed (estimated), travel = 0.68 x length. The mass is from the source, so the jack line is not flagged as estimated.",
+   "No access deck with hatch (ladder access transoms only, p.9): no access decks are placed.",
+   "Tie = 0.6 m Wall Tie with 'S' hook (2.24 kg, p.9); couplers = APAC drop-forged double coupler 0.98 kg (p.36; the S-hook tie may need fewer); eyebolt 0.2 kg estimated (Plettac value).",
+   "End guard rail = 2 x 1.2 m ledger (2 x 5.25 kg)."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 495,
+  "width_mm": 1316,
+  "leg_axis_mm": 1268,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 1980,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1828,
+   2438
+  ],
+  "extra_bay_lengths_mm": [
+   1268
+  ],
+  "compensation_frames_mm": [
+   495,
+   990,
+   1485
+  ],
+  "deck_module_width_mm": 230,
+  "decks_per_bay": 5,
+  "usable_deck_width_mm": 1150,
+  "width_class": "W09 (EN 12811-1), deduced from 5 x 0.23 m",
+  "max_load_class": 4,
+  "max_load_kn_m2": 4.0,
+  "load_classes_note": "'Heavy-duty access up to 4.0 kN/m2 platform loading' (p.6-7); bay and deck conditions not stated. 4.0 kN/m2 is above class 4 (3.0) but below class 5 (4.5), so class 4",
+  "star_pin_spacing_mm": 0,
+  "connection": "Kwikstage: clusters of four V-pressings every 495 mm, wedge ('banana') ends of ledgers and transoms (p.8)",
+  "diagonals_outside": true,
+  "bay_height_mm": 1980,
+  "access_surface": "none",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_plank_230": "Closed-end steel plank 230 mm",
+   "lvl_board_225": "LVL board 38 x 225"
+  },
+  "labels": {
+   "standard": "Kwikstage standard with spigot",
+   "ledger": "Banana ledger",
+   "transom": "Transom 1.2 m",
+   "base_collar": "Base collar",
+   "deck": "Steel plank 230",
+   "access": "Access deck (none in catalogue)",
+   "end_rail": "End guard rail = 2 x ledger 1.2 m",
+   "end_toeboard": "End toeboard: LVL board 1.2 m + end toe board bracket",
+   "tie": "Wall tie 0.6 m (S hook)",
+   "coupler": "Drop-forge double coupler (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Toeboard: LVL board + toe board bracket",
+   "guard_rail": "Banana ledger (guard rail)",
+   "brace": "Diagonal brace"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "KS-STD-1.0",
+    "l_mm": 1000,
+    "mass": 6.34,
+    "note": "1.0m Standard with spigot (p.8)",
+    "verified": false
+   },
+   {
+    "id": "KS-STD-1.5",
+    "l_mm": 1500,
+    "mass": 9.16,
+    "note": "1.5m Standard with spigot (p.8)",
+    "verified": false
+   },
+   {
+    "id": "KS-STD-2.0",
+    "l_mm": 2000,
+    "mass": 11.98,
+    "note": "2.0m Standard with spigot (p.8)",
+    "verified": false
+   },
+   {
+    "id": "KS-STD-2.5",
+    "l_mm": 2500,
+    "mass": 14.81,
+    "note": "2.5m Standard with spigot (p.8)",
+    "verified": false
+   },
+   {
+    "id": "KS-STD-3.0",
+    "l_mm": 3000,
+    "mass": 17.64,
+    "note": "3.0m Standard with spigot (p.8)",
+    "verified": false
+   },
+   {
+    "id": "KS-STD-4.0",
+    "l_mm": 4000,
+    "mass": 23.98,
+    "note": "4.0m Standard with spigot (p.8)",
+    "verified": false
+   }
+  ],
+  "transom": {
+   "id": "KS-T-1.2m",
+   "l_mm": 1268,
+   "mass": 12.08,
+   "note": "1.2m Transom (p.8)",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "KS-L-1.2m",
+    "l_mm": 1268,
+    "mass": 5.25,
+    "note": "1.2m Banana Ledger (p.8); centre distance 1268 mm from the diagonal table (p.9)",
+    "verified": false
+   },
+   {
+    "id": "KS-L-1.8m",
+    "l_mm": 1828,
+    "mass": 7.28,
+    "note": "1.8m Banana Ledger (p.8); centre distance 1828 mm from the diagonal table (p.9)",
+    "verified": false
+   },
+   {
+    "id": "KS-L-2.4m",
+    "l_mm": 2438,
+    "mass": 9.5,
+    "note": "2.4m Banana Ledger (p.8); centre distance 2438 mm from the diagonal table (p.9)",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "KS-L-1.2m",
+    "l_mm": 1268,
+    "mass": 5.25,
+    "note": "1.2m Banana Ledger (p.8); centre distance 1268 mm from the diagonal table (p.9)",
+    "verified": false
+   },
+   {
+    "id": "KS-L-1.8m",
+    "l_mm": 1828,
+    "mass": 7.28,
+    "note": "1.8m Banana Ledger (p.8); centre distance 1828 mm from the diagonal table (p.9)",
+    "verified": false
+   },
+   {
+    "id": "KS-L-2.4m",
+    "l_mm": 2438,
+    "mass": 9.5,
+    "note": "2.4m Banana Ledger (p.8); centre distance 2438 mm from the diagonal table (p.9)",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_plank_230": [
+    {
+     "id": "KS-SP-1.2m",
+     "l_mm": 1268,
+     "mass": 8.37,
+     "note": "1.2m Closed-end Steel Plank, 230 mm wide, 1.8 mm sheet (p.11)",
+     "verified": false
+    },
+    {
+     "id": "KS-SP-1.8m",
+     "l_mm": 1828,
+     "mass": 12.23,
+     "note": "1.8m Closed-end Steel Plank, 230 mm wide, 1.8 mm sheet (p.11)",
+     "verified": false
+    },
+    {
+     "id": "KS-SP-2.4m",
+     "l_mm": 2438,
+     "mass": 16.31,
+     "note": "2.4m Closed-end Steel Plank, 230 mm wide, 1.8 mm sheet (p.11)",
+     "verified": false
+    }
+   ],
+   "lvl_board_225": [
+    {
+     "id": "KS-LVL-1.2m",
+     "l_mm": 1268,
+     "mass": 5.64,
+     "note": "1.2m LVL Scaffolding Board 38 x 225 (p.11)",
+     "verified": false
+    },
+    {
+     "id": "KS-LVL-1.8m",
+     "l_mm": 1828,
+     "mass": 8.46,
+     "note": "1.8m LVL Scaffolding Board 38 x 225 (p.11)",
+     "verified": false
+    },
+    {
+     "id": "KS-LVL-2.4m",
+     "l_mm": 2438,
+     "mass": 11.28,
+     "note": "2.4m LVL Scaffolding Board 38 x 225 (p.11)",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [],
+  "vertical_brace": [
+   {
+    "id": "KS-BR-1828x1980",
+    "bay_mm": 1828,
+    "h_mm": 1980,
+    "l_mm": 2795,
+    "mass": 8.24,
+    "note": "p.9",
+    "verified": false
+   },
+   {
+    "id": "KS-BR-2438x1980",
+    "bay_mm": 2438,
+    "h_mm": 1980,
+    "l_mm": 3241,
+    "mass": 9.42,
+    "note": "p.9",
+    "verified": false
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "KS-LVL-1.2m + TBB",
+    "l_mm": 1268,
+    "mass": 6.44,
+    "note": "LVL board 38x225 1.2m on edge (p.11) + 1 Toe Board Bracket 0.8 kg (p.9) per bay",
+    "verified": false
+   },
+   {
+    "id": "KS-LVL-1.8m + TBB",
+    "l_mm": 1828,
+    "mass": 9.26,
+    "note": "LVL board 38x225 1.8m on edge (p.11) + 1 Toe Board Bracket 0.8 kg (p.9) per bay",
+    "verified": false
+   },
+   {
+    "id": "KS-LVL-2.4m + TBB",
+    "l_mm": 2438,
+    "mass": 12.08,
+    "note": "LVL board 38x225 2.4m on edge (p.11) + 1 Toe Board Bracket 0.8 kg (p.9) per bay",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "KS-L-1.2m x2",
+   "mass": 10.5,
+   "note": "2 x 1.2 m banana ledger (p.8)",
+   "verified": false
+  },
+  "end_toeboard_74": {
+   "id": "KS-LVL-1.2m + ETBB",
+   "mass": 6.94,
+   "note": "1.2 m LVL board (p.11) + End Toe Board Bracket 1.3 kg (p.10)",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "KS-JACK",
+    "h_mm": 600,
+    "mass": 3.7,
+    "note": "Base Jack 3.7 kg (p.10); length 0.6 m estimated, travel from rules.jack_ext_max_ratio",
+    "h_estimated": true,
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "KS-WT-0.6m",
+    "l_mm": 600,
+    "mass": 2.24,
+    "note": "0.6m Wall Tie, 'S' hook (p.9)",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "Drop-forge Double Coupler",
+    "mass": 0.98,
+    "note": "p.36",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt",
+    "mass": 0.2,
+    "estimated": true,
+    "note": "not in the catalogue; Plettac value",
+    "verified": false
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "No catalogue example (kg per m2 or bill of materials) for this system.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "masses of standards, ledgers, transoms, decks and braces on real parts",
+  "real deck (plank) width and how many planks fit on the transom",
+  "jack length, travel and the minimum length that must stay inside the standard",
+  "tie length and anchor type for the real wall gap"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.95,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "note": "Nothing in the APAC catalogue on ties, bracing frequency, wall gap or jack travel: all placeholders. The stair tower note (p.6-8: 4.4 m module, up to 50 m with ties) is not a facade rule. brace_est_mass_per_m = 2.95 from the APAC 1828x1980 brace (8.24 kg / 2.795 m), used only if a bay without a catalogued brace is braced."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation or the manufacturer's instructions."
+ }
+}

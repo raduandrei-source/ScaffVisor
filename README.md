@@ -1,13 +1,24 @@
-# ScaffVisor — Blender add-on (v0.5.0)
+# ScaffVisor — Blender add-on (v0.6.0)
 
 Documentation: **https://raduandrei-source.github.io/ScaffVisor/** (the **Help** button in the panel opens the page for the section you are in).
 
-Systems: Plettac SL 70 (catalog values) and Layher Blitz 70 (draft, see `docs/presets.md`).
+Systems: 23 built in — frame façade systems (Layher Blitz 70/100, Plettac SL 70/100, Altrad Mostostal Plus, assco quadro, Scafom-rux Framescaff, Hünnebeck BOSTA 70, SLV 70, walk-through frames) and modular systems (ringlock, cuplock, kwikstage, wedge-lock). See `docs/presets.md` and the systems catalog in `docs/catalog/`.
 
 Generates site scaffolding along the walls you mark, with adjustable height, a bill of materials and total weight.
 
+## Changes
+
+### 0.6.0
+- 21 new systems, 23 in all. Frame façade: Layher Blitz 70 aluminium and Blitz 100, Plettac SL 70 aluminium and SL 100, Altrad Mostostal Plus 70 / 100, Altrad assco quadro 70, Scafom-rux Framescaff, Hünnebeck BOSTA 70, SLV RAM 2 / SLV 70, A & B walk-through frame. Modular: Coronet, APAC, DSS and PERI UP ringlock / rosette; APAC, DSS and Duscaff cuplock; APAC and Uni-span kwikstage; Waco Wedgelok. Every value comes from a published parts list, with its source; missing parts are flagged as estimated.
+- New modular engine: standards (combined per leg up to 1 m above the top deck), base collars, transoms and ledgers per lift, on the same layout and ground following as the frame systems.
+- The System list is grouped by grid (systems with the same widths and bay lengths are listed together) and keeps the system of a saved file when systems are added.
+- Leg spacing is the nominal system width (axis to axis) for every system.
+- Access decks in 1.09-1.10 m frames get the extra 0.32 m deck beside them; jack, guard rail and toeboard lines take the system's own names and flags.
+- Layher Blitz 70: the eye bolt weight in the price list is per pack of 10; now 0.18 kg per bolt (estimated).
+- Systems catalog (`docs/catalog/`): one sheet per system with a model built by ScaffVisor, dimensioned views, when to use it, parts and sources. The `.blend` models are kept with the project files.
+
 ## Install
-Blender 4.2 or newer (extension package): drag `scaffvisor-0.5.0.zip` into the Blender window, or Preferences > Get Extensions > top-right menu > Install from Disk.
+Blender 4.2 or newer (extension package): drag `scaffvisor-0.6.0.zip` into the Blender window, or Preferences > Get Extensions > top-right menu > Install from Disk.
 Update: disable the old version, drag the newer zip, enable. No restart is needed. Remove: Preferences > Add-ons > ScaffVisor > Remove.
 The panel is in the 3D Viewport sidebar (N) > **ScaffVisor** tab.
 
@@ -67,7 +78,7 @@ the scaffold is built so that all decks stay horizontal at the heights given by 
 
 ## What it does not do (yet)
 - **It is not a stability calculation** and does not replace the manufacturer's manual or an engineer. Ties and braces are indicative.
-- Ground is followed with jacks, compensation frames and extra lifts (no stair-stepped bays across a wall, no cross-slope beyond the jack range). Two systems (Plettac SL 70, Layher Blitz 70 draft). Where a system's frame set leaves gaps in the jack range, the notes say which columns are out of range.
+- Ground is followed with jacks, compensation frames and extra lifts (no stair-stepped bays across a wall, no cross-slope beyond the jack range). Where a system's frame set leaves gaps in the jack range, the notes say which columns are out of range.
 - Corners at angles other than ~90 deg are approximate (a note is shown).
 - A chain of connected faces with different heights uses its tallest face for the whole chain.
 - No brackets/consoles, separate stair towers, passages, roofs or transport planning yet.

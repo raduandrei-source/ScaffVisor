@@ -2,6 +2,7 @@
  "_meta": {
   "id": "layher_blitz70_steel",
   "name": "Layher Blitz 70 (steel, 73 cm)",
+  "family": "Frame 0.73 m, U-deck grid 1.57-3.07 m (Layher Blitz type)",
   "status": "draft",
   "note": "Weights are guideline values from the Layher price list; 'verified' = false until weighed on real parts. Frame details, tie rules and jack minimum are NOT from Layher documents and are marked.",
   "units": {
@@ -9,17 +10,20 @@
    "mass": "kg"
   },
   "sources": [
-   "Layher Blitz price list 2019 (leiternprofi24.de, Layher DE_Blitz_Preisliste.pdf); all weights are 'ca.' guideline values (Richtwerte)",
-   "Layher Blitz assembly manual Art.-Nr. 8102.030, 03/2011 (manualslib.de): bay and anchoring notes"
+   "Layher Blitz price list 2019 (https://leiternprofi24.de/media/19/a6/6d/1670916471/Layher%20DE_Blitz_Preisliste.pdf); all weights are 'ca.' guideline values (Richtwerte)",
+   "Layher Blitz assembly manual Art.-Nr. 8102.030, 03/2011 (manualslib.de): bay and anchoring notes; same manual, edition 11.2013: https://www.leiternprofi24.de/media/06/b0/ae/1731009238/AuV-Layher-Blitz-Fassadengeruest.pdf"
   ],
   "approvals": [],
   "changes": [
    "Table names are shared with the engine (e.g. 'timber_deck_w320' holds the steel decks of this system); labels and deck types are set in 'system'.",
-   "Diagonals for the 1.57 m bay and the short bays are estimated geometrically: the price list gives no clear length for a 2 m lift."
+   "Diagonals for the 1.57 m bay and the short bays are estimated geometrically: the price list gives no clear length for a 2 m lift.",
+   "Eye bolt 4009.121: 1.8 kg in the price list is for a pack of 10; now 0.18 kg per bolt, estimated."
   ]
  },
  "system": {
   "width_mm": 730,
+  "leg_axis_mm": 730,
+  "leg_axis_note": "nominal system width = distance between leg axes (same grid as the decks and bays)",
   "frame_height_mm": 2000,
   "tube_od_mm": 48.3,
   "bay_lengths_mm": [
@@ -315,7 +319,9 @@
    },
    "eyebolt_120": {
     "id": "4009.121",
-    "mass": 1.8
+    "mass": 0.18,
+    "estimated": true,
+    "note": "price list: 1.8 kg per pack of 10 (sold only in VE 10); 0.18 kg per bolt"
    }
   },
   "tubes": {

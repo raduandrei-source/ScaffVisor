@@ -1,0 +1,612 @@
+{
+ "_meta": {
+  "id": "dss_ringlock",
+  "name": "DSS Ring Lock (steel, 73 cm, imperial bays)",
+  "family": "Ringlock 0.73 m, imperial bays 5-10 ft (node 0.50 m)",
+  "status": "draft",
+  "note": "US facade scaffold from the DSS (Blue Steel) System Scaffold Catalog 12/2025: 2'-4\" (732 mm) ledgers as transoms, 5'/6'/7'/8'/10' bays, 2 x 12-1/2 in steel planks with hooks per bay, ledgers as guard rails, vertical diagonals for a 2 m lift. Values are catalog values; 'verified' = false until weighed/measured.",
+  "units": {
+   "length": "mm",
+   "mass": "kg"
+  },
+  "sources": [
+   "1067929480-BLUE-STEEL-DSS-03220-System-Scaffold-Catalog-12302025.pdf PDF p.25 (verticals), p.26 (ledgers), p.31 (starter collar), p.32 (vertical diagonals), p.41 (system jack), p.48 (adjustable toe board), p.49 (universal toe boards), p.58 (Twist Lock tube), p.60 (I-bolt clamps), p.87-88 (12-1/2 in steel planks), p.97 (hatch planks)."
+  ],
+  "approvals": [
+   "Ring Lock: Australia Registration, DITUC Certification (Chile), Bureau Veritas Certification (numbers not given)"
+  ],
+  "changes": [
+   "Initial draft from scratchpad/out/modular.json (DSS Ring Lock + DSS shared accessories), values re-checked on PDF p.31, 33, 41, 48, 49, 58, 60, 87, 88, 97.",
+   "The catalog's 'MM' column is in metres (0.01 m resolution); lengths taken from the ledger table in mm.",
+   "Bays = imperial series 5'/6'/7'/8'/10' (1524/1829/2130/2440/3051 mm), the US equivalents of 1.57-3.07: it is the only series with a diagonal, a plank, a universal toe board and a hatch for every length. The metric series (RLH52/69/86/101 = 1572/2072/2572/3070) has no 10'-1\" diagonal and no toe boards for 2072/3070.",
+   "Extras 3' and 4' (914/1220). Transom = 2'-4\" ledger RLH24 (732 mm), 2 x 12-1/2 in planks (2 x 318 = 636 mm).",
+   "Diagonal bay lengths printed 1.52/1.83/3.05 m matched to the 1524/1829/3051 mm ledgers; WBSWP100 (3051) and WBSWP7 (2130) are from the Canadian-sizes table p.88.",
+   "Hatch planks 28 in x 7' / 10' (effective 2.13 / 3.05 m) mapped to the 2130 / 3051 bays; their fit on a 2'-4\" transom is not stated in the catalog.",
+   "Open end = 2 x RLH24 + adjustable toe board GRATB1 (24-38 in).",
+   "Base jack BPSJB: overall 0.54 m (22.22 in, titled '21 In'), max extension 0.38 m (15 in) from p.41 -> ext_max_mm 380.",
+   "Ties: tie tube = 4' Twist Lock tube TL4 (shortest tube in the catalog), coupler = right angle clamp CMPRA; eyebolt not in the catalog (0.2 kg estimated).",
+   "Brace l_mm = geometric axis length; the catalog gives bay x height only.",
+   "Load class and width class are not published: max_load_class 3 / 2.0 kN/m2 are defaults."
+  ]
+ },
+ "system": {
+  "kind": "modular",
+  "node_spacing_mm": 500,
+  "width_mm": 780.3,
+  "leg_axis_mm": 732,
+  "leg_axis_note": "transom length, axis to axis",
+  "frame_height_mm": 2000,
+  "tube_od_mm": 48.3,
+  "bay_lengths_mm": [
+   1524,
+   1829,
+   2130,
+   2440,
+   3051
+  ],
+  "extra_bay_lengths_mm": [
+   914,
+   1220
+  ],
+  "compensation_frames_mm": [
+   500,
+   1000,
+   1500
+  ],
+  "deck_module_width_mm": 318,
+  "decks_per_bay": 2,
+  "usable_deck_width_mm": 636,
+  "width_class": "approx. W06 (EN 12811-1) from 2 x 318 mm planks; US catalog, no width class",
+  "max_load_class": 3,
+  "max_load_kn_m2": 2.0,
+  "load_note": "Not published in the catalog (US catalog: OSHA 29 CFR 1926 Subpart L, ANSI A10.8 referenced).",
+  "star_pin_spacing_mm": 0,
+  "connection": "Ring Lock rosettes at 500 mm (first 400 mm above the bottom); ledgers and diagonals with wedge heads; planks hook onto the ledger tube.",
+  "diagonals_outside": true,
+  "bay_height_mm": 2000,
+  "access_surface": "plywood",
+  "access_extra_decks": 0,
+  "deck_grade_labels": {
+   "steel_318_hooks": "Steel plank 12-1/2\" with hooks (WBSWP)"
+  },
+  "labels": {
+   "standard": "Ring Lock vertical",
+   "ledger": "Ring Lock ledger",
+   "transom": "Ring Lock ledger 2'-4\" (transom)",
+   "base_collar": "Starter collar short RLBCS",
+   "deck": "Steel plank 12-1/2\" w/hooks",
+   "access": "28\" hatch plank w/ aluminium ladder",
+   "end_rail": "End guard rail = 2 x ledger 2'-4\"",
+   "end_toeboard": "Adjustable toe board GRATB1 (end)",
+   "tie": "Tie tube TL4 4' (1.22 m)",
+   "coupler": "Right angle clamp CMPRA (tie)",
+   "eyebolt": "Eyebolt (estimated)",
+   "toeboard": "Universal toe board",
+   "guard_rail": "Guard rail (ledger)",
+   "brace": "Vertical diagonal, 2 m lift"
+  }
+ },
+ "components": {
+  "standard": [
+   {
+    "id": "RLV10",
+    "l_mm": 500,
+    "mass": 3.1,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RLV33",
+    "l_mm": 1000,
+    "mass": 5.5,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RLV411",
+    "l_mm": 1500,
+    "mass": 7.7,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RLV66",
+    "l_mm": 2000,
+    "mass": 10.1,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RLV82",
+    "l_mm": 2500,
+    "mass": 13.1,
+    "src": "p.25",
+    "verified": false
+   },
+   {
+    "id": "RLV910",
+    "l_mm": 3000,
+    "mass": 15.0,
+    "src": "p.25",
+    "verified": false
+   }
+  ],
+  "base_collar": {
+   "id": "RLBCS",
+   "h_mm": 160,
+   "note": "effective length 0.16 m; the long collar RLBCL (0.20 m, 2.1 kg) is the alternative",
+   "mass": 1.7,
+   "src": "p.31",
+   "verified": false
+  },
+  "transom": {
+   "id": "RLH24",
+   "l_mm": 732,
+   "mass": 3.49,
+   "src": "p.26",
+   "verified": false
+  },
+  "ledger": [
+   {
+    "id": "RLH30",
+    "l_mm": 914,
+    "note": "3' ledger",
+    "mass": 4.13,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH40",
+    "l_mm": 1220,
+    "note": "4' ledger",
+    "mass": 5.2,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH50",
+    "l_mm": 1524,
+    "note": "5' ledger",
+    "mass": 6.18,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH60",
+    "l_mm": 1829,
+    "note": "6' ledger",
+    "mass": 7.31,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH70",
+    "l_mm": 2130,
+    "note": "7' ledger",
+    "mass": 8.38,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH80",
+    "l_mm": 2440,
+    "note": "8' ledger",
+    "mass": 9.57,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH100",
+    "l_mm": 3051,
+    "note": "10' ledger",
+    "mass": 11.96,
+    "src": "p.26",
+    "verified": false
+   }
+  ],
+  "guard_rail": [
+   {
+    "id": "RLH30",
+    "l_mm": 914,
+    "note": "3' ledger",
+    "mass": 4.13,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH40",
+    "l_mm": 1220,
+    "note": "4' ledger",
+    "mass": 5.2,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH50",
+    "l_mm": 1524,
+    "note": "5' ledger",
+    "mass": 6.18,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH60",
+    "l_mm": 1829,
+    "note": "6' ledger",
+    "mass": 7.31,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH70",
+    "l_mm": 2130,
+    "note": "7' ledger",
+    "mass": 8.38,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH80",
+    "l_mm": 2440,
+    "note": "8' ledger",
+    "mass": 9.57,
+    "src": "p.26",
+    "verified": false
+   },
+   {
+    "id": "RLH100",
+    "l_mm": 3051,
+    "note": "10' ledger",
+    "mass": 11.96,
+    "src": "p.26",
+    "verified": false
+   }
+  ],
+  "timber_deck_w320": {
+   "steel_318_hooks": [
+    {
+     "id": "WBSWP3",
+     "l_mm": 914,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 3'",
+     "mass": 9.7,
+     "src": "p.87",
+     "verified": false
+    },
+    {
+     "id": "WBSWP4",
+     "l_mm": 1220,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 4'",
+     "mass": 12.4,
+     "src": "p.87",
+     "verified": false
+    },
+    {
+     "id": "WBSWP5",
+     "l_mm": 1524,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 5'",
+     "mass": 13.3,
+     "src": "p.87",
+     "verified": false
+    },
+    {
+     "id": "WBSWP6",
+     "l_mm": 1829,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 6'",
+     "mass": 17.0,
+     "src": "p.87",
+     "verified": false
+    },
+    {
+     "id": "WBSWP7",
+     "l_mm": 2130,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 7'",
+     "mass": 18.7,
+     "src": "p.88",
+     "verified": false
+    },
+    {
+     "id": "WBSWP8",
+     "l_mm": 2440,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 8'",
+     "mass": 21.9,
+     "src": "p.87",
+     "verified": false
+    },
+    {
+     "id": "WBSWP100",
+     "l_mm": 3051,
+     "w_mm": 318,
+     "h_mm": 61,
+     "note": "12-1/2 in steel plank with hooks, 10'",
+     "mass": 26.2,
+     "src": "p.88",
+     "verified": false
+    }
+   ]
+  },
+  "access_deck_with_ladder_w640": [
+   {
+    "id": "WBAPSH287TH-H2",
+    "surface": "plywood",
+    "l_mm": 2130,
+    "w_mm": 711,
+    "note": "28 in hatch plank with aluminium ladder, effective length printed 2.13 m",
+    "mass": 33,
+    "src": "p.97",
+    "verified": false
+   },
+   {
+    "id": "WBAPSH2810TH-H2",
+    "surface": "plywood",
+    "l_mm": 3051,
+    "w_mm": 711,
+    "note": "28 in hatch plank with aluminium ladder, effective length printed 3.05 m",
+    "mass": 41.2,
+    "src": "p.97",
+    "verified": false
+   },
+   {
+    "id": "WBAASH287TH-H2",
+    "surface": "aluminium",
+    "l_mm": 2130,
+    "w_mm": 711,
+    "note": "28 in hatch plank with aluminium ladder, effective length printed 2.13 m",
+    "mass": 37.2,
+    "src": "p.97",
+    "verified": false
+   },
+   {
+    "id": "WBAASH2810TH-H2",
+    "surface": "aluminium",
+    "l_mm": 3051,
+    "w_mm": 711,
+    "note": "28 in hatch plank with aluminium ladder, effective length printed 3.05 m",
+    "mass": 47.2,
+    "src": "p.97",
+    "verified": false
+   }
+  ],
+  "vertical_brace": [
+   {
+    "id": "RLVD30",
+    "bay_mm": 914,
+    "h_mm": 2000,
+    "l_mm": 2199,
+    "mass": 4.7,
+    "src": "p.32",
+    "verified": false,
+    "note": "catalog bay length printed 0.91 m (3'); matched to the 914 mm ledger"
+   },
+   {
+    "id": "RLVD40",
+    "bay_mm": 1220,
+    "h_mm": 2000,
+    "l_mm": 2343,
+    "mass": 6.3,
+    "src": "p.32",
+    "verified": false
+   },
+   {
+    "id": "RLVD50",
+    "bay_mm": 1524,
+    "h_mm": 2000,
+    "l_mm": 2514,
+    "mass": 7.9,
+    "src": "p.32",
+    "verified": false,
+    "note": "catalog bay length printed 1.52 m (5'); matched to the 1524 mm ledger"
+   },
+   {
+    "id": "RLVD60",
+    "bay_mm": 1829,
+    "h_mm": 2000,
+    "l_mm": 2710,
+    "mass": 9.5,
+    "src": "p.32",
+    "verified": false,
+    "note": "catalog bay length printed 1.83 m (6'); matched to the 1829 mm ledger"
+   },
+   {
+    "id": "RLVD70",
+    "bay_mm": 2130,
+    "h_mm": 2000,
+    "l_mm": 2922,
+    "mass": 11.1,
+    "src": "p.32",
+    "verified": false
+   },
+   {
+    "id": "RLVD80",
+    "bay_mm": 2440,
+    "h_mm": 2000,
+    "l_mm": 3155,
+    "mass": 12.7,
+    "src": "p.32",
+    "verified": false
+   },
+   {
+    "id": "RLVD100",
+    "bay_mm": 3051,
+    "h_mm": 2000,
+    "l_mm": 3648,
+    "mass": 15.8,
+    "src": "p.32",
+    "verified": false,
+    "note": "catalog bay length printed 3.05 m (10'); matched to the 3051 mm ledger"
+   }
+  ],
+  "toeboard_timber_h150": [
+   {
+    "id": "GRUSTB30",
+    "l_mm": 914,
+    "h_mm": 172,
+    "note": "Universal toe board for the 3' bay, effective length 834 mm",
+    "mass": 3.72,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB40",
+    "l_mm": 1220,
+    "h_mm": 172,
+    "note": "Universal toe board for the 4' bay, effective length 1140 mm (description printed 3'-9\", code 40)",
+    "mass": 5.2,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB50",
+    "l_mm": 1524,
+    "h_mm": 172,
+    "note": "Universal toe board for the 5' bay, effective length 1440 mm",
+    "mass": 6.5,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB60",
+    "l_mm": 1829,
+    "h_mm": 172,
+    "note": "Universal toe board for the 6' bay, effective length 1750 mm",
+    "mass": 7.9,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB70",
+    "l_mm": 2130,
+    "h_mm": 172,
+    "note": "Universal toe board for the 7' bay, effective length 2050 mm",
+    "mass": 9.3,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB80",
+    "l_mm": 2440,
+    "h_mm": 172,
+    "note": "Universal toe board for the 8' bay, effective length 2360 mm",
+    "mass": 10.6,
+    "src": "p.49",
+    "verified": false
+   },
+   {
+    "id": "GRUSTB100",
+    "l_mm": 3051,
+    "h_mm": 172,
+    "note": "Universal toe board for the 10' bay, effective length 2970 mm",
+    "mass": 13.4,
+    "src": "p.49",
+    "verified": false
+   }
+  ],
+  "double_end_guard_rail_74": {
+   "id": "RLH24 x2",
+   "mass": 6.98,
+   "verified": false,
+   "note": "2 x 2'-4\" ledger RLH24 (3.49 kg each, p.26)"
+  },
+  "end_toeboard_74": {
+   "id": "GRATB1",
+   "note": "adjustable 612-975 mm",
+   "mass": 5.3,
+   "src": "p.48",
+   "verified": false
+  },
+  "base_plate_threaded": [
+   {
+    "id": "BPSJB",
+    "h_mm": 540,
+    "ext_max_mm": 380,
+    "note": "21 in system jack: overall 22.22 in / 0.54 m, max extension 15 in / 0.38 m",
+    "mass": 3.74,
+    "src": "p.41",
+    "verified": false
+   }
+  ],
+  "ties": {
+   "scaffold_tie_80": {
+    "id": "TL4",
+    "l_mm": 1220,
+    "note": "4' Twist Lock tube used as tie tube (the catalog has no dedicated wall tie)",
+    "mass": 4.3,
+    "src": "p.58",
+    "verified": false
+   },
+   "normal_coupler": {
+    "id": "CMPRA",
+    "mass": 1.5,
+    "src": "p.60",
+    "verified": false
+   },
+   "eyebolt_120": {
+    "id": "eyebolt-est",
+    "mass": 0.2,
+    "estimated": true,
+    "verified": false,
+    "note": "not in this catalog; 0.2 kg assumed (cf. PERI Ring Bolt UFE 12/120 = 0.19 kg)"
+   }
+  }
+ },
+ "sanity_check": {
+  "description": "The catalog gives no example of total scaffold weight per m2 of facade.",
+  "examples": [],
+  "kg_per_m2_range": null
+ },
+ "to_measure_on_site": [
+  "fit of the 28 in hatch plank on a 2'-4\" transom",
+  "tie tube length and anchor type used on site",
+  "weighed vertical, ledger, plank, diagonal",
+  "imperial vs metric ledger series in the yard"
+ ],
+ "rules": {
+  "anchor_area_m2": 22,
+  "max_free_height_above_anchor_m": 4.0,
+  "max_wall_gap_m": 0.3,
+  "inner_rail_gap_m": 0.3,
+  "jack_ext_min_m": 0.1,
+  "jack_ext_max_ratio": 0.68,
+  "brace_every_n_bays": 5,
+  "access_every_m": 40,
+  "wind_factor": {
+   "NONE": 1.0,
+   "NET": 1.5,
+   "TARP": 2.0
+  },
+  "joint_deg": 25,
+  "min_leg_clearance_m": 0.07,
+  "brace_est_mass_per_m": 2.5,
+  "brace_est_extra_mm": 0,
+  "toeboard_est_kg_per_m": 2.0,
+  "top_post_m": 1.0,
+  "brace_faces": 1,
+  "rules_verified": {
+   "anchor_area_m2": false,
+   "max_free_height_above_anchor_m": false,
+   "max_wall_gap_m": false,
+   "inner_rail_gap_m": false,
+   "jack_ext_min_m": false,
+   "brace_every_n_bays": false,
+   "access_every_m": false,
+   "wind_factor": false,
+   "joint_deg": false,
+   "min_leg_clearance_m": false,
+   "top_post_m": false,
+   "jack_ext_max": true,
+   "note": "The catalog publishes no tie pattern, wall gap, bracing frequency, access spacing or free height: these are the ScaffVisor default values, not the manufacturer's. Jack travel: ext_max_mm from the catalog. DSS: swivel jacks must be anchored to hold 4 x the shear force; above 45 deg consult a Professional Engineer (p.41)."
+  },
+  "note": "Indicative rules. Not a substitute for a stability calculation."
+ }
+}

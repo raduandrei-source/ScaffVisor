@@ -107,6 +107,14 @@ P = build_plan([(0, 0), (30, 0)], False, p, 0, ground=lambda x, y: 0.0 if x < 15
 apply_rules(P, p)
 check(P.vertical["nmin"] != P.vertical["n"] and len(P.end_rails) > 0, "step")
 
+# ---- SLV RAM 2 / SLV 70 catalogue kit: 120 m x 8.3 m = 10460.88 kg (engine counts fewer accessories; kit content is not itemised)
+ps = load_preset("slv_ram2_slv70")
+P = build_plan([(0, 0), (120, 0)], False, ps, 6.3, gap=0.15, allow_short=False)
+apply_rules(P, ps)
+B = compute_bom(P, ps, deck_grade=ps.default_grade())
+check(abs(B["total_kg"] - 10460.88) / 10460.88 < 0.10, "slv kit mass %.0f" % B["total_kg"])
+print("slv kit: %.0f kg vs 10461 (%.1f%%)" % (B["total_kg"], 100 * (B["total_kg"] / 10460.88 - 1)))
+
 # ---- every preset in presets/ loads and produces a consistent plan + bill of materials
 from core import preset as _P
 import glob as _g
@@ -129,7 +137,8 @@ for path in sorted(_g.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.
             check(Bm["total_kg"] > 0 and all(d["unit_kg"] > 0 and d["qty"] > 0 for d in Bm["lines"]), "%s bom %s" % (tag, gr))
             codes = [d["code"] for d in Bm["lines"]]
             check(len(codes) == len(set((d["cat"], d["code"], d["desc"]) for d in Bm["lines"])), tag + " unique lines")
-            check(5.0 < Bm["kg_m2"] < 30.0, "%s kg/m2 %.1f" % (tag, Bm["kg_m2"]))
+            # wide cuplock / kwikstage bays carry five steel planks and four tubes per lift: heavier per m2
+            check(5.0 < Bm["kg_m2"] < (45.0 if pr.kind == "modular" else 30.0), "%s kg/m2 %.1f" % (tag, Bm["kg_m2"]))
         check(Bm["est_kg"] <= Bm["total_kg"], tag + " estimated share")
     # one-lift-per-2m lattice on a slope with this system's compensation frames
     Pp = build_plan([(0, 0), (30, 0)], False, pr, 0, ground=lambda x, y: 0.1 * x, base_z=0.0, top_z=9.0, phase_tol=0.5)
