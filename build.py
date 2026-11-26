@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Build / rebuild the scaffold geometry from a root Empty."""
 import json
 import math

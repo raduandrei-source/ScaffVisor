@@ -42,4 +42,8 @@ Then change anything in the panel. The scaffold updates as you go. Open **Result
 - [All documented systems](systems.html): every system found in the documentation, grouped by grid.
 - [Limits](limits.html): what it does not do, so you do not rely on it for the wrong thing.
 
+## Licence
+
+ScaffVisor is one complete product: no key, no account, no online check. The code is GPL-3.0-or-later. **Free for teaching and research at universities:** write from your university address to the support e-mail and you get a free download.
+
 **ScaffVisor gives an indicative layout and weights. It is not a stability calculation and does not replace the manufacturer's assembly manual or an engineer.**

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Defensive class registration.
 
 Reinstalling over a running session (or a failed earlier unregister) can leave a class with the

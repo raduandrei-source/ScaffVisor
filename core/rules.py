@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Indicative rules: braces, access, ties, ends. Not a substitute for a stability calculation.
 
 Levels: d = 0 is the top working deck, d = 1 the deck 2 m below it, and so on.

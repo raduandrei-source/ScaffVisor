@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Fitting a scaffold to a wall path: bays, height, corners. Pure Python.
 
 Conventions (metres, world XY):

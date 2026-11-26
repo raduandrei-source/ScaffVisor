@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Links and constants shown to the user."""
 
 DOCS_URL = "https://raduandrei-source.github.io/ScaffVisor/"

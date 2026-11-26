@@ -17,6 +17,9 @@ Generates site scaffolding along the walls you mark, with adjustable height, a b
 - Layher Blitz 70: the eye bolt weight in the price list is per pack of 10; now 0.18 kg per bolt (estimated).
 - Systems catalog (`docs/catalog/`): one sheet per system with a model built by ScaffVisor, dimensioned views, when to use it, parts and sources. The `.blend` models are kept with the project files.
 
+## Licence
+GPL-3.0-or-later (see `LICENSE`). One complete product: no key, no account, no online check. Free for teaching and research at universities on request from a university address.
+
 ## Install
 Blender 4.2 or newer (extension package): drag `scaffvisor-0.6.0.zip` into the Blender window, or Preferences > Get Extensions > top-right menu > Install from Disk.
 Update: disable the old version, drag the newer zip, enable. No restart is needed. Remove: Preferences > Add-ons > ScaffVisor > Remove.

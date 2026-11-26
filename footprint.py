@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Extract the wall path(s) from selected faces (Edit Mode), a curve, or mesh edges.
 
 Result: {"chains": [{"points": [(x,y)..], "closed": bool, "z0": float, "z_top": float|None, "height": float|None,

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Preset JSON loading + mass/size lookups (mm in JSON, m in the plan)."""
 import json
 import os

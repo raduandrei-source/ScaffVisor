@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Simple low-poly meshes for scaffold parts. The builder is pure Python; to_bpy() creates the Mesh."""
 import math
 

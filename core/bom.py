@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Bill of materials + weight."""
 from collections import OrderedDict
 

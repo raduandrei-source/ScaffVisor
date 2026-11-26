@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """ScaffVisor sidebar.
 
 Layout rules (see the UI principles in the project skill):
