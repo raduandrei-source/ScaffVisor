@@ -182,7 +182,8 @@
             if (all.indexOf(w) < 0) return;
             score += (e.n.head.indexOf(w) >= 0 ? 6 : 0) + (e.n.page.indexOf(w) >= 0 ? 3 : 0) + Math.min(5, e.n.text.split(w).length - 1);
           }
-          hits.push({ e: e, s: score + (e.guide ? 4 : 0) });   /* explanations first, then the system sheets */
+          var data = /systems\.html/.test(e.url) || !e.guide;      /* tables of systems and catalog sheets */
+          hits.push({ e: e, s: score + (data ? 0 : 6) });            /* explanations first, then the data */
         });
         hits.sort(function (a, b) { return b.s - a.s; });
         nav.hidden = true; box.hidden = false;
