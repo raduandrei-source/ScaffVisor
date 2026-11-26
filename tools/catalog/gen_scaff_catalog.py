@@ -323,6 +323,7 @@ for fam in FAMS:
 
 n = 0
 sections = []
+SEARCH = []
 for gi, (grp, ftitle, fdims, pids) in enumerate(groups):
     inner = []
     tlinks = []
@@ -411,7 +412,10 @@ for gi, (grp, ftitle, fdims, pids) in enumerate(groups):
     {"<details class='src-more'><summary><span class='sm-o'>Notes (" + str(len(notes)) + ")</span><span class='sm-c'>Hide notes</span></summary><ol>" + "".join("<li>%s</li>" % E(x) for x in notes) + "</ol></details>" if notes else ""}
   </div>
 </article>''')
-        tlinks.append('<a href="#%s"><span class="ix-n">%s</span><span>%s</span></a>' % (pid, num, E(meta["name"])))
+        tlinks.append('<a href="#%s" data-id="%s"><span class="ix-n">%s</span><span>%s</span></a>' % (pid, pid, num, E(meta["name"])))
+        stext = " ".join([num, kind_txt, meta.get("family", ""), ftitle, " ".join(meta.get("sources", [])), " ".join(meta.get("approvals", []))]
+                         + ["%s %s %s" % (g_, c_, d_) for g_, c_, d_, _m, _e in rows] + ["%s %s" % kv for kv in ess] + t["use"] + t["no"])
+        SEARCH.append(dict(id=pid, num=num, name=meta["name"], family=meta.get("family", ""), text=re.sub(r"\s+", " ", stext)))
     sid = "f%02d" % gi
     sections.append(f'<section class="cat" id="{sid}"><header class="cat-head"><h2>{E(ftitle)}</h2><p>{E(fdims)}</p></header>{"".join(inner)}</section>')
     toc.append(f'<div class="ix-fam"><h4>{E(ftitle)}</h4>{"".join(tlinks)}</div>')
@@ -426,12 +430,20 @@ for fam in FAMS:
         for s_ in m.get("sources", [])[:2]:
             h, ok = linkify(s_)
             links.append(h)
-        rest.append("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
+        rest.append("<tr data-s=\"%s\"><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>" % (
+            E(" ".join([fam["title"], m["maker"], m["system"], m["region"], m.get("parts", "")]).lower()),
             E(fam["title"]), E(m["maker"] + " " + m["system"]), E(m["region"]), "<br>".join(links) or E(m["src"])))
 n_rest = len(rest)
 
 css = open(CSSF, encoding="utf-8").read()
 css += """
+.csearch { position: relative; max-width: 560px; }
+.csearch svg { position: absolute; left: 12px; top: 19px; width: 17px; height: 17px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.csearch input { width: 100%; padding: 9px 12px 9px 38px; font: 400 0.98rem var(--f-body); color: var(--ink); background: var(--sheet);
+  border: 1.5px solid var(--line); border-radius: 3px; -webkit-appearance: none; appearance: none; }
+.csearch input:focus { outline: none; border-color: var(--woodC); }
+.csearch .hits { margin-top: 6px; min-height: 1.2em; }
+#documented tbody tr[hidden] { display: none; }
 .ess { font-size: 0.86rem; } .ess th { width: 34%; font-weight: 600; }
 .facts ul { margin: 2px 0 0; padding-left: 1.1rem; display: grid; gap: 3px; }
 td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -462,6 +474,34 @@ pin.addEventListener("click",function(){d.classList.toggle("bar-free");save("sca
 showTheme();showPin();
 var tt=document.querySelector(".totop");function tog(){tt.classList.toggle("on",window.scrollY>600);}window.addEventListener("scroll",tog,{passive:true});tog();})();"""
 
+SEARCH_JS = r"""(function(){
+var q=document.getElementById("cq"),hits=document.getElementById("chits");if(!q)return;
+var data=JSON.parse(document.getElementById("cat-index").textContent);
+function norm(s){return(s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+data.forEach(function(r){r.n=norm(r.num+" "+r.name+" "+r.family+" "+r.text);});
+var rows=Array.prototype.slice.call(document.querySelectorAll("#documented tbody tr"));
+rows.forEach(function(tr){tr.n=norm(tr.getAttribute("data-s")+" "+tr.textContent);});
+function run(){
+  var w=norm(q.value).split(/\s+/).filter(Boolean),shown=0;
+  data.forEach(function(r){
+    var ok=w.every(function(x){return r.n.indexOf(x)>=0;}),el=document.getElementById(r.id);
+    if(el){el.hidden=!ok;}
+    var a=document.querySelector('.index a[data-id="'+r.id+'"]');if(a){a.hidden=!ok;}
+    if(ok)shown++;
+  });
+  document.querySelectorAll("section.cat").forEach(function(sec){sec.hidden=!sec.querySelector(".sheet:not([hidden])");});
+  document.querySelectorAll(".index .ix-fam").forEach(function(f){if(f.querySelector("a[data-id]")){f.hidden=!f.querySelector("a[data-id]:not([hidden])");}});
+  var rshown=0;rows.forEach(function(tr){var ok=w.every(function(x){return tr.n.indexOf(x)>=0;});tr.hidden=!ok;if(ok)rshown++;});
+  var ap=document.getElementById("documented");if(ap)ap.hidden=w.length>0&&rshown===0;
+  hits.textContent=w.length?(shown+" of "+data.length+" systems"+(rows.length?" · "+rshown+" documented":"")):"";
+}
+var t;q.addEventListener("input",function(){clearTimeout(t);t=setTimeout(run,80);});
+q.addEventListener("keydown",function(e){if(e.key==="Escape"){q.value="";run();}});
+document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement!==q&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();q.focus();q.scrollIntoView({block:"center"});}});
+var m=location.search.match(/[?&]q=([^&]+)/);if(m){q.value=decodeURIComponent(m[1].replace(/\+/g," "));run();}
+})();"""
+
+CAT_INDEX = json.dumps(SEARCH, ensure_ascii=False).replace("</", "<\\/")
 page = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -488,6 +528,11 @@ page = f'''<!doctype html>
     <p class="eyebrow">ScaffVisor · Blender add-on</p>
     <h1>Scaffold systems</h1>
     <p class="lede">The {n} systems you can pick in ScaffVisor's <b>System</b> list, grouped by grid: systems in the same group share widths, bay lengths and lift, so their parts fit the same layout; weights and article numbers differ by maker. Each sheet shows a model built by ScaffVisor (2 bays x 2 lifts), dimensioned views, when to use the system, its parts with weights and the documents the numbers come from. {n_rest} more systems are documented at the end, waiting for a published parts list.</p>
+    <div class="csearch" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+      <input id="cq" type="search" placeholder="Search systems, makers, parts, codes" autocomplete="off" spellcheck="false" aria-label="Search the catalog">
+      <p id="chits" class="hits" aria-live="polite"></p>
+    </div>
     <div class="summary" id="cuprins">
       <div class="legend"><h2 class="h-small">How to read a sheet</h2><ul>
         <li><span>Weights</span><span>guideline values from the manufacturer's list; * = estimated</span></li>
@@ -506,9 +551,13 @@ page = f'''<!doctype html>
   <footer class="foot"><p>ScaffVisor does not calculate stability and does not replace the manufacturer's instructions or a structural calculation. Weights are catalogue guideline values until weighed on real parts.</p></footer>
 </div>
 <a class="totop" href="#cuprins" aria-label="Back to contents" title="Back to contents"><span aria-hidden="true">↑</span>TOP</a>
+<script type="application/json" id="cat-index">{CAT_INDEX}</script>
 <script>{JS}</script>
+<script>{SEARCH_JS}</script>
 </body>
 </html>
 '''
 open(os.path.join(OUT, "index.html"), "w", encoding="utf-8", newline="\n").write(page)
+with open(os.path.join(OUT, "search.json"), "w", encoding="utf-8", newline="\n") as f:
+    json.dump(SEARCH, f, ensure_ascii=False)
 print("cards", n, "documented", n_rest, "size", len(page))

@@ -34,7 +34,14 @@
     <div class="side-in">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <p class="ver">User guide · version {{ site.version }}</p>
-      <nav class="nav">
+      <div class="search" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+        <input id="q" type="search" placeholder="Search the guide" autocomplete="off" spellcheck="false"
+               aria-label="Search the guide and the systems catalog" aria-controls="results" aria-describedby="qhint">
+        <kbd id="qhint" title="Press / to search">/</kbd>
+      </div>
+      <div class="results" id="results" role="listbox" aria-label="Search results" hidden></div>
+      <nav class="nav" id="nav">
         <ul>
         {%- for item in site.nav %}
           {%- assign url = item.url | relative_url %}
@@ -116,6 +123,104 @@
     btn.addEventListener("click", function () { open(!side.classList.contains("open")); });
     scrim.addEventListener("click", function () { open(false); });
     side.addEventListener("click", function (e) { if (e.target.closest("a") && window.innerWidth < 900) open(false); });
+
+    /* ── live search: every section of the guide (split at h2) and every sheet of the systems catalog ── */
+    var q = document.getElementById("q"), box = document.getElementById("results"), nav = document.getElementById("nav");
+    var BASE = "{{ '/' | relative_url }}", idx = null, loading = null, sel = -1;
+    function norm(s) { return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+    function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+    function load() {
+      if (loading) return loading;
+      var guide = fetch(BASE + "search.json").then(function (r) { return r.json(); }).then(function (pages) {
+        var out = [], dp = new DOMParser();
+        pages.forEach(function (p) {
+          var doc = dp.parseFromString("<div>" + p.html + "</div>", "text/html").body.firstChild;
+          var cur = { url: p.url, page: p.title, head: "", text: "" };
+          Array.prototype.forEach.call(doc.childNodes, function (n) {
+            if (n.nodeName === "H2") {
+              if (cur.text.trim() || cur.head) out.push(cur);
+              cur = { url: p.url + "#" + (n.id || ""), page: p.title, head: n.textContent, text: "" };
+            } else { cur.text += " " + (n.textContent || ""); }
+          });
+          out.push(cur);
+        });
+        return out;
+      });
+      var cat = fetch(BASE + "catalog/search.json").then(function (r) { return r.ok ? r.json() : []; }).then(function (rows) {
+        return rows.map(function (s) { return { url: BASE + "catalog/#" + s.id, page: "Systems catalog", head: s.name, text: s.text }; });
+      }).catch(function () { return []; });
+      loading = Promise.all([guide, cat]).then(function (a) {
+        idx = a[0].concat(a[1]).map(function (e) {
+          e.text = e.text.replace(/\s+/g, " ").trim();
+          e.n = { page: norm(e.page), head: norm(e.head), text: norm(e.text) };
+          return e;
+        });
+      });
+      return loading;
+    }
+    function snippet(text, words) {
+      var t = norm(text), at = -1;
+      words.forEach(function (w) { var i = t.indexOf(w); if (i >= 0 && (at < 0 || i < at)) at = i; });
+      var a = Math.max(0, at - 50), s = text.slice(a, a + 150);
+      var h = esc(s);
+      words.forEach(function (w) {
+        if (!w) return;
+        h = h.replace(new RegExp("(" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "ig"), "<mark>$1</mark>");
+      });
+      return (a > 0 ? "… " : "") + h + (a + 150 < text.length ? " …" : "");
+    }
+    function search() {
+      var words = norm(q.value).split(/\s+/).filter(Boolean);
+      sel = -1;
+      if (!words.length) { box.hidden = true; nav.hidden = false; box.innerHTML = ""; return; }
+      load().then(function () {
+        var hits = [];
+        idx.forEach(function (e) {
+          var all = e.n.page + " " + e.n.head + " " + e.n.text, score = 0;
+          for (var i = 0; i < words.length; i++) {
+            var w = words[i];
+            if (all.indexOf(w) < 0) return;
+            score += (e.n.head.indexOf(w) >= 0 ? 6 : 0) + (e.n.page.indexOf(w) >= 0 ? 3 : 0) + Math.min(5, e.n.text.split(w).length - 1);
+          }
+          hits.push({ e: e, s: score });
+        });
+        hits.sort(function (a, b) { return b.s - a.s; });
+        nav.hidden = true; box.hidden = false;
+        if (!hits.length) { box.innerHTML = '<p class="r-none">Nothing found for “' + esc(q.value) + '”.</p>'; return; }
+        box.innerHTML = '<p class="r-count">' + hits.length + (hits.length === 1 ? " result" : " results") + "</p>" +
+          hits.slice(0, 14).map(function (h, i) {
+            var e = h.e;
+            return '<a class="r" role="option" id="r' + i + '" href="' + esc(e.url) + '"><span class="r-where">' + esc(e.page) +
+              (e.head ? " › " + esc(e.head) : "") + '</span><span class="r-snip">' + snippet(e.text || e.head, words) + "</span></a>";
+          }).join("");
+      });
+    }
+    var t0 = null;
+    q.addEventListener("input", function () { clearTimeout(t0); t0 = setTimeout(search, 90); });
+    q.addEventListener("focus", function () { load(); });
+    q.addEventListener("keydown", function (ev) {
+      var items = box.querySelectorAll("a.r");
+      if (ev.key === "Escape") { q.value = ""; search(); q.blur(); return; }
+      if (!items.length) return;
+      if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+        ev.preventDefault();
+        sel = (sel + (ev.key === "ArrowDown" ? 1 : -1) + items.length) % items.length;
+        items.forEach(function (a, i) { a.classList.toggle("sel", i === sel); });
+        items[sel].scrollIntoView({ block: "nearest" });
+      } else if (ev.key === "Enter") {
+        ev.preventDefault(); (items[sel >= 0 ? sel : 0]).click();
+      }
+    });
+    box.addEventListener("click", function (ev) {
+      if (ev.target.closest("a.r")) { setTimeout(function () { q.value = ""; search(); }, 0); }
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "/" && document.activeElement !== q && !/input|textarea/i.test(document.activeElement.tagName)) {
+        ev.preventDefault();
+        if (window.innerWidth < 900) open(true);
+        q.focus();
+      }
+    });
 
     /* back to the top */
     var tt = document.querySelector(".totop");
