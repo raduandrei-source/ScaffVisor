@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }} user guide</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <script>
+  /* theme before the page paints; dark is the default, shared with the systems catalog */
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("scaffvisor-docs-theme"); } catch (e) {}
+    document.documentElement.setAttribute("data-theme", (t === "light" || t === "dark") ? t : "dark");
+  })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+</head>
+<body id="top">
+  <header class="mbar">
+    <button class="icon-btn" id="menuBtn" type="button" aria-controls="side" aria-expanded="false" aria-label="Open the menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a class="mbar-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="icon-btn theme-btn" type="button" aria-label="Switch theme">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </header>
+
+  <aside class="side" id="side" aria-label="Guide contents">
+    <div class="side-in">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <p class="ver">User guide · version {{ site.version }}</p>
+      <nav class="nav">
+        <ul>
+        {%- for item in site.nav %}
+          {%- assign url = item.url | relative_url %}
+          {%- assign here = false %}
+          {%- if item.url == page.url or item.url == '/' and page.url == '/index.html' %}{% assign here = true %}{% endif %}
+          <li{% if here %} class="here"{% endif %}>
+            <a href="{{ url }}"{% if here %} aria-current="page"{% endif %}>{{ item.title }}</a>
+            {%- if here %}<ul class="toc" id="toc"></ul>{% endif %}
+          </li>
+        {%- endfor %}
+        </ul>
+      </nav>
+      <div class="side-foot">
+        <button class="theme-btn wide" type="button" aria-label="Switch theme">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <span class="theme-txt">Light theme</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="content">
+    <article class="doc">
+      {%- unless page.hide_title %}<h1>{{ page.title }}</h1>{% endunless %}
+      {{ content }}
+    </article>
+  </main>
+
+  <a class="totop" href="#top" aria-label="Back to the top" title="Back to the top"><span aria-hidden="true">↑</span> Top</a>
+
+  <script>
+  (function () {
+    var d = document.documentElement;
+    function sync() {
+      var dark = d.getAttribute("data-theme") === "dark";
+      document.querySelectorAll(".theme-btn").forEach(function (b) {
+        b.setAttribute("aria-label", dark ? "Switch to the light theme" : "Switch to the dark theme");
+        b.title = b.getAttribute("aria-label");
+      });
+      document.querySelectorAll(".theme-txt").forEach(function (s) { s.textContent = dark ? "Light theme" : "Dark theme"; });
+    }
+    document.querySelectorAll(".theme-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var next = d.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        d.setAttribute("data-theme", next);
+        try { localStorage.setItem("scaffvisor-docs-theme", next); } catch (e) {}
+        sync();
+      });
+    });
+    sync();
+
+    /* contents of the current page under its menu entry */
+    var toc = document.getElementById("toc");
+    if (toc) {
+      document.querySelectorAll(".doc h2[id]").forEach(function (h) {
+        var li = document.createElement("li"), a = document.createElement("a");
+        a.href = "#" + h.id; a.textContent = h.textContent; li.appendChild(a); toc.appendChild(li);
+      });
+      if (!toc.children.length) toc.remove();
+      var links = toc ? Array.prototype.slice.call(toc.querySelectorAll("a")) : [];
+      function mark() {
+        var cur = null;
+        links.forEach(function (a) {
+          var h = document.getElementById(a.getAttribute("href").slice(1));
+          if (h && h.getBoundingClientRect().top < 120) cur = a;
+        });
+        links.forEach(function (a) { a.classList.toggle("on", a === cur); });
+      }
+      window.addEventListener("scroll", mark, { passive: true }); mark();
+    }
+
+    /* phone: the menu slides in */
+    var side = document.getElementById("side"), btn = document.getElementById("menuBtn"), scrim = document.getElementById("scrim");
+    function open(v) {
+      side.classList.toggle("open", v); scrim.hidden = !v; btn.setAttribute("aria-expanded", v ? "true" : "false");
+    }
+    btn.addEventListener("click", function () { open(!side.classList.contains("open")); });
+    scrim.addEventListener("click", function () { open(false); });
+    side.addEventListener("click", function (e) { if (e.target.closest("a") && window.innerWidth < 900) open(false); });
+
+    /* back to the top */
+    var tt = document.querySelector(".totop");
+    function tog() { tt.classList.toggle("on", window.scrollY > 500); }
+    window.addEventListener("scroll", tog, { passive: true }); tog();
+  })();
+  </script>
+</body>
+</html>

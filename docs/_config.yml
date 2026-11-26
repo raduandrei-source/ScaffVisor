@@ -1,11 +1,21 @@
 title: ScaffVisor
 description: Site scaffolding for Blender, generated on the walls you mark.
-theme: minima
-show_excerpts: false
-header_pages:
-  - index.md
-  - philosophy.md
-  - panel.md
-  - presets.md
-  - systems.md
-  - limits.md
+version: 0.6.0
+markdown: kramdown
+kramdown:
+  auto_ids: true
+nav:
+  - title: Overview
+    url: /
+  - title: Philosophy
+    url: /philosophy.html
+  - title: The panel
+    url: /panel.html
+  - title: Systems and presets
+    url: /presets.html
+  - title: Systems catalog
+    url: /catalog/
+  - title: All documented systems
+    url: /systems.html
+  - title: Limits
+    url: /limits.html

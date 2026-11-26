@@ -149,4 +149,11 @@ for path in sorted(_g.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.
     check(len(out) <= 0.5 * len(Pp.leg_info), "%s too many legs out of jack range (%d of %d)" % (tag, len(out), len(Pp.leg_info)))
     Bm = compute_bom(Pp, pr, deck_grade=pr.default_grade())
     print("%s: slope 30 m -> %d frames, %.0f kg, %d jacks, est %.0f kg" % (tag, Bm["counts"]["frames"], Bm["total_kg"], len(Pp.leg_info), Bm["est_kg"]))
+# ---- the guide and the catalog never name the shops (decision 2026-11-26)
+import re as _re
+_docs = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
+for _f in _g.glob(os.path.join(_docs, "**", "*.*"), recursive=True):
+    if _f.endswith((".md", ".html", ".yml", ".scss")):
+        _t = open(_f, encoding="utf-8").read()
+        check(not _re.search(r"gumroad|superhive", _t, _re.I), "shop named in " + _f)
 print("OK %d checks" % ok)
